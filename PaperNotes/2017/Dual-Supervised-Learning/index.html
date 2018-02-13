@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Natural Language Processing,Machine Learning,Machine Translation," />
+
+
+<meta name="description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。  Supervised learning tasks in dual forms translation (Fr -&amp;gt; En / En -&amp;g">
+<meta name="keywords" content="Natural Language Processing,Machine Learning,Machine Translation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dual Supervised Learning">
+<meta property="og:url" content="https://hanvincent.github.io/PaperNotes/2017/Dual-Supervised-Learning/index.html">
+<meta property="og:site_name" content="HanVincent">
+<meta property="og:description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。  Supervised learning tasks in dual forms translation (Fr -&amp;gt; En / En -&amp;g">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-02-13T04:13:28.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dual Supervised Learning">
+<meta name="twitter:description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。  Supervised learning tasks in dual forms translation (Fr -&amp;gt; En / En -&amp;g">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hanvincent.github.io/PaperNotes/2017/Dual-Supervised-Learning/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Dual Supervised Learning | HanVincent</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HanVincent</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Vincent's Home</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/PaperNotes/2017/Dual-Supervised-Learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Han">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HanVincent">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Dual Supervised Learning</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:38:36+08:00">2018-02-13</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Notes/" itemprop="url" rel="index"><span itemprop="name">Paper Notes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://arxiv.org/pdf/1707.00415.pdf" target="_blank" rel="noopener">Paper Link</a></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。</p>
+<ul>
+<li>Supervised learning tasks in dual forms<ul>
+<li>translation (Fr -&gt; En / En -&gt; Fr)</li>
+<li>speech recognition / text to speech</li>
+<li>image classification / image generation</li>
+</ul>
+</li>
+</ul>
+<h3 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h3><h4 id="目的：同時訓練-dual-models"><a href="#目的：同時訓練-dual-models" class="headerlink" title="目的：同時訓練 dual models"></a>目的：同時訓練 dual models</h4><h4 id="舉例證明效果更好："><a href="#舉例證明效果更好：" class="headerlink" title="舉例證明效果更好："></a>舉例證明效果更好：</h4><ol>
+<li>Neural Machine Translation</li>
+<li>Image Processing on CIFAR-10</li>
+<li>Sentiment Analysis on IMDB dataset</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Def</th>
+<th style="text-align:left">Illustration</th>
+<th style="text-align:left">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>primal task:</strong></td>
+<td style="text-align:left"><em>x $\rightarrow$ y</em></td>
+<td style="text-align:left">P(y\</td>
+<td>x; $\theta$~xy~)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>dual task:</strong></td>
+<td style="text-align:left"><em>y $\rightarrow$ x</em></td>
+<td style="text-align:left">P(x\</td>
+<td>y; $\theta$~yx~)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Probabilistic-Duality"><a href="#Probabilistic-Duality" class="headerlink" title="Probabilistic Duality:"></a>Probabilistic Duality:</h4><p>$$P(x, y) = P(x)P(y|x; \theta_{xy}) = P(y)P(x|y; \theta_{yx}) \<br>\theta: model$$</p>
+<p>困難：如果個別計算 cost function ，則上方公式難保成立。</p>
+<p>object 1: $min_{\theta_{xy}}(1/n)\sum^n_{i=1}\ell_1(f(x_i;\theta_{xy}), y_i),$<br>object 2: $min_{\theta_{yx}}(1/n)\sum^n_{i=1}\ell_2(g(y_i;\theta_{yx}), x_i),$<br>s.t. $P(x)P(y|x;\theta_{xy}), \forall x,y,$</p>
+<p>解決：將上述公式轉為 penalty term ( 使用 Lagrange Multipliers) ，可將penalty term 視為 data-dependent regularization term.</p>
+<p>然而，因為$P(x), P(y)$ (marginal distributions) 並不好取得，用$\hat{P}(x), \hat{P}(y)$ (empirical marginal distributions) 取代。</p>
+<p>利用 Lagrange multipliers 和 equality constraint of probabilistic duality(以下稱雙向機率對等條件) 代入上方 objective functions.</p>
+<ol>
+<li>將雙向機率對等條件 regularize<br>$$\ell_{duality}=(log\hat{P}(x)+logP(y|x;\theta_{xy})-log\hat{P}(y)-logP(x|y;\theta_{yx}))^2$$</li>
+<li>Minimize the weighted combination and the above regularization term，針對 objective 1. &amp; 2. 加上 $\lambda\ell_{duality}$，可用SGD, Adam, Adadelta。</li>
+</ol>
+<p><small>備註：提供 theoretical analysis 確保DSL的 generalization bound；提供演算法。</small></p>
+<h3 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h3><p>此方法也對 unsupervised learning 帶來好處，以翻譯為例，$x \rightarrow y’$，再由$y’ \rightarrow x’$，透過減少$x$和$x’$的差異，雙向models都會被優化。</p>
+<p>$\ell_{duality}$ (regularization term) 是 data dependent，意指每個樣本影響 regularization term，每個 model 影響其他 model 的 regularization；然而，Lasso, SVM 是 data independent。</p>
+<p>DSL 之必要條件：</p>
+<ol>
+<li>Duality 必須存在(for the two tasks)</li>
+<li>Primal 和 Dual models 必須可訓練(trainable)</li>
+<li>$\hat{P}(X)$ and $\hat{P}(Y)$ 必須可取得</li>
+</ol>
+<h3 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h3><h4 id="機器翻譯"><a href="#機器翻譯" class="headerlink" title="機器翻譯"></a>機器翻譯</h4><ul>
+<li>參考 Bahdanau et al., 2015; Jean et al., 2015</li>
+<li>Tasks<ol>
+<li>En $\leftrightarrow$ Fr<ul>
+<li>Dataset from previous papers</li>
+</ul>
+</li>
+<li>En $\leftrightarrow$ De(Germany)<ul>
+<li>Dataset from newstest 2012, 2013, 2014</li>
+</ul>
+</li>
+<li>En $\leftrightarrow$ Zh(Chinese)<ul>
+<li>Dataset from NIST2006, 2008, 2012</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Model<ul>
+<li>使用 GRU as the recurrent module (上述 paper) 實踐 seq2seq model</li>
+<li>Word embedding 維度為620</li>
+<li>Hidden node 為 1000</li>
+<li>單字數量分別為 30k, 50k, 30k</li>
+<li>Baseline: RNNSearch</li>
+</ul>
+</li>
+<li>Evaluation Metrics<ul>
+<li>Tokenized case-sensitive BLEU</li>
+<li>分數越大品質越好</li>
+<li>case-insensitive BLEU for Zh $\rightarrow$ En</li>
+</ul>
+</li>
+<li>Training Procedure<ol>
+<li>Initialize two models by two warm-start models（上述 paper），從後段得知為 RNNSearch 訓練出來的 models 作為 initial</li>
+<li>Use SGD with minibatch size of 80 to optimize</li>
+<li>Initialize learning rate = 0.2, 持續減半直到 BLEU score on the validation set 無法明顯成長</li>
+<li>The gradient clip is set as 1.0, 5.0 and 1.0 individually</li>
+<li>根據經驗，$\lambda_{xy}$ and $\lambda_{yx}$ are set as 0.01</li>
+</ol>
+</li>
+<li>Result<ul>
+<li>可以同時改良兩個models</li>
+<li>En $\rightarrow$ Fr 進步最多</li>
+<li>Regularize probabilistic duality constraint 會降低 $\ell_{duality}$，RNNSearch $\rightarrow$ DSL</li>
+</ul>
+</li>
+<li>Improvement<ul>
+<li>Replace “UNK”(unknown word) with corresponding word-level translations</li>
+<li>使用更好的 models 作為 initials ，取代原本從 RNNSearch 得到的 warm-start models</li>
+</ul>
+</li>
+<li>Advantages<ul>
+<li>Improve by leveraging the stuctural duality of sentences</li>
+<li>consider more contextual information</li>
+<li>handle the plural form</li>
+</ul>
+</li>
+</ul>
+<h4 id="圖像處理"><a href="#圖像處理" class="headerlink" title="圖像處理"></a>圖像處理</h4><ul>
+<li>Dataset: CIFAR-10 with 10 classes of images</li>
+<li>ResNet for image classifiaciont; PixelCNN++ for image generation</li>
+<li>$\chi$ for image space; $y$ for category space related to CIFAR-10</li>
+<li>Marginal Distributions use uniform distribution</li>
+<li>Models<ul>
+<li>Baseline for image classification: ResNet-32, ResNet-110; for image generation, PixelCNN++</li>
+</ul>
+</li>
+<li>Evaluation Metrics<ul>
+<li>classification error rates for image classfication.</li>
+<li>bits per dimension(bpd) (Salimans et al., 2016) for image generation. for an image x with label y, the bpd is<br>$$ -(\sum^{N_x}_{i=1}logP(x_i|x_{x&lt;i}, y)) / (N_xlog(2)) $$</li>
+</ul>
+</li>
+<li>Training Procedure<ul>
+<li>Initialize both the primal and dual models with ResNet model and PixelCNN++ model pre-trained independently and separately.</li>
+<li>Initialize learning rate of image classification model as 0.1 and that of image generation model as 0.0005</li>
+<li>將近兩週才收斂</li>
+</ul>
+</li>
+<li>Result<ul>
+<li>Image classification 有進步好棒棒</li>
+<li>Image generation 比較困難，採用 ResNet-110 則 bpd 減少0.01，0.01不大卻是進步許多</li>
+</ul>
+</li>
+</ul>
+<h4 id="情感分析"><a href="#情感分析" class="headerlink" title="情感分析"></a>情感分析</h4><ul>
+<li>$\chi$ 代表句子，$y$代表情緒</li>
+<li>Dataset IMDB movie review </li>
+<li>Marginal Distributions use uniform distribution, positive(0.5) or negative(0.5)</li>
+<li>Model<ul>
+<li>LSTM for sentiment classification model</li>
+<li>embedding dimension = 500</li>
+<li>hidden layer size = 1024</li>
+<li>LSTM for sentence generation, input:<br>$$W^e_wE_wx_{t-1} + W^e_sE_sy$$<br>$x_{t-1}$ t-1’th word<br>$E_w$ and $E_s$ embedding matrices and sentiment label<br>$W’s$ represent the connections between embedding matrix and LSTM cells</li>
+<li>一個字一個字產生成句子，該字被產生的機率和下述公式成正比，contextual language model(CLM) $$exp(W^d_wE_wx_{t-1}+W^d_sE_sy+W_hh_{t-1})$$</li>
+</ul>
+</li>
+<li>Evaluation Metrics<ul>
+<li>Use error rate</li>
+</ul>
+</li>
+<li>Training Procedure<ol>
+<li>Baseline models: use Adadelta as the optimization method to train model</li>
+<li>Initialize the two models for DSL</li>
+<li>Use plain SGD </li>
+<li>Initialize learning rate of 0.2</li>
+<li>Decrease it to 0.02 當 validation set 沒明顯進步時</li>
+<li>$\lambda_{xy}=(5/l_x)^2$ and $\lambda_{yx}=(0.5/l_x)^2$，$l_x$ 為x的長度</li>
+</ol>
+</li>
+<li>Result<ul>
+<li>成功減少分類錯誤</li>
+<li>稍微改進 perplexity for sentence generation，原因可能為 label 僅能提供 1 bit 資訊 </li>
+<li>Baseline model 通常抓 training data 的高頻字</li>
+<li>CLM in DSL 可以抓到更準確或強烈的字</li>
+</ul>
+</li>
+</ul>
+<h3 id="探討"><a href="#探討" class="headerlink" title="探討"></a>探討</h3><ul>
+<li>根據三項測驗，發現不需要做 warm-start models 也可以達到比 baseline 好的效果，差別只在速度</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Machine-Translation/" rel="tag"># Machine Translation</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/" rel="next" title="Glove - Global Vector for Word Representation">
+                <i class="fa fa-chevron-left"></i> Glove - Global Vector for Word Representation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/" rel="prev" title="Generating News Headlines with Recurrent Neural Networks">
+                Generating News Headlines with Recurrent Neural Networks <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Vincent Han" />
+            
+              <p class="site-author-name" itemprop="name">Vincent Han</p>
+              <p class="site-description motion-element" itemprop="description">Personal Website for resume and posts.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#內容"><span class="nav-number">2.</span> <span class="nav-text">內容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目的：同時訓練-dual-models"><span class="nav-number">2.1.</span> <span class="nav-text">目的：同時訓練 dual models</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#舉例證明效果更好："><span class="nav-number">2.2.</span> <span class="nav-text">舉例證明效果更好：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probabilistic-Duality"><span class="nav-number">2.3.</span> <span class="nav-text">Probabilistic Duality:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#討論"><span class="nav-number">3.</span> <span class="nav-text">討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#應用"><span class="nav-number">4.</span> <span class="nav-text">應用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#機器翻譯"><span class="nav-number">4.1.</span> <span class="nav-text">機器翻譯</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#圖像處理"><span class="nav-number">4.2.</span> <span class="nav-text">圖像處理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情感分析"><span class="nav-number">4.3.</span> <span class="nav-text">情感分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#探討"><span class="nav-number">5.</span> <span class="nav-text">探討</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vincent Han</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

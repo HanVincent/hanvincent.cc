@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Deep Learning,Natural Language Processing,Headline Generation,Machine Learning,LSTM," />
+
+
+<meta name="description" content="Paper Link Abstract 使用 encoder-decoder LSTM model with attention mechanism 用 AWS, TensorFlow, English Giga-word 作為工具  Introduction summarization 的兩種方法：extractive 和 abstractive extractive: 擷取出 main poi">
+<meta name="keywords" content="Deep Learning,Natural Language Processing,Headline Generation,Machine Learning,LSTM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Headline Generation Using Recurrent Neural Networks">
+<meta property="og:url" content="https://hanvincent.github.io/PaperNotes/2017/Headline-Generation-Using-Recurrent-Neural-Networks/index.html">
+<meta property="og:site_name" content="HanVincent">
+<meta property="og:description" content="Paper Link Abstract 使用 encoder-decoder LSTM model with attention mechanism 用 AWS, TensorFlow, English Giga-word 作為工具  Introduction summarization 的兩種方法：extractive 和 abstractive extractive: 擷取出 main poi">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-02-13T04:13:31.446Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Headline Generation Using Recurrent Neural Networks">
+<meta name="twitter:description" content="Paper Link Abstract 使用 encoder-decoder LSTM model with attention mechanism 用 AWS, TensorFlow, English Giga-word 作為工具  Introduction summarization 的兩種方法：extractive 和 abstractive extractive: 擷取出 main poi">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hanvincent.github.io/PaperNotes/2017/Headline-Generation-Using-Recurrent-Neural-Networks/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Headline Generation Using Recurrent Neural Networks | HanVincent</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HanVincent</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Vincent's Home</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/PaperNotes/2017/Headline-Generation-Using-Recurrent-Neural-Networks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Han">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HanVincent">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Headline Generation Using Recurrent Neural Networks</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:56:14+08:00">2018-02-13</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Notes/" itemprop="url" rel="index"><span itemprop="name">Paper Notes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://github.com/hengluchang/deep-news-summarization/blob/master/headline-generation-recurrent.pdf" target="_blank" rel="noopener">Paper Link</a></p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li>使用 encoder-decoder LSTM model with attention mechanism</li>
+<li>用 AWS, TensorFlow, English Giga-word 作為工具</li>
+</ul>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+<li>summarization 的兩種方法：extractive 和 abstractive<ul>
+<li>extractive: 擷取出 main point</li>
+<li>abstractive: 換句話說</li>
+</ul>
+</li>
+<li>不同於 text summarization 的格式，一般新聞標題通常較令人吃驚，但是 Gigaword 比較偏向新聞內容的摘要</li>
+</ul>
+<h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3><ul>
+<li>這篇為上篇<a href="https://hackmd.io/s/HydCMGj2b" target="_blank" rel="noopener">Generating Headlines</a>的實作及改良</li>
+<li>用attention=based, encoder, latent soft 產生 abstractive summaries 的 data-driven 方法</li>
+<li>instrinsic: 直接找使用者判斷</li>
+<li>extrinsic: 注重效能大於分析，task-based</li>
+</ul>
+<h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul>
+<li>English Gigaword 2nd edition</li>
+<li>同個標題有很多不同的文章</li>
+<li>重複很多相同的新聞篇幅</li>
+<li>因為以上問題，這篇論文使用 1994-2004 APW 的新聞</li>
+<li>資料以 Standard Generalized Markup Language 格式儲存</li>
+<li>每筆資料包含 meta-data(獨立ID和文件類型)、標題、文章</li>
+</ul>
+<h3 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h3><ul>
+<li>使用 python BeautifulSoup4 進行解析</li>
+<li>取出標題及第一段段落</li>
+<li>以下資料刪除以提升正確率、運算效率及節省記憶體空間：<ul>
+<li>標題不符合文法或包含非英文字元</li>
+<li>標題含有’-‘或者第一段少於三個字</li>
+<li>標題有不完整的括號</li>
+<li>含有不完整的 SGML-tagged 或遺失重要 tag</li>
+</ul>
+</li>
+</ul>
+<h3 id="Word-Length-Bins"><a href="#Word-Length-Bins" class="headerlink" title="Word Length Bins"></a>Word Length Bins</h3><ul>
+<li>目標是藉由優化 bin sizes 達到縮小標題和句子間的 padding</li>
+<li>將標題長度以: 10, 12, 15, 18 做級距切割，第一句長度以: 20, 30, 40, 45, 50, 60, 70 做級距切割，觀察不同間距的頻率分佈</li>
+</ul>
+<h3 id="Encoder-decoder-LSTM-Model"><a href="#Encoder-decoder-LSTM-Model" class="headerlink" title="Encoder-decoder LSTM Model"></a>Encoder-decoder LSTM Model</h3><ul>
+<li>使用 encoder-decoer LSTM model (RNN) 和 attention mechanism</li>
+<li>使用兩層（上篇用一層）</li>
+<li>使用五個 buckets 和被優化的 bucketing 長度來減少被用在句子裡的 paddings 數量（上篇只用一個 bucket）</li>
+<li><p>先顛倒文章第一句句子順序後當成 input 放入 encoder，如此 input 的前幾個字能比較靠近 output 的前幾個字，以抓出 short term dependencies</p>
+<blockquote>
+<p><i>…其實如果 encoder 是 RNN 的話，理論上越後輸入的單詞影響越大，並非等權的，估計這也是為何 Google 提出 Sequence to Sequence 模型時，發現把輸入句子逆序輸入做翻譯效果會更好的原因）</i></p>
+</blockquote>
+</li>
+<li><p>使用 greedy decoder 取代 beam search decoder 來產生標題</p>
+</li>
+<li>被產生出來的字會被當成下一個預測字的 input</li>
+<li>attention mechanism 給予 encoder 裡的 ouput hidden states 和 current hidden state 權重，來決定哪個字比較重要</li>
+<li>dropout = 0.2, hidden units = 512, word embeddings = 512 dim</li>
+<li>高頻 80,000 words，其他字用 _UNK 或 OOV(out-of-vocabulary)</li>
+<li>使用五個 buckets ((30, 10), (30, 20), (40, 10), (40, 20), (50, 20)) (sen_len, head_len)，意指有五個不同的 encoder-decoder LSTM models</li>
+<li>使用 _PAD 來填充句子和標題到達 bucket size</li>
+</ul>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><ul>
+<li>70% 訓練集，20% 評估集，10% 測試集</li>
+<li>batched 訓練大小 = 128</li>
+<li>learning rate = 0.5</li>
+<li>gradient descent optimizer<ul>
+<li>decay factor = 0.99</li>
+<li>maximum gradient norm = 5</li>
+</ul>
+</li>
+<li>10 epochs</li>
+<li>能使用沒在句中出現過的字來產生好的標題</li>
+<li>遺漏訊息、產生錯誤訊息、因為 bucketing issue 導致出現 <eos> 前就結束，最後一個問題可被解決，只要eos還沒出現，就不斷轉成更大的 bucket</eos></li>
+</ul>
+<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><ul>
+<li>使用 system-oriented 和 user-oriented 的評估方式來比較結果</li>
+<li>user evaluation<ul>
+<li>one-factor within-subject design evaluation survey</li>
+<li>變因為標題產生方式的不同</li>
+<li>使用 Google 表單進行調查<ul>
+<li>搜集性別、年齡、國籍、母語，以確認國籍和母語不影響受試者對句子的評估</li>
+<li>提供10篇新聞讓使用者閱讀，並提供真實的和預測的兩種標題</li>
+<li>以1-5分各自評分兩者標題</li>
+<li>再以1-5分評分兩者間的相似度</li>
+<li>最後再要求受試者選出有描繪到主題的標題</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>system-oriented automatic evaluation<ul>
+<li>使用 BLEU 評斷兩者間的相似程度</li>
+<li>BLEU 是以判斷 n-grams 重疊程度的 precision-based 衡量方法</li>
+<li>使用 k = 1 (unigram)</li>
+</ul>
+</li>
+<li>為了比較系統評估和人工評估之間的關係，挑 BLUE 分數在 0.1 - 0.8 之間的新聞作為人工評估的資料</li>
+<li>以 paired samples t-test 來比較使用者對於兩者標題總結的優劣</li>
+<li><p>相似度方面，使用 Spearman 相關來衡量兩者評估方式間的關聯</p>
+<blockquote>
+<p>Pearson 相關常用來呈現連續型(continous)變數之間的關聯性，尤其在變數符合常態分配的假設下，最爲精確；而spearman相關則不需符合常態，僅要求變數的資料型態至少爲有序的(ordinal)。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Data-Analysis"><a href="#Data-Analysis" class="headerlink" title="Data Analysis"></a>Data Analysis</h3><ul>
+<li>樣本分析<ul>
+<li>71人參加，女性42人(59%)，男性29人(41%)</li>
+<li>平均年齡 28.52歲，標準差 9.020</li>
+<li>國籍：美國 34人(47.8%)，台灣 29人(40.8%)，墨西哥 2人，中國 2人，印度 2人，加拿大 1人，馬來西亞 1人</li>
+<li>母語：英文 35人，中文 33人，印度語 2人，西班牙 1人</li>
+</ul>
+</li>
+<li>兩者標題的評估比較<ul>
+<li>使用 independent sample t-test 去分析是否母語會影響兩者標題總結優劣的評估結果，結果呈現無太大影響</li>
+<li>從 paired sample t-test 比較，有 7 則新聞預測的標題比較好</li>
+</ul>
+</li>
+<li>系統和人工的評估比較<ul>
+<li>使用 Spearman’s rank-order correlation</li>
+<li>系統和人工評估之間的關聯呈現微弱且正向，表示兩者並無一致性的結果</li>
+</ul>
+</li>
+<li>優良標題的選擇<ul>
+<li>結果顯示，10則新聞預測標題和實際標題各佔半</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          
+            <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
+          
+            <a href="/tags/Headline-Generation/" rel="tag"># Headline Generation</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/LSTM/" rel="tag"># LSTM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/" rel="next" title="Generating News Headlines with Recurrent Neural Networks">
+                <i class="fa fa-chevron-left"></i> Generating News Headlines with Recurrent Neural Networks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/" rel="prev" title="Reading Wikipedia to Answer Open-Domain Question">
+                Reading Wikipedia to Answer Open-Domain Question <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Vincent Han" />
+            
+              <p class="site-author-name" itemprop="name">Vincent Han</p>
+              <p class="site-description motion-element" itemprop="description">Personal Website for resume and posts.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Related-Work"><span class="nav-number">3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dataset"><span class="nav-number">4.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Preprocessing"><span class="nav-number">5.</span> <span class="nav-text">Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Word-Length-Bins"><span class="nav-number">6.</span> <span class="nav-text">Word Length Bins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Encoder-decoder-LSTM-Model"><span class="nav-number">7.</span> <span class="nav-text">Encoder-decoder LSTM Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Result"><span class="nav-number">8.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation"><span class="nav-number">9.</span> <span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Analysis"><span class="nav-number">10.</span> <span class="nav-text">Data Analysis</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vincent Han</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

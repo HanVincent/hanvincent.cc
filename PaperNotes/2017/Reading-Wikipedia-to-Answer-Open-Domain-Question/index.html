@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Deep Learning,Natural Language Processing,Machine Learning,Machine Comprehension,Machine Reading,Recurrent Neural Network," />
+
+
+<meta name="description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
+<meta name="keywords" content="Deep Learning,Natural Language Processing,Machine Learning,Machine Comprehension,Machine Reading,Recurrent Neural Network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reading Wikipedia to Answer Open-Domain Question">
+<meta property="og:url" content="https://hanvincent.github.io/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/index.html">
+<meta property="og:site_name" content="HanVincent">
+<meta property="og:description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://i.imgur.com/NUXpoqK.png">
+<meta property="og:image" content="https://i.imgur.com/jolVu8n.png">
+<meta property="og:image" content="https://i.imgur.com/DpA8ZQ2.png">
+<meta property="og:updated_time" content="2018-02-13T04:13:32.475Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Reading Wikipedia to Answer Open-Domain Question">
+<meta name="twitter:description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
+<meta name="twitter:image" content="https://i.imgur.com/NUXpoqK.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hanvincent.github.io/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Reading Wikipedia to Answer Open-Domain Question | HanVincent</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HanVincent</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Vincent's Home</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Han">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HanVincent">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Reading Wikipedia to Answer Open-Domain Question</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:58:14+08:00">2018-02-13</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Notes/" itemprop="url" rel="index"><span itemprop="name">Paper Notes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://github.com/facebookresearch/DrQA#machine-reading-at-scale" target="_blank" rel="noopener">Paper Link</a></p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li>只使用 Wiki 當作資源找出趣聞問題的解答</li>
+<li>Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決</li>
+<li>System: Search Component + RNN<ul>
+<li>Bigram hashing</li>
+<li>TF-IDF matching</li>
+<li>Multi-layer RNN</li>
+</ul>
+</li>
+</ul>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+<li>一般 knowledge bases(KBs)：Freebase, DBPedia</li>
+<li>使用 Wiki 作文本導致 QA任務 需要結合 large-scale open-domain QA 和 machine comprehension</li>
+<li><p>Machine Reading at Scale:</p>
+<ul>
+<li>抓出相關文章</li>
+<li>掃描段落找出答案</li>
+</ul>
+</li>
+<li><p>只使用內文，不使用 wiki 的 internal graph structure</p>
+<ul>
+<li>可以套用此系統到其他文本</li>
+</ul>
+</li>
+<li><p>Large-scale QA system: IBM’s DeepQA</p>
+<ul>
+<li>依賴很多資源</li>
+<li>information redundancy</li>
+</ul>
+</li>
+<li><p>Machine Comprehension: SQuAD, CNN/Daily Mail</p>
+<ul>
+<li>大多都是以找出一小段相關 text 給 model，但是對 open-domain QA 不切實際</li>
+<li>因此， KBs or Information Retrieval 應該要有 search component</li>
+</ul>
+</li>
+<li><p>使用很多 dataset 來評估 MRS</p>
+</li>
+<li><p>Improve performance by the use of multitask learning and distant supervision</p>
+<blockquote>
+<p>ditant supervision: 使用已從在的資料庫(Freebase or a domain-specific DB)來搜集有關聯的配對，然後再用這些配對產生 training data。例如：Freebase 有 Barack Obama &amp; Michelle Obama 結婚，拿這個事實去標籤同時包含這兩位的句子，如此就能產生大量的資料（也有可能 noisy）。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3><ul>
+<li>Motivation:<ul>
+<li>KBs 限制: 不完整、固定的資料格式</li>
+<li>近期 deep learning 發展，attention-based, memory-augmented neural networks</li>
+</ul>
+</li>
+<li>提及其他使用 wiki 的研究 blablabla…</li>
+<li>只考慮 text comprehension</li>
+<li>為了強調 machine reading at scale 的任務，只使用 wiki 當作唯一資源</li>
+</ul>
+<h3 id="DrQA-for-MRS"><a href="#DrQA-for-MRS" class="headerlink" title="DrQA for MRS"></a>DrQA for MRS</h3><ul>
+<li>Doc Retrieval + Doc Reader</li>
+<li><p>Doc Retrieval</p>
+<ul>
+<li>使用有效率的方式（非機器學習）</li>
+<li>simple inverted index lookup(followed by term vector model scoring???) &gt; built-in ElasticSearch based Wiki Search API</li>
+<li>使用 TF-IDF weighted bag-of-word vectors 比較文章和問題</li>
+<li>透過 local word order with n-gram features 改良系統，best -&gt; bigram counts -&gt; 使用 hashing 保持速度和記憶體使用率 -&gt; map bigrams to $2^{24}$ bins with an unasigned murmur3 hash</li>
+<li><p>回傳五篇最相關的 wiki 文章</p>
+<blockquote>
+<p>Feature hashing 的目標是把原始的高為特徵向量壓縮成較低為特徵向量，且勁量不損失原始特徵的表達。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>Doc Reader</p>
+<ul>
+<li>Paragraph encoding + Question encoding</li>
+<li>3-layer bidirectional LSTMs with h=128 hidden units for both</li>
+<li>Stanford CoreNLP toolkit for tokenization, lemma, POS, NE tag</li>
+<li>所有訓練資料依照段落長度排序，並分到 mini-batches of 32 examples each.</li>
+<li>用 Adamax 優化</li>
+<li>在 word embeddings 和所有 hidden units of LSTMs 使用 dropout with p=0.3 </li>
+<li><p>Paragraph encoding<br>$$ {p_1,…,p_m}=RNN({\check{p}_1,…\check{p}_m}) $$<br>$p_i$: 為每層的 hidden units 的並列(concatenation)，預期 encode 有用的 token $p_i$ context 資訊<br>$\check{p}_1$: feature vector</p>
+<ol>
+<li><p>Word embeddings: 使用 pre-trained 300d Glove word embeddings，保持大部分但微調前 1000 於問題的常見字，像是 what, how, which，畢竟這對QA系統很重要<br>$$ f_{emb}(p_i)=E(p_i) $$</p>
+</li>
+<li><p>Exact match: 使用3個 simple binary features，表示 $p_i$ 是否可完整配對到問題中的字，完整、小寫、或lemma form。但是3用在哪不解？<br>$$ f_{exact\_match(p_i)}=I(p_i\in q) $$</p>
+</li>
+<li><p>Token features: 再加上 POS, NER, TF(normalized term frequency)<br>$$ f_{token}(p_i)=(POS(p_i),NER(p_i),TF(p_i))$$</p>
+</li>
+<li><p>(複雜)Aligned question embedding: attention score $a_{i,j}$ captures the imilarity between $p_i$ and each question words $q_j$.<br>$$ f_{align}(p_i)=\sum_j a_{i,j}E(q_j) $$<br><img src="https://i.imgur.com/NUXpoqK.png" alt=""></p>
+</li>
+</ol>
+</li>
+<li><p>Question encoding</p>
+<ul>
+<li>套用在 $q_i$ word embedding</li>
+<li>並且結合 hidden units into one vector<br><img src="https://i.imgur.com/jolVu8n.png" alt=""></li>
+</ul>
+</li>
+<li><p>Prediction</p>
+<ul>
+<li>使用 paragraph vectors 和 question vector 來訓練兩個 classifier</li>
+<li>用來預測答案的開頭字跟結尾字</li>
+<li>使用 bilinear term 計算每個字可能為開頭和結尾的機率<br><img src="https://i.imgur.com/DpA8ZQ2.png" alt=""></li>
+<li>選擇最可能的 span 從 $i$ 到 $i’$，不可超過十五個單字，且 $P_{start}(i)*P_{end}(i’)$ is max</li>
+<li>使用 unnormalized exp 以相容不同段落之間的比較</li>
+<li>argmax 找出最可能的答案</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><ol>
+<li><p>Wiki: 答案來源</p>
+<ul>
+<li>只使用內容純文字，list, figure 等全部刪除</li>
+<li>5,075,182 articles, 9,008,962 unique uncased tokens</li>
+</ul>
+</li>
+<li><p>SQuAD datset: 主要用來 train Document Reader</p>
+<ul>
+<li>Stanford Question Answering Dataset, for machine comprehension based on Wiki</li>
+<li>87k examples for training; 10k for development, a large hidden test set(private)</li>
+<li>Each example: a paragraph &amp; answer, an associated human-generated question</li>
+<li>訓練過程中，需要預測出正確解答</li>
+<li>使用 exact string match(EM) 和 F1 score 評估，token level</li>
+<li>只使用 development set QA pairs 做評估，但不使用提供的段落，要求系統找出正確解答</li>
+</ul>
+</li>
+<li><p>另外 3 個 QA datasets: test 整個系統，evaluated 使用 multitask learning and distant supervision 學習的 model</p>
+<ul>
+<li>CuratedTREC<ul>
+<li>from TREC QA tasks</li>
+<li>2,180 questions</li>
+</ul>
+</li>
+<li>WebQuestions<ul>
+<li>被用來回答 Freebase KB 的問題</li>
+<li>問題是透過 Google Suggest API 來爬取的</li>
+<li>透過 Amazon Turk 得到解答</li>
+<li>使用 entity names 把答案轉換成 text</li>
+</ul>
+</li>
+<li>WikiMovies<ul>
+<li>96k qa pair in movie</li>
+<li>from OMDb and MovieLens DB</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Distantly Supervised Data<ul>
+<li>原本資料只有 qa pair，不含相關段落</li>
+<li>利用 Distant supervision for relation extraction(2009) 提出的方法</li>
+</ul>
+<ol>
+<li>用 Doc. Retriever 找出該問題的前五篇</li>
+<li>移除不包含答案、短於25或超過1500 char 的段落</li>
+<li>如果 Q 裡面有 named entity，移除那些不包含 EN 的段落</li>
+<li>score all positions that match an answer using unigram and bigram overlap between the question and a 20 token window利用評分剩下的段落</li>
+<li>留最高分的五個段落(keeping up to the top 5 paragraphs with the highest overlaps)，若都沒有，則移除該例子</li>
+</ol>
+</li>
+</ul>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><ul>
+<li><p>Document Retrieval</p>
+<ul>
+<li>方法為找出的前五篇文章中至少一篇出現答案的比率</li>
+<li>比 wiki 內建的搜尋引擎好</li>
+<li>比 Okapi BM25 或 cosine distance in the word embeddings space 好</li>
+</ul>
+</li>
+<li><p>Document Reader</p>
+<ul>
+<li>用 SQuAD evaluation 評估</li>
+<li>此 model 可以達到 SQuAD 最好的結果</li>
+<li>若拿掉 $f_{aligned}$ and $f_{exact\_match}$，效果大幅降低，推論出這兩個 features 扮演著相似但是互補的角色</li>
+</ul>
+</li>
+<li><p>DrQA</p>
+<ul>
+<li>使用上述四個 dataset</li>
+<li><p>用三個 DrQA 版本來比較餵給 Doc. Reader 的訓練來源上使用 distant supervision 和 multitask learning 的影響</p>
+<ol>
+<li>SQuAD: 單純在 Doc. Reader model 上使用訓練集和評估集</li>
+<li>Fine-tune (DS): Doc. Reader model 已經用 SQuAD 事先訓練好，再使用從每個 dataset 得到的 distant supervision training set 來 fine-tuned</li>
+<li>Multitask (DS): Doc. Reader model 從 SQuAD training set 和所有 DS sources 訓練出來</li>
+</ol>
+</li>
+<li><p>SQuAD 雖然比較差，但沒有落後很多，代表有 task transfer</p>
+</li>
+<li>SQuAD -&gt; Multitask(DS) 最主要的進步原因不是 task transfer，因為 fine-tuning on each dataset alone using DS 也有進步，代表導入同領域的 extra data 提供幫助</li>
+<li>Multitask (DS) system 最好</li>
+<li>比較 YodaQA(來源不只 wiki，redudant resources)，儘管我們的任務困難度上升，但重新確認我們的效能並不是落後太多 on CuratedTREC</li>
+<li>on WebQuestions 落後較多是因為這個資料集是從特定格式的 Freebase 產生的，而 YodaQA 直接使用此資料</li>
+<li>完整的 single SQuDA 系統雖然在 SQuDA 資料上的成績從69.6 -&gt; 27.1，但是因為給予的資料從段落變成所有 wiki，若給正確的該篇文章（非段落）則可達 49.4，表示 false positives 來自 topcial sentences.(?)</li>
+<li>儘管 Doc. Retrieval 效果很好，但是值得注意的是，這個落差可能來自於 SQuAD 的questions，因為這些questions是再給予一段段落後去產生的，並不知道上下文，因此可能和整篇文章的主旨有出入</li>
+</ul>
+</li>
+</ul>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><ul>
+<li>利用 wiki 研究 MRS</li>
+<li>此成果表示 MRS 是很關鍵的任務</li>
+<li>只使用 machine comprehension 並不能解決整體任務，此研究結合 search, distant supervision, and multitask learning</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          
+            <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Machine-Comprehension/" rel="tag"># Machine Comprehension</a>
+          
+            <a href="/tags/Machine-Reading/" rel="tag"># Machine Reading</a>
+          
+            <a href="/tags/Recurrent-Neural-Network/" rel="tag"># Recurrent Neural Network</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/PaperNotes/2017/Headline-Generation-Using-Recurrent-Neural-Networks/" rel="next" title="Headline Generation Using Recurrent Neural Networks">
+                <i class="fa fa-chevron-left"></i> Headline Generation Using Recurrent Neural Networks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Miscellany/GEC-log/" rel="prev" title="GEC log">
+                GEC log <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Vincent Han" />
+            
+              <p class="site-author-name" itemprop="name">Vincent Han</p>
+              <p class="site-description motion-element" itemprop="description">Personal Website for resume and posts.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Related-Work"><span class="nav-number">3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DrQA-for-MRS"><span class="nav-number">4.</span> <span class="nav-text">DrQA for MRS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data"><span class="nav-number">5.</span> <span class="nav-text">Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">7.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vincent Han</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
