@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hanvincent.github.io/2018/02/DL-notes/</loc>
+    
+    <lastmod>2018-02-22T08:43:44.129Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hanvincent.github.io/2018/02/GEC-log/</loc>
     
     <lastmod>2018-02-22T08:41:17.080Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://hanvincent.github.io/2018/02/QA-bot/</loc>
     
     <lastmod>2018-02-22T08:40:35.152Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hanvincent.github.io/2018/02/DL-notes/</loc>
-    
-    <lastmod>2018-02-22T08:40:28.078Z</lastmod>
     
   </url>
   

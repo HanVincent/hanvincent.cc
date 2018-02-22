@@ -1084,7 +1084,7 @@ pre .javascript .function {
 }
 .gitment_title:hover {
   color: #fff;
-  background: #0a9caf;
+  background: #ababab;
   background-image: initial;
   background-position-x: initial;
   background-position-y: initial;
@@ -1094,20 +1094,20 @@ pre .javascript .function {
   background-attachment: initial;
   background-origin: initial;
   background-clip: initial;
-  background-color: #0a9caf;
+  background-color: #ababab;
 }
 .gitment_title {
-  border: 1px solid #0a9caf;
-  border-top-color: #0a9caf;
+  border: 1px solid #ababab;
+  border-top-color: #ababab;
   border-top-style: solid;
   border-top-width: 1px;
-  border-right-color: #0a9caf;
+  border-right-color: #ababab;
   border-right-style: solid;
   border-right-width: 1px;
-  border-bottom-color: #0a9caf;
+  border-bottom-color: #ababab;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-left-color: #0a9caf;
+  border-left-color: #ababab;
   border-left-style: solid;
   border-left-width: 1px;
   border-image-source: initial;
@@ -1128,7 +1128,8 @@ pre .javascript .function {
   padding-right: 15px;
   padding-bottom: 0px;
   padding-left: 15px;
-  color: #0a9caf;
+  margin-top: 10px;
+  color: #ababab;
   cursor: pointer;
   font-size: 14px;
 }
@@ -1869,7 +1870,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7555;
+  background: #ffff13;
 }
 .links-of-blogroll {
   font-size: 13px;
