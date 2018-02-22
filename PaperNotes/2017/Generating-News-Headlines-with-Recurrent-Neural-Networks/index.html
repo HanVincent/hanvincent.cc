@@ -102,28 +102,28 @@
 
 
   
-  <meta name="keywords" content="GEC,NLP Lab," />
+  <meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Headline Generation,LSTM," />
 
 
-<meta name="description" content="Outline Papers Log">
-<meta name="keywords" content="GEC,NLP Lab">
+<meta name="description" content="Paper Link Abstract an encoder-decoder recurrent neural network with LSTM units and attention effective at paraphrasing pay attention to specific input words   simplified attention mechanism performs">
+<meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Headline Generation,LSTM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GEC log">
-<meta property="og:url" content="https://hanvincent.github.io/GEC log/index.html">
+<meta property="og:title" content="Generating News Headlines with Recurrent Neural Networks">
+<meta property="og:url" content="https://hanvincent.github.io/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="Outline Papers Log">
+<meta property="og:description" content="Paper Link Abstract an encoder-decoder recurrent neural network with LSTM units and attention effective at paraphrasing pay attention to specific input words   simplified attention mechanism performs">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-02-22T08:31:45.187Z">
+<meta property="og:updated_time" content="2018-02-22T08:32:46.241Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GEC log">
-<meta name="twitter:description" content="Outline Papers Log">
+<meta name="twitter:title" content="Generating News Headlines with Recurrent Neural Networks">
+<meta name="twitter:description" content="Paper Link Abstract an encoder-decoder recurrent neural network with LSTM units and attention effective at paraphrasing pay attention to specific input words   simplified attention mechanism performs">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hanvincent.github.io/GEC log/"/>
+  <link rel="canonical" href="https://hanvincent.github.io/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/"/>
 
 
 
@@ -132,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>GEC log | HanVincent</title>
+  <title>Generating News Headlines with Recurrent Neural Networks | HanVincent</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/GEC log/">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Han">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">GEC log</h1>
+          <h1 class="post-title" itemprop="name headline">Generating News Headlines with Recurrent Neural Networks</h1>
         
 
         <div class="post-meta">
@@ -314,7 +314,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T12:02:42+08:00">2018-02-13</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:53:32+08:00">2018-02-13</time>
             
 
             
@@ -335,7 +335,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Miscellany/" itemprop="url" rel="index"><span itemprop="name">Miscellany</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Notes/" itemprop="url" rel="index"><span itemprop="name">Paper Notes</span></a></span>
 
                 
                 
@@ -350,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/GEC log/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/GEC log/" itemprop="commentsCount"></span>
+                <a href="/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -359,7 +359,7 @@
 
           
           
-             <span id="/GEC log/" class="leancloud_visitors" data-flag-title="GEC log">
+             <span id="/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/" class="leancloud_visitors" data-flag-title="Generating News Headlines with Recurrent Neural Networks">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,287 +390,157 @@
       
 
       
-        <h2 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h2><ul>
-<li><a href="#paper">Papers</a></li>
-<li><a href="#log">Log</a></li>
+        <p><a href="https://nlp.stanford.edu/courses/cs224n/2015/reports/1.pdf" target="_blank" rel="noopener">Paper Link</a></p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li>an encoder-decoder recurrent neural network with LSTM units and attention<ul>
+<li>effective at paraphrasing</li>
+<li>pay attention to specific input words</li>
+</ul>
+</li>
+<li>simplified attention mechanism performs better than complex attention mechanism</li>
 </ul>
 <a id="more"></a>
-<h2 id="Paper"><a href="#Paper" class="headerlink" title="Paper"></a>Paper</h2><h3 id="Hybrid-Systems-and-Type-Filtering"><a href="#Hybrid-Systems-and-Type-Filtering" class="headerlink" title="Hybrid Systems and Type Filtering"></a>Hybrid Systems and Type Filtering</h3><ul>
-<li><p>Error Type</p>
-<ul>
-<li>Open-class: spelling, collocation</li>
-<li>Closed class: determiners, preposition</li>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><ul>
+<li>Recurrent NN 常被使用在機器翻譯、語音識別、閱讀理解</li>
+<li>參考的論文是以 simpler attention-based model 完成產生新聞標題（而非 RNN）</li>
 </ul>
-</li>
-<li><p>Hybrid System</p>
-<ul>
-<li>Ruled-based system(RBS)<ul>
-<li>Self-Assessment and Tutoring(SAT) system<ul>
-<li>text assessment</li>
-<li>sentence evaluation</li>
-<li>word-level feedback</li>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><ul>
+<li>使用 encoder-decoder architecture, both encoder &amp; decoder are recurrent NN</li>
+<li>Encoder<ul>
+<li>每一次 input 只輸入一個字</li>
 </ul>
-</li>
-<li>Only use word-level feedback of SAT (∵ on strict correction not detection)<ul>
-<li>Rules from n-gram error &gt; 5 times &amp; 90% in CLC</li>
-<li>Rules from machine-readable dict.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Ad-hoc statistical machine system(SMT)<ul>
-<li>Try to ‘translate’ incorrect into correct</li>
-<li>Many parallel corpora</li>
-<li>Lexical reoredering model<ul>
-<li>Pialign 2011 (word alignment)</li>
-<li>charactr-level Levenshtein distance</li>
-</ul>
-</li>
-<li>4-gram target language model by Kneser-Ney smoothing<ul>
-<li>Knser-Ney smoothing: 不僅僅看 unigram，該字的出現機率正比於前一字的單字種類數</li>
-</ul>
-</li>
-<li>Decoding<ul>
-<li>Moses 2007 to generate 10 correctionss</li>
-<li>Moses: statistical machine translation with beam search and phrase-based translation …</li>
-</ul>
-</li>
-<li>NLTK for NLP</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Ranking</p>
-<ul>
-<li>Combining all possible corrections and ranking</li>
-<li>Ranking for alternative corrections<ul>
-<li>Target language model in SMT</li>
-<li>M$ web n-gram services based on 5-gram</li>
-</ul>
-</li>
-<li>M$ is better evaluated by $M^2$ Scorer(2012) due to massive data</li>
-</ul>
-</li>
-<li><p>pre-Analysis</p>
-<ul>
-<li>(normalisation: bias towards prefer deletion or skip insertion)</li>
-<li>Performance<ul>
-<li>Based on Error Type</li>
-<li>Lower down due to unnecessary correction -&gt; recall ↓(?) -&gt; remove types that precision = 0</li>
-<li>Error type filtering technique<ol>
-<li>Extract correct and original sentence</li>
-<li>Delete unwanted types</li>
-<li>Edit original text from reference above</li>
+<ol>
+<li>每個input word 先經過 embedding layer 轉乘 distributed representation</li>
+<li>再丟到利用前一個字生成的 hidden layer，此層為 multi-layer neural network.<br><small><em>(That distributed representation is then combined using a multi-layer neural network with the hidden layers generated after feeding in the previous word, or all 0’s for the first word in the text.)</em></small></li>
 </ol>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Experiment</p>
+<li><p>Decoder</p>
 <ul>
-<li>Order: RBS &gt; SMT</li>
-<li>Best: RBSc &gt; LM &gt; SMT_10-best &gt; LM</li>
-<li>Good at<ul>
-<li>mechanical errors(punct, capitalization, and spelling)</li>
-<li>enforcing diff. types of agreement</li>
+<li>用最後一個 input word 產生的 hidden layer 當作 decoder input<br><small><em>(The decoder take as input the hidden layers generated after feeding in the last word of the input text)</em></small></li>
 </ul>
+<ol>
+<li>最後一個 input 為 <eos> ，餵入後轉成 distributed representation</eos></li>
+<li>藉由 softmax layer 和 attention 機制一個字接著一個字的產生新聞標題，同樣地每個 output word 都會被當成產生下一個字的 input，新聞標題同樣以 <eos> 做結尾</eos></li>
+</ol>
 </li>
-<li>Bad at<ul>
-<li>others, reordering, srun (precision = 0)</li>
-<li>Wci(idioms, collocation)</li>
-<li>…</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Result</p>
+<li><p>整理理解後：</p>
 <ul>
-<li>Score for unnecessary deletion (could)</li>
-<li>Domain diff. (social media &gt; the media)</li>
-<li>Uncredited correction (right but diff. from answer, right in isolation but wrong)</li>
+<li>encoder 過程不會有 ouput，只有每次訓練出來的 state 給下個神經使用（應該為 memory 的概念）</li>
+<li>encoder 和 decoder 中間是以 <eos> 當作 input 作為連接</eos></li>
+<li>decoder 過程皆以預測的 output 作為預測下一個字的 input</li>
 </ul>
 </li>
-</ul>
-<h2 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h2><h3 id="Unnecessary-Punctuation"><a href="#Unnecessary-Punctuation" class="headerlink" title="Unnecessary Punctuation"></a>Unnecessary Punctuation</h3><ul>
-<li>Comma</li>
-<li>Period</li>
-<li>!</li>
-<li>?</li>
-<li>: </li>
-<li>“</li>
-</ul>
-<h4 id="Week-01-comma"><a href="#Week-01-comma" class="headerlink" title="Week 01 - comma"></a>Week 01 - comma</h4><ul>
-<li><p>Preprocessing</p>
+<li><p>Loss function<br>$$-log\ p(y_1,…,y_{T^{‘}}|x_1,…x_T)<br>=-\sum^T_{t=1}log\ p(y_t|y_1,…,y_{t-1},x_1,…x_T)$$</p>
+</li>
+<li><p>training 過程中使用 <strong>teacher forcing</strong></p>
 <ul>
-<li>將 EFcamdat &gt; wikED format (6.9G)<ul>
-<li>ef.format.py ef.*.fixed.txt &gt; ef.sents.txt</li>
+<li>在 decoder 時原該將上個預測字作為 input，卻使用真正標題對應該位置的字作為 input</li>
+<li>但在 testing 中，input 完全為實際預測的上個字，導致 training 和 testing 沒有關連ㄎdㄎ</li>
+<li>為了克服這項問題，training 過程，改成10%機率餵入 generated word 而非 expected word</li>
+<li>testing 過程，使用 beam-search decoder 一次產生一個字，於每次 extending the $B$ highest probability sequences</li>
 </ul>
 </li>
-<li>抓 [-.//PU-] &amp;&amp; [-.//D-], . only for punct.<ul>
-<li>egrep –color ‘[-[^a-zA-Z]//PU-]‘ ef.sents.txt &gt; ef.sents.PU.txt  (1.2M)</li>
-<li>egrep –color ‘[-[^a-zA-Z]//D-]‘ ef.sents.txt &gt; ef.sents.D.txt  (12M)</li>
-</ul>
+<li><p>4層 LSTM units 的隱藏層，每層 600 個 hidden units</p>
 </li>
-</ul>
-</li>
-<li><p>Observation</p>
+<li>dropout 但效果不彰，不使用</li>
+<li>使用均勻分布 [-0.1; 0.1] 初始化大部分參數</li>
+<li>使用訓練文本中出現字頻的 log-probability 初始化 softmax layer 中每個字的 biases</li>
+<li><p>Learning 過程</p>
 <ul>
-<li><p>Noise</p>
+<li>Learning rate = 0.01</li>
+<li>RMSProp adative gradient method, decay = 0.9, momentum = 0.9</li>
+<li>訓練 9 epochs, 5th epoch後，每 epoch 減半 learning rate</li>
+<li>batch size = 384 examples，但 batching 卻複雜化 model，因為每句長度不一</li>
+<li>固定 input 和 output 最大長度，並且使用特別的邏輯去確保正確的隱藏層 states 被餵入一開始的decoder ，以及預測到最後不會有損失發生</li>
+</ul>
+<h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h3><ul>
+<li>幫助神經網路記住輸入的特定面向，包含數字和名稱</li>
+<li>使用於預測每個字時，根據所有 input 字計算該字的重要性，並利用此去計算該 output 的 weight。<br> <small><em>(For each output word the attention mechanism computes a weight over each of the input words that determines how much attention should be paid to that input word.)</em></small></li>
+<li>weights 總和為1，並在處理完該句最後字時拿來計算最後一層隱藏層的 weighted average，weighted average, referred to as the context, is then input into the softmax layer along with the last hidden layer from the current step of the decoding.</li>
+</ul>
+</li>
+<li><p>complex attention</p>
 <ul>
-<li>tag 和前單字連一起</li>
-<li>Weird tags<br>  | tag      | sents.t | D.t  | PU.t |<br>  | ——– | ——- | —- | —- |<br>  | [-//PU-] | 24669   | 1766 | 239  |<br>  | [-//D-]  | 19890   | 1270 | 41   |<br>  | {+,//D+} | 6       | 2    | 1    |</li>
+<li>= dot mechanism</li>
+<li>input word 在位置 t 時的 attention weight 是<br>$a_{y_{t^{‘}}}(t)=exp(h^T_{x_t}h_{y_{t^{‘}}}) / \sum^T_texp(h^T_{x_t}h_{y_{t^{‘}}}) \<br>h_{x_t} 代表處理完第 t 個 input word後的最後一層隱藏層 \<br>h_{y_{t^{‘}}}代表 last\ hidden\ layer\ from\ the\ current\ step\ of\ decoding$</li>
+<li>同樣的 hidden units(600) 同時被用來計算 attention weight 和 context</li>
 </ul>
 </li>
-<li><p>Domain converge - Hi/Hello</p>
+<li><p>simple attention</p>
 <ul>
-<li>NNP _ NNP</li>
-<li>NNP _ NNP .</li>
-<li>NNP _ NNP ,</li>
-<li>NNP _ NNP , PRON</li>
+<li>處理完每個 input word 產生的最後一層的 hidden units 被切成 50, 550 兩部分</li>
+<li>50 units 被拿來計算 attention weight</li>
+<li>550 units 被拿來計算 context</li>
+<li>current step of decoding 的最後一層隱藏單位一樣也被切成50, 550</li>
+<li>50 拿來計算 attention weight</li>
+<li>550 給 softmax layer</li>
 </ul>
 </li>
-<li><p>Use nltk.pos_tag &amp; tagset = ‘universal’</p>
+</ul>
+<h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul>
+<li>English Gigaword dataset from the Stanford Linguistics department</li>
+<li>前處理後，有5.5M篇文章，236M單字</li>
+<li>Preprocessing<ul>
+<li>lowercased and tokenized, 移除標點符號</li>
+<li>僅保留第一段</li>
+<li>加入 <eos> 於標題和內文結尾</eos></li>
+<li>無標題、無內文、標題長度超過25字、內文長度超過50字等資料皆移除</li>
+<li>使用前40,000高頻字，其餘以 <unk> 取代</unk></li>
+<li>data 切割成 training set 和 holdout set，holdout set 僅包含上個月的資料，為防止重複資料，完全不採用上上個月的資料</li>
+<li>隨機洗亂 training data</li>
+</ul>
+</li>
+<li>Dataset Issues<ul>
+<li>還是會有些雜音存在於資料，像是連字號形式，但是好的 model 應能處理這些雜音，因此不過濾</li>
+</ul>
+</li>
+</ul>
+<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><ul>
+<li>看 training 和 holdout 的 loss</li>
+<li>BLEU evaluation metric<ul>
+<li>用於 holdout set(為了效率，只用 384 examples)</li>
+<li>looks at what fraction of n-grams of different lengths from the expected headlines are actually output by the model.</li>
+<li>並考慮產生的標題相較於真實標題的字數</li>
+<li>metric 同時直接應用於 384 heldout example，而非一個個 example 計算</li>
+</ul>
+</li>
+</ul>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><ul>
+<li>training loss 通常比 holdout loss 高，因為計算 holdout loss 過程並沒餵入 10% 的預測字</li>
+<li>訓練和測試資料來自同份報社則效果不錯，並懂得換句話說</li>
+<li>預測 Huffington Post 和 Forbes 時效果較差，可能和文章寫法有關</li>
+</ul>
+<h3 id="Detail"><a href="#Detail" class="headerlink" title="Detail"></a>Detail</h3><ul>
+<li><p>存在最後一層的資料</p>
 <ul>
-<li>NOUN _ NOUN . (1732)</li>
-<li>NOUN _ NOUN . PRON (562)</li>
-<li>NOUN _ NOUN . NOUN (386)<blockquote>
-<p>Hi/Hello</p>
-</blockquote>
-</li>
-<li>ADJ NOUN _ (365)<blockquote>
-<p>不知為何刪掉結尾逗號</p>
-</blockquote>
-</li>
-<li><strong>DET NOUN _ ADP PRON</strong> (426)</li>
-<li><strong>ADJ NOUN _ ADP PRON</strong> (407)</li>
-<li><strong>PRON NOUN _ ADP PRON</strong> (345)<blockquote>
-<p>useful rule<br>because, so, that, if, on</p>
-</blockquote>
-</li>
-<li>DET NOUN _ CONJ PRON (320)</li>
-<li>ADJ NOUN _ CONJ PRON (307)</li>
-<li><strong>. NOUN _ CONJ NOUN</strong> (304)<blockquote>
-<p>Oxford comma 或同位語 up to semantics<br>and, but, or</p>
-</blockquote>
-</li>
+<li>$o_{y_{t^{‘}}}=W_{co}c_{y_{t^{‘}}}+W_{ho}h_{y_t^{‘}}+b_o$ 計算 input to the softmax function<br>$y_{t^{‘}}$ for the current step of decoding<br>$c_{y_{t^{‘}}}$ context computed for $y_{t^{‘}}$<br>$h_{y_{t^{‘}}}$ last hidden layser for $y_{t^{‘}}$<br>$W_{co}, W_{ho}, b_o$ 是 model parameters</li>
+<li>利用最高分的 ouput 字透過 $W_{ho}h_{y_{t^{‘}}}+b_o$ 去觀察 hidden layer 對 output 產生什麼影響；也透過 $W_{co}h_{y_{t}}+b_o$ 觀察 attention context</li>
+<li>鑑於 context 只是 a weighted sum over the hidden layers of the decoder，我們可以計算 $W_{co}h_{x_{t}}+b_o$ for each of the input positions，並且在神經網路關注每個 input 位置的條件下，了解哪個字應該被記憶(recalled)</li>
+<li>透過舉例，了解 network 有時採取很多步驟才 encode 特定字</li>
+<li>而在 decoding 階段，關聯字則比較有關</li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-<h4 id="Week-02-comma"><a href="#Week-02-comma" class="headerlink" title="Week 02 - comma"></a>Week 02 - comma</h4><ul>
-<li><p>Preprocessing</p>
+<li><p>attention weight vector 如何被計算</p>
 <ul>
-<li>重新將 <code>[-.//D-]</code>, <code>[-.//PU-]</code> export ef.sents.UP.txt (70980, 13MB)，因為兩者意義相同，應同時被觀察</li>
-<li>將 <code>{+.//PU+}</code>, <code>[{-.+.//PU-}]</code> export ef.MP.txt (391872, 65MB)，用來比較從 UP 得到的 rules 是否衝突</li>
-<li>新增可抓數字(30th) 的 regex in re_token</li>
-<li>暫時忽略轉換失敗的 <code>&lt;selection&gt;</code> 未來不該出現</li>
-<li><code>[-//PU-] (2002)</code>, <code>[-//D-] (1309)</code>, <code>{+//D+} (0)</code>, <code>[{-.+.//PU-}]</code>(9700)</li>
-<li><code>{+.//D+}</code> 是矛盾 tag，出現8次，直接忽略</li>
-<li>改用 spaCy POS tag，但 input 為句子</li>
-</ul>
-</li>
-<li><p>Observation</p>
-<ul>
-<li>逗號佔了總標點符號 41692 次 / 70980 句</li>
-<li>window size = 3</li>
-<li>NOUN _ CCONJ (7764)<blockquote>
-<p>{‘and’: 7244, ‘but’: 293, ‘or’: 211, ‘AND’: 6, ‘&amp;’: 4, ‘both’: 3, ‘nor’: 2, ‘plus’: 1}</p>
-</blockquote>
-</li>
-<li>ADJ _ CCONJ (1762)<blockquote>
-<p>{‘and’: 1540, ‘but’: 199, ‘or’: 20, ‘nor’: 2, ‘&amp;’: 1}</p>
-</blockquote>
-</li>
-<li><p>PROPN _ CCONJ (1100)</p>
-<blockquote>
-<p>{‘and’: 1023, ‘but’: 59, ‘or’: 12, ‘AND’: 5, ‘&amp;’: 1}</p>
-</blockquote>
-</li>
-<li><p>NOUN _ ADP (4748)</p>
-<blockquote>
-<p>{‘because’: 2692, ‘in’: 519, ‘with’: 228, ‘at’: 219, ‘for’: 184, ‘on’: 121, ‘like’: 120, ‘of’: 81, ‘as’: 68, ‘if’: 53, ‘that’: 44, ‘by’: 38, ‘from’: 38, ‘so’: 36, ‘after’: 35, ‘to’: 33, ‘about’: 32, ‘since’: 28, ‘near’: 24, ‘between’: 21, ‘before’: 13, ‘while’: 12, ‘across’: 11, ‘although’: 10, ‘due’: 9, ‘until’: 9, ‘during’: 8, ‘though’: 7, ‘without’: 6, ‘under’: 5, ‘except’: 4, ‘behind’: 4, ‘into’: 3, ‘than’: 3, ‘opposite’: 3, ‘through’: 3, ‘unless’: 3, ‘among’: 2, ‘whereas’: 2, ‘inside’: 2, ‘around’: 2, ‘outside’: 2, ‘If’: 2, ‘af’: 1, ‘In’: 1, ‘IN’: 1, ‘besides’: 1, ‘out’: 1, ‘against’: 1, ‘within’: 1, ‘FOR’: 1, ‘beyond’: 1}</p>
-</blockquote>
-</li>
-<li>PROPN _ ADP (872)<blockquote>
-<p>PROPN 開頭大寫<br>{‘in’: 397, ‘because’: 274, ‘at’: 70, ‘with’: 22, ‘for’: 20, ‘from’: 15, ‘on’: 14, ‘as’: 9, ‘to’: 6, ‘after’: 5, ‘so’: 4, ‘since’: 4, ‘of’: 4, ‘through’: 3, ‘by’: 3, ‘that’: 3, ‘if’: 3, ‘between’: 3, ‘during’: 3, ‘IN’: 2, ‘near’: 2, ‘opposite’: 1, ‘though’: 1, ‘before’: 1, ‘BECAUSE’: 1, ‘along’: 1, ‘while’: 1}</p>
-</blockquote>
-</li>
-<li>ADJ _ ADP (1056)<blockquote>
-<p>{‘because’: 737, ‘with’: 78, ‘in’: 37, ‘that’: 26, ‘if’: 25, ‘for’: 22, ‘on’: 17, ‘at’: 13, ‘as’: 13, ‘than’: 11, ‘so’: 11, ‘about’: 10, ‘of’: 8, ‘to’: 6, ‘like’: 5, ‘between’: 5, ‘by’: 5, ‘although’: 4, ‘since’: 3, ‘after’: 3, ‘though’: 2, ‘from’: 2, ‘until’: 1, ‘per’: 1, ‘during’: 1, ‘versus’: 1, ‘due’: 1, ‘without’: 1, ‘despite’: 1, ‘around’: 1, ‘before’: 1, ‘against’: 1, ‘through’: 1, ‘among’: 1, ‘whether’: 1}</p>
-</blockquote>
-</li>
-<li><p>VERB _ ADP (1049)</p>
-<blockquote>
-<p>{‘because’: 410, ‘that’: 311, ‘in’: 79, ‘at’: 47, ‘with’: 41, ‘if’: 35, ‘to’: 22, ‘for’: 18, ‘on’: 16, ‘by’: 12, ‘as’: 8, ‘from’: 7, ‘like’: 6, ‘about’: 6, ‘after’: 5, ‘whether’: 4, ‘so’: 3, ‘since’: 2, ‘until’: 2, ‘before’: 2, ‘onto’: 1, ‘WITH’: 1, ‘unless’: 1, ‘during’: 1, ‘although’: 1, ‘of’: 1, ‘If’: 1, ‘out’: 1, ‘though’: 1, ‘without’: 1, ‘inside’: 1, ‘against’: 1, ‘BECAUSE’: 1}</p>
-</blockquote>
-</li>
-<li><p>INTJ _ PROPN (2796)</p>
-<blockquote>
-<p>{‘Hi’: 2386, ‘Hello’: 303, ‘Hey’: 93, ‘Dear’: 10, ‘OK’: 2, ‘Well’: 1, ‘Yes’: 1}</p>
-</blockquote>
-</li>
-<li><p>INTJ _ NOUN (1172)</p>
-<blockquote>
-<p>{‘Hi’: 844, ‘Hello’: 216, ‘Please’: 70, ‘please’: 13, ‘like’: 10, ‘Hey’: 9, ‘hi’: 2, ‘Ok’: 1, ‘HI’: 1, ‘bye’: 1, ‘Oh’: 1, ‘Sorry’: 1, ‘HELLO’: 1, ‘sure’: 1, ‘well’: 1}</p>
-</blockquote>
-</li>
-<li><p>NOUN _ (1494)</p>
-<blockquote>
-<p>不該存在的 pattern？</p>
-</blockquote>
-</li>
-<li><p>NOUN _ VERB (1238)</p>
-<blockquote>
-<p>主要為 is, are，部分 will, was, has, does, can, have，涵蓋少許 V-ed/V-ing（可能會需要留逗號）</p>
-</blockquote>
-</li>
-<li><p>NOUN _ ADV (952)</p>
-<blockquote>
-<p>{‘too’: 203, ‘when’: 186, ‘there’: 125, ‘where’: 88, ‘so’: 54, ‘because’: 31, ‘as’: 15, ‘next’: 14, ‘only’: 14, ‘also’: 13, ‘about’: 12, ‘very’: 11, ‘even’: 8, ‘then’: 8, ‘however’: 8, ‘again’: 7, ‘twice’: 6, ‘once’: 6, ‘just’: 6, ‘here’: 5, ‘sometimes’: 5, ‘especially’: 5, ‘near’: 5, ‘now’: 5, ‘maybe’: 4, ‘not’: 4, ‘usually’: 4, ‘together’: 4, ‘mainly’: 4, ‘why’: 3, ‘everyday’: 3, ‘There’: 3, ‘never’: 3, ‘alone’: 3, ‘really’: 3, ‘So’: 3, ‘always’: 3, ‘respectively’: 2, ‘generally’: 2, ‘in’: 2, ‘live’: 2, ‘at’: 2, ‘recently’: 2, ‘still’: 2, ‘regularly’: 2, ‘rather’: 2, ‘yet’: 2, ‘whenever’: 1, ‘regardless’: 1, ‘opposite’: 1, ‘obviously’: 1, ‘initially’: 1, ‘responsibly’: 1, ‘anyway’: 1, ‘outside’: 1, ‘around’: 1, ‘gradually’: 1, ‘furthermore’: 1, ‘daily’: 1, ‘behind’: 1, ‘since’: 1, ‘occasionally’: 1, ‘frequently’: 1, ‘along’: 1, ‘Fully’: 1, ‘wich’: 1, ‘instead’: 1, ‘often’: 1, ‘away’: 1, ‘right’: 1, ‘mostly’: 1, ‘how’: 1, ‘diagonally’: 1, ‘everywhere’: 1, ‘Then’: 1, ‘However’: 1, ‘although’: 1, ‘lately’: 1, ‘specially’: 1, ‘ago’: 1, ‘soon’: 1, ‘irrespective’: 1, ‘greatly’: 1, ‘nearby’: 1, ‘efficiently’: 1, ‘fortunately’: 1, ‘unfortunately’: 1, ‘suddenly’: 1, ‘more’: 1, ‘anymore’: 1, ‘Here’: 1, ‘exceptionally’: 1, ‘continuously’: 1, ‘either’: 1, ‘south’: 1}</p>
-</blockquote>
-</li>
-<li><p>VERB _ CCONJ (847)</p>
-</li>
-<li>ADJ _ ADJ (738)</li>
-<li>PUNCT _ PRON (666)</li>
-<li>ADJ _ (608)</li>
-<li>NOUN _ ADJ (602)</li>
-<li>ADV _ ADP (582)</li>
-<li>CCONJ _ PRON (575)</li>
-<li>ADJ _ NOUN (567)</li>
-<li>PROPN _ VERB (565)</li>
+<li>已有初步的計算 attention weight vector 理論</li>
+<li>假設 nework大略記得哪個字應該被產生，dot product $h^T_{x_t}h_{y_t^{‘}}$ 會計算被記住字和實際字之間的相似度</li>
+<li>e.g. 如果 network 記得下個字跟數字有關，且能夠產生和數字很關的字，attention mechanism 將會允許他得到該數字</li>
+<li>因為 decoder 最後一層隱藏層的每個單位和 encoder 最後一層隱藏層的每個單位都會在同樣空間，因此計算 $W_{co}h_{y_{t^{‘}}}+b_o$ 並選擇最高分數的字是具有意義的</li>
+<li>simple attention mechanism 不僅幫助分析哪些 units 影響 attention，且也減少了同時計算 attention weight vector 和 context的噪音</li>
+<li>過程中每一個神經元都會有各自功能，像是抓出人名國名等</li>
+<li>在 encoding 的神經元和 decoding 的神經元會互相影響</li>
+<li>在 decoding 的神經元會視情況、時間不同而有不同的現象</li>
 </ul>
 </li>
 </ul>
-<h4 id="Week-03-comma"><a href="#Week-03-comma" class="headerlink" title="Week 03 - comma"></a>Week 03 - comma</h4><ul>
-<li>Refactor to functional programming</li>
-<li>產生 add.comma.txt 做比較<ul>
-<li>針對 ‘_ and’ 進行觀察</li>
-<li>top 3 common pattern 有矛盾<ul>
-<li>_ + and + cl (被刪除 2825)</li>
-<li>_ + and + other (被刪除 7968)</li>
-<li>INTJ + _ + NAME</li>
+<h3 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h3><ul>
+<li>當 decoding beams 的數量很小時，decoding 較早結束，進而寫出不正確的細節</li>
+<li>當 beams 的數量較大時，容易產生較無關聯且較常出現於 input 的標題，因為增加了「產生機率數值最大的句子」的機率</li>
+<li>因為很難拿捏 beams 的數量，這裡只用 2 decoding beams 給BLEU evaluation，若能解決第二個問題，則可以用較大的 beams 來產生更好的結果</li>
 </ul>
-</li>
-<li>判斷子句的方式會有誤差，跟複雜句子&amp;spaCy有關</li>
+<h3 id="備註"><a href="#備註" class="headerlink" title="備註"></a>備註</h3><ul>
+<li>這篇參考許多論文</li>
 </ul>
-</li>
-<li>需要改觀察其他？<ul>
-<li>NOUN _ ADP</li>
-<li>NOUN _ VERB</li>
-</ul>
-</li>
-</ul>
-<p>需要看數量</p>
-<p>When S V (in the place) , 這種 pattern? 用 tree 去抓的話或許可以找到動詞和主詞，其他用ＰＯＳ取代</p>
-<p>!!! 統計所有句型 產生rule ！！！<br>When I am swimming, the woman is singing.</p>
-<ul>
-<li>When I am swimming,</li>
-<li>, the woman is singing.</li>
-</ul>
-<h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><p>Hi/Hello/Dear _ NOUN</p>
 
       
     </div>
@@ -691,9 +561,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GEC/" rel="tag"># GEC</a>
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
-            <a href="/tags/NLP-Lab/" rel="tag"># NLP Lab</a>
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
+          
+            <a href="/tags/Headline-Generation/" rel="tag"># Headline Generation</a>
+          
+            <a href="/tags/LSTM/" rel="tag"># LSTM</a>
           
         </div>
       
@@ -706,8 +582,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/QA bot with wiki/" rel="next" title="Reading Wikipedia to Answer Open-Domain Question">
-                <i class="fa fa-chevron-left"></i> Reading Wikipedia to Answer Open-Domain Question
+              <a href="/PaperNotes/2017/Dual-Supervised-Learning/" rel="next" title="Dual Supervised Learning">
+                <i class="fa fa-chevron-left"></i> Dual Supervised Learning
               </a>
             
           </div>
@@ -716,8 +592,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/DL notes/" rel="prev" title="Deep Learning on Coursera">
-                Deep Learning on Coursera <i class="fa fa-chevron-right"></i>
+              <a href="/PaperNotes/2017/Headline-Generation-Using-Recurrent-Neural-Networks/" rel="prev" title="Headline Generation Using Recurrent Neural Networks">
+                Headline Generation Using Recurrent Neural Networks <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -897,7 +773,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Outline"><span class="nav-number">1.</span> <span class="nav-text">Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Paper"><span class="nav-number">2.</span> <span class="nav-text">Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hybrid-Systems-and-Type-Filtering"><span class="nav-number">2.1.</span> <span class="nav-text">Hybrid Systems and Type Filtering</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Log"><span class="nav-number">3.</span> <span class="nav-text">Log</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unnecessary-Punctuation"><span class="nav-number">3.1.</span> <span class="nav-text">Unnecessary Punctuation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Week-01-comma"><span class="nav-number">3.1.1.</span> <span class="nav-text">Week 01 - comma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Week-02-comma"><span class="nav-number">3.1.2.</span> <span class="nav-text">Week 02 - comma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Week-03-comma"><span class="nav-number">3.1.3.</span> <span class="nav-text">Week 03 - comma</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rules"><span class="nav-number">4.</span> <span class="nav-text">Rules</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Background"><span class="nav-number">2.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">3.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention"><span class="nav-number">4.</span> <span class="nav-text">Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dataset"><span class="nav-number">5.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation"><span class="nav-number">6.</span> <span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis"><span class="nav-number">7.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detail"><span class="nav-number">8.</span> <span class="nav-text">Detail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Error"><span class="nav-number">9.</span> <span class="nav-text">Error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#備註"><span class="nav-number">10.</span> <span class="nav-text">備註</span></a></li></ol></div>
             
 
           </div>
@@ -1245,6 +1121,29 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

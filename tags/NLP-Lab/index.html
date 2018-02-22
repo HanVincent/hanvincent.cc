@@ -286,7 +286,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/GEC log/" itemprop="url">
+            <a class="post-title-link" href="/Miscellany/GEC-log/" itemprop="url">
               
                 <span itemprop="name">GEC log</span>
               
@@ -340,7 +340,7 @@
          $("#gitment_title").attr("style", "display:none");
          $("#container").attr("style", "").addClass("gitment_container");
          var gitment = new Gitment({
-           id: window.location.pathname,
+           id: '<%= page.subtitle %>',
            theme: myTheme,
            owner: '',
            repo: '',

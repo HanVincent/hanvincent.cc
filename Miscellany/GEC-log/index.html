@@ -102,28 +102,28 @@
 
 
   
-  <meta name="keywords" content="Machine Learning,Machine Translation,Natural Language Processing," />
+  <meta name="keywords" content="GEC,NLP Lab," />
 
 
-<meta name="description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
-<meta name="keywords" content="Machine Learning,Machine Translation,Natural Language Processing">
+<meta name="description" content="Outline Papers Log">
+<meta name="keywords" content="GEC,NLP Lab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dual Supervised Learning">
-<meta property="og:url" content="https://hanvincent.github.io/DualSL/index.html">
+<meta property="og:title" content="GEC log">
+<meta property="og:url" content="https://hanvincent.github.io/Miscellany/GEC-log/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
+<meta property="og:description" content="Outline Papers Log">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-02-22T08:32:09.000Z">
+<meta property="og:updated_time" content="2018-02-22T08:31:45.187Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dual Supervised Learning">
-<meta name="twitter:description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
+<meta name="twitter:title" content="GEC log">
+<meta name="twitter:description" content="Outline Papers Log">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hanvincent.github.io/DualSL/"/>
+  <link rel="canonical" href="https://hanvincent.github.io/Miscellany/GEC-log/"/>
 
 
 
@@ -132,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>Dual Supervised Learning | HanVincent</title>
+  <title>GEC log | HanVincent</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/DualSL/">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/Miscellany/GEC-log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Han">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Dual Supervised Learning</h1>
+          <h1 class="post-title" itemprop="name headline">GEC log</h1>
         
 
         <div class="post-meta">
@@ -314,7 +314,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:38:36+08:00">2018-02-13</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T12:02:42+08:00">2018-02-13</time>
             
 
             
@@ -335,7 +335,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Notes/" itemprop="url" rel="index"><span itemprop="name">Paper Notes</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Miscellany/" itemprop="url" rel="index"><span itemprop="name">Miscellany</span></a></span>
 
                 
                 
@@ -350,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/DualSL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/DualSL/" itemprop="commentsCount"></span>
+                <a href="/Miscellany/GEC-log/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/Miscellany/GEC-log/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -359,7 +359,7 @@
 
           
           
-             <span id="/DualSL/" class="leancloud_visitors" data-flag-title="Dual Supervised Learning">
+             <span id="/Miscellany/GEC-log/" class="leancloud_visitors" data-flag-title="GEC log">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,183 +390,287 @@
       
 
       
-        <p><a href="https://arxiv.org/pdf/1707.00415.pdf" target="_blank" rel="noopener">Paper Link</a></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。</p>
+        <h2 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h2><ul>
+<li><a href="#paper">Papers</a></li>
+<li><a href="#log">Log</a></li>
+</ul>
 <a id="more"></a>
+<h2 id="Paper"><a href="#Paper" class="headerlink" title="Paper"></a>Paper</h2><h3 id="Hybrid-Systems-and-Type-Filtering"><a href="#Hybrid-Systems-and-Type-Filtering" class="headerlink" title="Hybrid Systems and Type Filtering"></a>Hybrid Systems and Type Filtering</h3><ul>
+<li><p>Error Type</p>
 <ul>
-<li>Supervised learning tasks in dual forms<ul>
-<li>translation (Fr -&gt; En / En -&gt; Fr)</li>
-<li>speech recognition / text to speech</li>
-<li>image classification / image generation</li>
+<li>Open-class: spelling, collocation</li>
+<li>Closed class: determiners, preposition</li>
+</ul>
+</li>
+<li><p>Hybrid System</p>
+<ul>
+<li>Ruled-based system(RBS)<ul>
+<li>Self-Assessment and Tutoring(SAT) system<ul>
+<li>text assessment</li>
+<li>sentence evaluation</li>
+<li>word-level feedback</li>
+</ul>
+</li>
+<li>Only use word-level feedback of SAT (∵ on strict correction not detection)<ul>
+<li>Rules from n-gram error &gt; 5 times &amp; 90% in CLC</li>
+<li>Rules from machine-readable dict.</li>
 </ul>
 </li>
 </ul>
-<h3 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h3><h4 id="目的：同時訓練-dual-models"><a href="#目的：同時訓練-dual-models" class="headerlink" title="目的：同時訓練 dual models"></a>目的：同時訓練 dual models</h4><h4 id="舉例證明效果更好："><a href="#舉例證明效果更好：" class="headerlink" title="舉例證明效果更好："></a>舉例證明效果更好：</h4><ol>
-<li>Neural Machine Translation</li>
-<li>Image Processing on CIFAR-10</li>
-<li>Sentiment Analysis on IMDB dataset</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Def</th>
-<th style="text-align:left">Illustration</th>
-<th style="text-align:left">Probability</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>primal task:</strong></td>
-<td style="text-align:left"><em>x $\rightarrow$ y</em></td>
-<td style="text-align:left">P(y\</td>
-<td>x; $\theta$~xy~)</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>dual task:</strong></td>
-<td style="text-align:left"><em>y $\rightarrow$ x</em></td>
-<td style="text-align:left">P(x\</td>
-<td>y; $\theta$~yx~)</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Probabilistic-Duality"><a href="#Probabilistic-Duality" class="headerlink" title="Probabilistic Duality:"></a>Probabilistic Duality:</h4><p>$$P(x, y) = P(x)P(y|x; \theta_{xy}) = P(y)P(x|y; \theta_{yx}) \<br>\theta: model$$</p>
-<p>困難：如果個別計算 cost function ，則上方公式難保成立。</p>
-<p>object 1: $min_{\theta_{xy}}(1/n)\sum^n_{i=1}\ell_1(f(x_i;\theta_{xy}), y_i),$<br>object 2: $min_{\theta_{yx}}(1/n)\sum^n_{i=1}\ell_2(g(y_i;\theta_{yx}), x_i),$<br>s.t. $P(x)P(y|x;\theta_{xy}), \forall x,y,$</p>
-<p>解決：將上述公式轉為 penalty term ( 使用 Lagrange Multipliers) ，可將penalty term 視為 data-dependent regularization term.</p>
-<p>然而，因為$P(x), P(y)$ (marginal distributions) 並不好取得，用$\hat{P}(x), \hat{P}(y)$ (empirical marginal distributions) 取代。</p>
-<p>利用 Lagrange multipliers 和 equality constraint of probabilistic duality(以下稱雙向機率對等條件) 代入上方 objective functions.</p>
-<ol>
-<li>將雙向機率對等條件 regularize<br>$$\ell_{duality}=(log\hat{P}(x)+logP(y|x;\theta_{xy})-log\hat{P}(y)-logP(x|y;\theta_{yx}))^2$$</li>
-<li>Minimize the weighted combination and the above regularization term，針對 objective 1. &amp; 2. 加上 $\lambda\ell_{duality}$，可用SGD, Adam, Adadelta。</li>
-</ol>
-<p><small>備註：提供 theoretical analysis 確保DSL的 generalization bound；提供演算法。</small></p>
-<h3 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h3><p>此方法也對 unsupervised learning 帶來好處，以翻譯為例，$x \rightarrow y’$，再由$y’ \rightarrow x’$，透過減少$x$和$x’$的差異，雙向models都會被優化。</p>
-<p>$\ell_{duality}$ (regularization term) 是 data dependent，意指每個樣本影響 regularization term，每個 model 影響其他 model 的 regularization；然而，Lasso, SVM 是 data independent。</p>
-<p>DSL 之必要條件：</p>
-<ol>
-<li>Duality 必須存在(for the two tasks)</li>
-<li>Primal 和 Dual models 必須可訓練(trainable)</li>
-<li>$\hat{P}(X)$ and $\hat{P}(Y)$ 必須可取得</li>
-</ol>
-<h3 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h3><h4 id="機器翻譯"><a href="#機器翻譯" class="headerlink" title="機器翻譯"></a>機器翻譯</h4><ul>
-<li>參考 Bahdanau et al., 2015; Jean et al., 2015</li>
-<li>Tasks<ol>
-<li>En $\leftrightarrow$ Fr<ul>
-<li>Dataset from previous papers</li>
+</li>
+<li>Ad-hoc statistical machine system(SMT)<ul>
+<li>Try to ‘translate’ incorrect into correct</li>
+<li>Many parallel corpora</li>
+<li>Lexical reoredering model<ul>
+<li>Pialign 2011 (word alignment)</li>
+<li>charactr-level Levenshtein distance</li>
 </ul>
 </li>
-<li>En $\leftrightarrow$ De(Germany)<ul>
-<li>Dataset from newstest 2012, 2013, 2014</li>
+<li>4-gram target language model by Kneser-Ney smoothing<ul>
+<li>Knser-Ney smoothing: 不僅僅看 unigram，該字的出現機率正比於前一字的單字種類數</li>
 </ul>
 </li>
-<li>En $\leftrightarrow$ Zh(Chinese)<ul>
-<li>Dataset from NIST2006, 2008, 2012</li>
+<li>Decoding<ul>
+<li>Moses 2007 to generate 10 correctionss</li>
+<li>Moses: statistical machine translation with beam search and phrase-based translation …</li>
 </ul>
 </li>
+<li>NLTK for NLP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Ranking</p>
+<ul>
+<li>Combining all possible corrections and ranking</li>
+<li>Ranking for alternative corrections<ul>
+<li>Target language model in SMT</li>
+<li>M$ web n-gram services based on 5-gram</li>
+</ul>
+</li>
+<li>M$ is better evaluated by $M^2$ Scorer(2012) due to massive data</li>
+</ul>
+</li>
+<li><p>pre-Analysis</p>
+<ul>
+<li>(normalisation: bias towards prefer deletion or skip insertion)</li>
+<li>Performance<ul>
+<li>Based on Error Type</li>
+<li>Lower down due to unnecessary correction -&gt; recall ↓(?) -&gt; remove types that precision = 0</li>
+<li>Error type filtering technique<ol>
+<li>Extract correct and original sentence</li>
+<li>Delete unwanted types</li>
+<li>Edit original text from reference above</li>
 </ol>
 </li>
-<li>Model<ul>
-<li>使用 GRU as the recurrent module (上述 paper) 實踐 seq2seq model</li>
-<li>Word embedding 維度為620</li>
-<li>Hidden node 為 1000</li>
-<li>單字數量分別為 30k, 50k, 30k</li>
-<li>Baseline: RNNSearch</li>
-</ul>
-</li>
-<li>Evaluation Metrics<ul>
-<li>Tokenized case-sensitive BLEU</li>
-<li>分數越大品質越好</li>
-<li>case-insensitive BLEU for Zh $\rightarrow$ En</li>
-</ul>
-</li>
-<li>Training Procedure<ol>
-<li>Initialize two models by two warm-start models（上述 paper），從後段得知為 RNNSearch 訓練出來的 models 作為 initial</li>
-<li>Use SGD with minibatch size of 80 to optimize</li>
-<li>Initialize learning rate = 0.2, 持續減半直到 BLEU score on the validation set 無法明顯成長</li>
-<li>The gradient clip is set as 1.0, 5.0 and 1.0 individually</li>
-<li>根據經驗，$\lambda_{xy}$ and $\lambda_{yx}$ are set as 0.01</li>
-</ol>
-</li>
-<li>Result<ul>
-<li>可以同時改良兩個models</li>
-<li>En $\rightarrow$ Fr 進步最多</li>
-<li>Regularize probabilistic duality constraint 會降低 $\ell_{duality}$，RNNSearch $\rightarrow$ DSL</li>
-</ul>
-</li>
-<li>Improvement<ul>
-<li>Replace “UNK”(unknown word) with corresponding word-level translations</li>
-<li>使用更好的 models 作為 initials ，取代原本從 RNNSearch 得到的 warm-start models</li>
-</ul>
-</li>
-<li>Advantages<ul>
-<li>Improve by leveraging the stuctural duality of sentences</li>
-<li>consider more contextual information</li>
-<li>handle the plural form</li>
 </ul>
 </li>
 </ul>
-<h4 id="圖像處理"><a href="#圖像處理" class="headerlink" title="圖像處理"></a>圖像處理</h4><ul>
-<li>Dataset: CIFAR-10 with 10 classes of images</li>
-<li>ResNet for image classifiaciont; PixelCNN++ for image generation</li>
-<li>$\chi$ for image space; $y$ for category space related to CIFAR-10</li>
-<li>Marginal Distributions use uniform distribution</li>
-<li>Models<ul>
-<li>Baseline for image classification: ResNet-32, ResNet-110; for image generation, PixelCNN++</li>
+</li>
+<li><p>Experiment</p>
+<ul>
+<li>Order: RBS &gt; SMT</li>
+<li>Best: RBSc &gt; LM &gt; SMT_10-best &gt; LM</li>
+<li>Good at<ul>
+<li>mechanical errors(punct, capitalization, and spelling)</li>
+<li>enforcing diff. types of agreement</li>
 </ul>
 </li>
-<li>Evaluation Metrics<ul>
-<li>classification error rates for image classfication.</li>
-<li>bits per dimension(bpd) (Salimans et al., 2016) for image generation. for an image x with label y, the bpd is<br>$$ -(\sum^{N_x}_{i=1}logP(x_i|x_{x&lt;i}, y)) / (N_xlog(2)) $$</li>
-</ul>
-</li>
-<li>Training Procedure<ul>
-<li>Initialize both the primal and dual models with ResNet model and PixelCNN++ model pre-trained independently and separately.</li>
-<li>Initialize learning rate of image classification model as 0.1 and that of image generation model as 0.0005</li>
-<li>將近兩週才收斂</li>
-</ul>
-</li>
-<li>Result<ul>
-<li>Image classification 有進步好棒棒</li>
-<li>Image generation 比較困難，採用 ResNet-110 則 bpd 減少0.01，0.01不大卻是進步許多</li>
+<li>Bad at<ul>
+<li>others, reordering, srun (precision = 0)</li>
+<li>Wci(idioms, collocation)</li>
+<li>…</li>
 </ul>
 </li>
 </ul>
-<h4 id="情感分析"><a href="#情感分析" class="headerlink" title="情感分析"></a>情感分析</h4><ul>
-<li>$\chi$ 代表句子，$y$代表情緒</li>
-<li>Dataset IMDB movie review </li>
-<li>Marginal Distributions use uniform distribution, positive(0.5) or negative(0.5)</li>
-<li>Model<ul>
-<li>LSTM for sentiment classification model</li>
-<li>embedding dimension = 500</li>
-<li>hidden layer size = 1024</li>
-<li>LSTM for sentence generation, input:<br>$$W^e_wE_wx_{t-1} + W^e_sE_sy$$<br>$x_{t-1}$ t-1’th word<br>$E_w$ and $E_s$ embedding matrices and sentiment label<br>$W’s$ represent the connections between embedding matrix and LSTM cells</li>
-<li>一個字一個字產生成句子，該字被產生的機率和下述公式成正比，contextual language model(CLM) $$exp(W^d_wE_wx_{t-1}+W^d_sE_sy+W_hh_{t-1})$$</li>
-</ul>
 </li>
-<li>Evaluation Metrics<ul>
-<li>Use error rate</li>
-</ul>
-</li>
-<li>Training Procedure<ol>
-<li>Baseline models: use Adadelta as the optimization method to train model</li>
-<li>Initialize the two models for DSL</li>
-<li>Use plain SGD </li>
-<li>Initialize learning rate of 0.2</li>
-<li>Decrease it to 0.02 當 validation set 沒明顯進步時</li>
-<li>$\lambda_{xy}=(5/l_x)^2$ and $\lambda_{yx}=(0.5/l_x)^2$，$l_x$ 為x的長度</li>
-</ol>
-</li>
-<li>Result<ul>
-<li>成功減少分類錯誤</li>
-<li>稍微改進 perplexity for sentence generation，原因可能為 label 僅能提供 1 bit 資訊 </li>
-<li>Baseline model 通常抓 training data 的高頻字</li>
-<li>CLM in DSL 可以抓到更準確或強烈的字</li>
+<li><p>Result</p>
+<ul>
+<li>Score for unnecessary deletion (could)</li>
+<li>Domain diff. (social media &gt; the media)</li>
+<li>Uncredited correction (right but diff. from answer, right in isolation but wrong)</li>
 </ul>
 </li>
 </ul>
-<h3 id="探討"><a href="#探討" class="headerlink" title="探討"></a>探討</h3><ul>
-<li>根據三項測驗，發現不需要做 warm-start models 也可以達到比 baseline 好的效果，差別只在速度</li>
+<h2 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h2><h3 id="Unnecessary-Punctuation"><a href="#Unnecessary-Punctuation" class="headerlink" title="Unnecessary Punctuation"></a>Unnecessary Punctuation</h3><ul>
+<li>Comma</li>
+<li>Period</li>
+<li>!</li>
+<li>?</li>
+<li>: </li>
+<li>“</li>
 </ul>
+<h4 id="Week-01-comma"><a href="#Week-01-comma" class="headerlink" title="Week 01 - comma"></a>Week 01 - comma</h4><ul>
+<li><p>Preprocessing</p>
+<ul>
+<li>將 EFcamdat &gt; wikED format (6.9G)<ul>
+<li>ef.format.py ef.*.fixed.txt &gt; ef.sents.txt</li>
+</ul>
+</li>
+<li>抓 [-.//PU-] &amp;&amp; [-.//D-], . only for punct.<ul>
+<li>egrep –color ‘[-[^a-zA-Z]//PU-]‘ ef.sents.txt &gt; ef.sents.PU.txt  (1.2M)</li>
+<li>egrep –color ‘[-[^a-zA-Z]//D-]‘ ef.sents.txt &gt; ef.sents.D.txt  (12M)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Observation</p>
+<ul>
+<li><p>Noise</p>
+<ul>
+<li>tag 和前單字連一起</li>
+<li>Weird tags<br>  | tag      | sents.t | D.t  | PU.t |<br>  | ——– | ——- | —- | —- |<br>  | [-//PU-] | 24669   | 1766 | 239  |<br>  | [-//D-]  | 19890   | 1270 | 41   |<br>  | {+,//D+} | 6       | 2    | 1    |</li>
+</ul>
+</li>
+<li><p>Domain converge - Hi/Hello</p>
+<ul>
+<li>NNP _ NNP</li>
+<li>NNP _ NNP .</li>
+<li>NNP _ NNP ,</li>
+<li>NNP _ NNP , PRON</li>
+</ul>
+</li>
+<li><p>Use nltk.pos_tag &amp; tagset = ‘universal’</p>
+<ul>
+<li>NOUN _ NOUN . (1732)</li>
+<li>NOUN _ NOUN . PRON (562)</li>
+<li>NOUN _ NOUN . NOUN (386)<blockquote>
+<p>Hi/Hello</p>
+</blockquote>
+</li>
+<li>ADJ NOUN _ (365)<blockquote>
+<p>不知為何刪掉結尾逗號</p>
+</blockquote>
+</li>
+<li><strong>DET NOUN _ ADP PRON</strong> (426)</li>
+<li><strong>ADJ NOUN _ ADP PRON</strong> (407)</li>
+<li><strong>PRON NOUN _ ADP PRON</strong> (345)<blockquote>
+<p>useful rule<br>because, so, that, if, on</p>
+</blockquote>
+</li>
+<li>DET NOUN _ CONJ PRON (320)</li>
+<li>ADJ NOUN _ CONJ PRON (307)</li>
+<li><strong>. NOUN _ CONJ NOUN</strong> (304)<blockquote>
+<p>Oxford comma 或同位語 up to semantics<br>and, but, or</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Week-02-comma"><a href="#Week-02-comma" class="headerlink" title="Week 02 - comma"></a>Week 02 - comma</h4><ul>
+<li><p>Preprocessing</p>
+<ul>
+<li>重新將 <code>[-.//D-]</code>, <code>[-.//PU-]</code> export ef.sents.UP.txt (70980, 13MB)，因為兩者意義相同，應同時被觀察</li>
+<li>將 <code>{+.//PU+}</code>, <code>[{-.+.//PU-}]</code> export ef.MP.txt (391872, 65MB)，用來比較從 UP 得到的 rules 是否衝突</li>
+<li>新增可抓數字(30th) 的 regex in re_token</li>
+<li>暫時忽略轉換失敗的 <code>&lt;selection&gt;</code> 未來不該出現</li>
+<li><code>[-//PU-] (2002)</code>, <code>[-//D-] (1309)</code>, <code>{+//D+} (0)</code>, <code>[{-.+.//PU-}]</code>(9700)</li>
+<li><code>{+.//D+}</code> 是矛盾 tag，出現8次，直接忽略</li>
+<li>改用 spaCy POS tag，但 input 為句子</li>
+</ul>
+</li>
+<li><p>Observation</p>
+<ul>
+<li>逗號佔了總標點符號 41692 次 / 70980 句</li>
+<li>window size = 3</li>
+<li>NOUN _ CCONJ (7764)<blockquote>
+<p>{‘and’: 7244, ‘but’: 293, ‘or’: 211, ‘AND’: 6, ‘&amp;’: 4, ‘both’: 3, ‘nor’: 2, ‘plus’: 1}</p>
+</blockquote>
+</li>
+<li>ADJ _ CCONJ (1762)<blockquote>
+<p>{‘and’: 1540, ‘but’: 199, ‘or’: 20, ‘nor’: 2, ‘&amp;’: 1}</p>
+</blockquote>
+</li>
+<li><p>PROPN _ CCONJ (1100)</p>
+<blockquote>
+<p>{‘and’: 1023, ‘but’: 59, ‘or’: 12, ‘AND’: 5, ‘&amp;’: 1}</p>
+</blockquote>
+</li>
+<li><p>NOUN _ ADP (4748)</p>
+<blockquote>
+<p>{‘because’: 2692, ‘in’: 519, ‘with’: 228, ‘at’: 219, ‘for’: 184, ‘on’: 121, ‘like’: 120, ‘of’: 81, ‘as’: 68, ‘if’: 53, ‘that’: 44, ‘by’: 38, ‘from’: 38, ‘so’: 36, ‘after’: 35, ‘to’: 33, ‘about’: 32, ‘since’: 28, ‘near’: 24, ‘between’: 21, ‘before’: 13, ‘while’: 12, ‘across’: 11, ‘although’: 10, ‘due’: 9, ‘until’: 9, ‘during’: 8, ‘though’: 7, ‘without’: 6, ‘under’: 5, ‘except’: 4, ‘behind’: 4, ‘into’: 3, ‘than’: 3, ‘opposite’: 3, ‘through’: 3, ‘unless’: 3, ‘among’: 2, ‘whereas’: 2, ‘inside’: 2, ‘around’: 2, ‘outside’: 2, ‘If’: 2, ‘af’: 1, ‘In’: 1, ‘IN’: 1, ‘besides’: 1, ‘out’: 1, ‘against’: 1, ‘within’: 1, ‘FOR’: 1, ‘beyond’: 1}</p>
+</blockquote>
+</li>
+<li>PROPN _ ADP (872)<blockquote>
+<p>PROPN 開頭大寫<br>{‘in’: 397, ‘because’: 274, ‘at’: 70, ‘with’: 22, ‘for’: 20, ‘from’: 15, ‘on’: 14, ‘as’: 9, ‘to’: 6, ‘after’: 5, ‘so’: 4, ‘since’: 4, ‘of’: 4, ‘through’: 3, ‘by’: 3, ‘that’: 3, ‘if’: 3, ‘between’: 3, ‘during’: 3, ‘IN’: 2, ‘near’: 2, ‘opposite’: 1, ‘though’: 1, ‘before’: 1, ‘BECAUSE’: 1, ‘along’: 1, ‘while’: 1}</p>
+</blockquote>
+</li>
+<li>ADJ _ ADP (1056)<blockquote>
+<p>{‘because’: 737, ‘with’: 78, ‘in’: 37, ‘that’: 26, ‘if’: 25, ‘for’: 22, ‘on’: 17, ‘at’: 13, ‘as’: 13, ‘than’: 11, ‘so’: 11, ‘about’: 10, ‘of’: 8, ‘to’: 6, ‘like’: 5, ‘between’: 5, ‘by’: 5, ‘although’: 4, ‘since’: 3, ‘after’: 3, ‘though’: 2, ‘from’: 2, ‘until’: 1, ‘per’: 1, ‘during’: 1, ‘versus’: 1, ‘due’: 1, ‘without’: 1, ‘despite’: 1, ‘around’: 1, ‘before’: 1, ‘against’: 1, ‘through’: 1, ‘among’: 1, ‘whether’: 1}</p>
+</blockquote>
+</li>
+<li><p>VERB _ ADP (1049)</p>
+<blockquote>
+<p>{‘because’: 410, ‘that’: 311, ‘in’: 79, ‘at’: 47, ‘with’: 41, ‘if’: 35, ‘to’: 22, ‘for’: 18, ‘on’: 16, ‘by’: 12, ‘as’: 8, ‘from’: 7, ‘like’: 6, ‘about’: 6, ‘after’: 5, ‘whether’: 4, ‘so’: 3, ‘since’: 2, ‘until’: 2, ‘before’: 2, ‘onto’: 1, ‘WITH’: 1, ‘unless’: 1, ‘during’: 1, ‘although’: 1, ‘of’: 1, ‘If’: 1, ‘out’: 1, ‘though’: 1, ‘without’: 1, ‘inside’: 1, ‘against’: 1, ‘BECAUSE’: 1}</p>
+</blockquote>
+</li>
+<li><p>INTJ _ PROPN (2796)</p>
+<blockquote>
+<p>{‘Hi’: 2386, ‘Hello’: 303, ‘Hey’: 93, ‘Dear’: 10, ‘OK’: 2, ‘Well’: 1, ‘Yes’: 1}</p>
+</blockquote>
+</li>
+<li><p>INTJ _ NOUN (1172)</p>
+<blockquote>
+<p>{‘Hi’: 844, ‘Hello’: 216, ‘Please’: 70, ‘please’: 13, ‘like’: 10, ‘Hey’: 9, ‘hi’: 2, ‘Ok’: 1, ‘HI’: 1, ‘bye’: 1, ‘Oh’: 1, ‘Sorry’: 1, ‘HELLO’: 1, ‘sure’: 1, ‘well’: 1}</p>
+</blockquote>
+</li>
+<li><p>NOUN _ (1494)</p>
+<blockquote>
+<p>不該存在的 pattern？</p>
+</blockquote>
+</li>
+<li><p>NOUN _ VERB (1238)</p>
+<blockquote>
+<p>主要為 is, are，部分 will, was, has, does, can, have，涵蓋少許 V-ed/V-ing（可能會需要留逗號）</p>
+</blockquote>
+</li>
+<li><p>NOUN _ ADV (952)</p>
+<blockquote>
+<p>{‘too’: 203, ‘when’: 186, ‘there’: 125, ‘where’: 88, ‘so’: 54, ‘because’: 31, ‘as’: 15, ‘next’: 14, ‘only’: 14, ‘also’: 13, ‘about’: 12, ‘very’: 11, ‘even’: 8, ‘then’: 8, ‘however’: 8, ‘again’: 7, ‘twice’: 6, ‘once’: 6, ‘just’: 6, ‘here’: 5, ‘sometimes’: 5, ‘especially’: 5, ‘near’: 5, ‘now’: 5, ‘maybe’: 4, ‘not’: 4, ‘usually’: 4, ‘together’: 4, ‘mainly’: 4, ‘why’: 3, ‘everyday’: 3, ‘There’: 3, ‘never’: 3, ‘alone’: 3, ‘really’: 3, ‘So’: 3, ‘always’: 3, ‘respectively’: 2, ‘generally’: 2, ‘in’: 2, ‘live’: 2, ‘at’: 2, ‘recently’: 2, ‘still’: 2, ‘regularly’: 2, ‘rather’: 2, ‘yet’: 2, ‘whenever’: 1, ‘regardless’: 1, ‘opposite’: 1, ‘obviously’: 1, ‘initially’: 1, ‘responsibly’: 1, ‘anyway’: 1, ‘outside’: 1, ‘around’: 1, ‘gradually’: 1, ‘furthermore’: 1, ‘daily’: 1, ‘behind’: 1, ‘since’: 1, ‘occasionally’: 1, ‘frequently’: 1, ‘along’: 1, ‘Fully’: 1, ‘wich’: 1, ‘instead’: 1, ‘often’: 1, ‘away’: 1, ‘right’: 1, ‘mostly’: 1, ‘how’: 1, ‘diagonally’: 1, ‘everywhere’: 1, ‘Then’: 1, ‘However’: 1, ‘although’: 1, ‘lately’: 1, ‘specially’: 1, ‘ago’: 1, ‘soon’: 1, ‘irrespective’: 1, ‘greatly’: 1, ‘nearby’: 1, ‘efficiently’: 1, ‘fortunately’: 1, ‘unfortunately’: 1, ‘suddenly’: 1, ‘more’: 1, ‘anymore’: 1, ‘Here’: 1, ‘exceptionally’: 1, ‘continuously’: 1, ‘either’: 1, ‘south’: 1}</p>
+</blockquote>
+</li>
+<li><p>VERB _ CCONJ (847)</p>
+</li>
+<li>ADJ _ ADJ (738)</li>
+<li>PUNCT _ PRON (666)</li>
+<li>ADJ _ (608)</li>
+<li>NOUN _ ADJ (602)</li>
+<li>ADV _ ADP (582)</li>
+<li>CCONJ _ PRON (575)</li>
+<li>ADJ _ NOUN (567)</li>
+<li>PROPN _ VERB (565)</li>
+</ul>
+</li>
+</ul>
+<h4 id="Week-03-comma"><a href="#Week-03-comma" class="headerlink" title="Week 03 - comma"></a>Week 03 - comma</h4><ul>
+<li>Refactor to functional programming</li>
+<li>產生 add.comma.txt 做比較<ul>
+<li>針對 ‘_ and’ 進行觀察</li>
+<li>top 3 common pattern 有矛盾<ul>
+<li>_ + and + cl (被刪除 2825)</li>
+<li>_ + and + other (被刪除 7968)</li>
+<li>INTJ + _ + NAME</li>
+</ul>
+</li>
+<li>判斷子句的方式會有誤差，跟複雜句子&amp;spaCy有關</li>
+</ul>
+</li>
+<li>需要改觀察其他？<ul>
+<li>NOUN _ ADP</li>
+<li>NOUN _ VERB</li>
+</ul>
+</li>
+</ul>
+<p>需要看數量</p>
+<p>When S V (in the place) , 這種 pattern? 用 tree 去抓的話或許可以找到動詞和主詞，其他用ＰＯＳ取代</p>
+<p>!!! 統計所有句型 產生rule ！！！<br>When I am swimming, the woman is singing.</p>
+<ul>
+<li>When I am swimming,</li>
+<li>, the woman is singing.</li>
+</ul>
+<h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><p>Hi/Hello/Dear _ NOUN</p>
 
       
     </div>
@@ -587,11 +691,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+            <a href="/tags/GEC/" rel="tag"># GEC</a>
           
-            <a href="/tags/Machine-Translation/" rel="tag"># Machine Translation</a>
-          
-            <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
+            <a href="/tags/NLP-Lab/" rel="tag"># NLP Lab</a>
           
         </div>
       
@@ -604,8 +706,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Glove/" rel="next" title="Glove - Global Vector for Word Representation">
-                <i class="fa fa-chevron-left"></i> Glove - Global Vector for Word Representation
+              <a href="/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/" rel="next" title="Reading Wikipedia to Answer Open-Domain Question">
+                <i class="fa fa-chevron-left"></i> Reading Wikipedia to Answer Open-Domain Question
               </a>
             
           </div>
@@ -614,8 +716,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Generate Headline/" rel="prev" title="Generating News Headlines with Recurrent Neural Networks">
-                Generating News Headlines with Recurrent Neural Networks <i class="fa fa-chevron-right"></i>
+              <a href="/StudyNotes/Deep-Learning-on-Coursera/" rel="prev" title="Deep Learning on Coursera">
+                Deep Learning on Coursera <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -795,7 +897,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#內容"><span class="nav-number">2.</span> <span class="nav-text">內容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目的：同時訓練-dual-models"><span class="nav-number">2.1.</span> <span class="nav-text">目的：同時訓練 dual models</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#舉例證明效果更好："><span class="nav-number">2.2.</span> <span class="nav-text">舉例證明效果更好：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probabilistic-Duality"><span class="nav-number">2.3.</span> <span class="nav-text">Probabilistic Duality:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#討論"><span class="nav-number">3.</span> <span class="nav-text">討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#應用"><span class="nav-number">4.</span> <span class="nav-text">應用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#機器翻譯"><span class="nav-number">4.1.</span> <span class="nav-text">機器翻譯</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#圖像處理"><span class="nav-number">4.2.</span> <span class="nav-text">圖像處理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情感分析"><span class="nav-number">4.3.</span> <span class="nav-text">情感分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#探討"><span class="nav-number">5.</span> <span class="nav-text">探討</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Outline"><span class="nav-number">1.</span> <span class="nav-text">Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Paper"><span class="nav-number">2.</span> <span class="nav-text">Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hybrid-Systems-and-Type-Filtering"><span class="nav-number">2.1.</span> <span class="nav-text">Hybrid Systems and Type Filtering</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Log"><span class="nav-number">3.</span> <span class="nav-text">Log</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unnecessary-Punctuation"><span class="nav-number">3.1.</span> <span class="nav-text">Unnecessary Punctuation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Week-01-comma"><span class="nav-number">3.1.1.</span> <span class="nav-text">Week 01 - comma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Week-02-comma"><span class="nav-number">3.1.2.</span> <span class="nav-text">Week 02 - comma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Week-03-comma"><span class="nav-number">3.1.3.</span> <span class="nav-text">Week 03 - comma</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rules"><span class="nav-number">4.</span> <span class="nav-text">Rules</span></a></li></ol></div>
             
 
           </div>
@@ -1143,29 +1245,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
