@@ -286,7 +286,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/StudyNotes/Deep-Learning-on-Coursera/" itemprop="url">
+            <a class="post-title-link" href="/DL notes/" itemprop="url">
               
                 <span itemprop="name">Deep Learning on Coursera</span>
               
@@ -340,9 +340,8 @@
        function showGitment() {
          $("#gitment_title").attr("style", "display:none");
          $("#container").attr("style", "").addClass("gitment_container");
-         var fileName = window.location.pathname.split('/').pop();
          var gitment = new Gitment({
-           id: fileName,
+           id: window.location.pathname,
            theme: myTheme,
            owner: '',
            repo: '',

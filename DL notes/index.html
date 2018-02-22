@@ -102,28 +102,30 @@
 
 
   
-  <meta name="keywords" content="Natural Language Processing,word2vec," />
+  <meta name="keywords" content="Deep Learning,Coursera," />
 
 
-<meta name="description" content="= 因為知乎或其他論壇已有許多詳細翻譯和筆記，可自行觀看，不另行做筆記 = Paper Link">
-<meta name="keywords" content="Natural Language Processing,word2vec">
+<meta name="description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
+<meta name="keywords" content="Deep Learning,Coursera">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Glove - Global Vector for Word Representation">
-<meta property="og:url" content="https://hanvincent.github.io/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/index.html">
+<meta property="og:title" content="Deep Learning on Coursera">
+<meta property="og:url" content="https://hanvincent.github.io/DL notes/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="= 因為知乎或其他論壇已有許多詳細翻譯和筆記，可自行觀看，不另行做筆記 = Paper Link">
+<meta property="og:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-02-22T07:59:13.713Z">
+<meta property="og:image" content="https://hanvincent.github.io/DL%20notes/negative_sampling.jpeg">
+<meta property="og:updated_time" content="2018-02-22T08:33:58.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Glove - Global Vector for Word Representation">
-<meta name="twitter:description" content="= 因為知乎或其他論壇已有許多詳細翻譯和筆記，可自行觀看，不另行做筆記 = Paper Link">
+<meta name="twitter:title" content="Deep Learning on Coursera">
+<meta name="twitter:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
+<meta name="twitter:image" content="https://hanvincent.github.io/DL%20notes/negative_sampling.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hanvincent.github.io/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/"/>
+  <link rel="canonical" href="https://hanvincent.github.io/DL notes/"/>
 
 
 
@@ -132,7 +134,7 @@
     sidebar: "",
   };
 </script>
-  <title>Glove - Global Vector for Word Representation | HanVincent</title>
+  <title>Deep Learning on Coursera | HanVincent</title>
   
 
 
@@ -285,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/DL notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Han">
@@ -302,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Glove - Global Vector for Word Representation</h1>
+          <h1 class="post-title" itemprop="name headline">Deep Learning on Coursera</h1>
         
 
         <div class="post-meta">
@@ -314,7 +316,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:34:32+08:00">2018-02-13</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T12:06:08+08:00">2018-02-13</time>
             
 
             
@@ -335,7 +337,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Notes/" itemprop="url" rel="index"><span itemprop="name">Paper Notes</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Study-Notes/" itemprop="url" rel="index"><span itemprop="name">Study Notes</span></a></span>
 
                 
                 
@@ -350,8 +352,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/" itemprop="commentsCount"></span>
+                <a href="/DL notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/DL notes/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -359,7 +361,7 @@
 
           
           
-             <span id="/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/" class="leancloud_visitors" data-flag-title="Glove - Global Vector for Word Representation">
+             <span id="/DL notes/" class="leancloud_visitors" data-flag-title="Deep Learning on Coursera">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,12 +392,55 @@
       
 
       
-        <p>= 因為知乎或其他論壇已有許多詳細翻譯和筆記，可自行觀看，不另行做筆記 =</p>
-<p><a href="https://nlp.stanford.edu/pubs/glove.pdf" target="_blank" rel="noopener">Paper Link</a></p>
+        <h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><p>Learn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.</p>
 <a id="more"></a>
 <ul>
-<li><a href="https://kknews.cc/zh-tw/news/4mqpp6x.html" target="_blank" rel="noopener">https://kknews.cc/zh-tw/news/4mqpp6x.html</a></li>
-<li><a href="http://www.pengfoo.com/machine-learning/2017-04-11" target="_blank" rel="noopener">http://www.pengfoo.com/machine-learning/2017-04-11</a></li>
+<li><p>Loss function: the error for a single training example</p>
+</li>
+<li><p>Cost function: the average of the loss functions of the entire training set.</p>
+</li>
+<li><p>derivative just means slope of the line</p>
+</li>
+<li><p>vector/matrix multiplication is faster than for-loop</p>
+</li>
+<li><p>High bias: too many wrong prediction; High variance: too overfitting training data</p>
+</li>
+</ul>
+<h3 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h3><h3 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h3><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><ul>
+<li>Speech recognition</li>
+<li>Music generation</li>
+<li>Sentiment classification</li>
+<li>DNA sequence anlaysis</li>
+<li>Machine translation</li>
+<li>Video activity recognition</li>
+<li>Name entity recognition</li>
+</ul>
+<h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><ul>
+<li>Basic representation: one-hot encoding</li>
+<li><p>If word not in dictionary?</p>
+</li>
+<li><p>Why not a standard network?</p>
+<ul>
+<li>Inputs, outputs can be different length</li>
+<li>Doesn’t share features learned across different position of text</li>
+</ul>
+</li>
+<li><p>Recurrent Neural Network</p>
+<ul>
+<li>Usually starts with zero vector</li>
+<li>Forward propagation activation function: hidden - ReLU, tanh, output - sigmoid</li>
+<li>One-to-many, many-to-many, one-to-one, many-to-one</li>
+<li>Language Model: calculate the probability of sentence</li>
+<li>character-level language model: no worry about <unk> but cost computationally expensive and can not learn words relationship</unk></li>
+<li>Vanishing gradient: weakness of basic NN, so use LSTM, GRU</li>
+</ul>
+</li>
+<li><p>Word2Vec</p>
+<ul>
+<li>Skip-gram, CBOW: need to sum up all candidate vectors, which is expensive cost</li>
+<li>Negative Sampling: more efficiently to compute, only choose some negative samples to train<img src="/DL%20notes/negative_sampling.jpeg" title="[Negative Sampling Formula]"></li>
+</ul>
+</li>
 </ul>
 
       
@@ -417,9 +462,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
-            <a href="/tags/word2vec/" rel="tag"># word2vec</a>
+            <a href="/tags/Coursera/" rel="tag"># Coursera</a>
           
         </div>
       
@@ -432,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/GEC log/" rel="next" title="GEC log">
+                <i class="fa fa-chevron-left"></i> GEC log
               </a>
             
           </div>
@@ -441,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/PaperNotes/2017/Dual-Supervised-Learning/" rel="prev" title="Dual Supervised Learning">
-                Dual Supervised Learning <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -500,8 +541,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,6 +654,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutional-Neural-Networks"><span class="nav-number">2.</span> <span class="nav-text">Convolutional Neural Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-Models"><span class="nav-number">3.</span> <span class="nav-text">Sequence Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">3.1.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-number">3.2.</span> <span class="nav-text">Notes</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
