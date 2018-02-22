@@ -102,32 +102,28 @@
 
 
   
-  <meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Machine Comprehension,Machine Reading,Recurrent Neural Network," />
+  <meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Headline Generation,LSTM," />
 
 
-<meta name="description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
-<meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Machine Comprehension,Machine Reading,Recurrent Neural Network">
+<meta name="description" content="Paper Link Abstract 使用 encoder-decoder LSTM model with attention mechanism 用 AWS, TensorFlow, English Giga-word 作為工具">
+<meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Headline Generation,LSTM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reading Wikipedia to Answer Open-Domain Question">
-<meta property="og:url" content="https://hanvincent.github.io/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/index.html">
+<meta property="og:title" content="Headline Generation Using Recurrent Neural Networks">
+<meta property="og:url" content="https://hanvincent.github.io/2018/02/Headline-Generation/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
+<meta property="og:description" content="Paper Link Abstract 使用 encoder-decoder LSTM model with attention mechanism 用 AWS, TensorFlow, English Giga-word 作為工具">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="https://i.imgur.com/NUXpoqK.png">
-<meta property="og:image" content="https://i.imgur.com/jolVu8n.png">
-<meta property="og:image" content="https://i.imgur.com/DpA8ZQ2.png">
-<meta property="og:updated_time" content="2018-02-22T08:33:39.613Z">
+<meta property="og:updated_time" content="2018-02-22T08:40:50.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Reading Wikipedia to Answer Open-Domain Question">
-<meta name="twitter:description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
-<meta name="twitter:image" content="https://i.imgur.com/NUXpoqK.png">
+<meta name="twitter:title" content="Headline Generation Using Recurrent Neural Networks">
+<meta name="twitter:description" content="Paper Link Abstract 使用 encoder-decoder LSTM model with attention mechanism 用 AWS, TensorFlow, English Giga-word 作為工具">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hanvincent.github.io/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/"/>
+  <link rel="canonical" href="https://hanvincent.github.io/2018/02/Headline-Generation/"/>
 
 
 
@@ -136,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>Reading Wikipedia to Answer Open-Domain Question | HanVincent</title>
+  <title>Headline Generation Using Recurrent Neural Networks | HanVincent</title>
   
 
 
@@ -289,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/2018/02/Headline-Generation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Han">
@@ -306,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Reading Wikipedia to Answer Open-Domain Question</h1>
+          <h1 class="post-title" itemprop="name headline">Headline Generation Using Recurrent Neural Networks</h1>
         
 
         <div class="post-meta">
@@ -318,7 +314,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:58:14+08:00">2018-02-13</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:56:14+08:00">2018-02-13</time>
             
 
             
@@ -354,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/" itemprop="commentsCount"></span>
+                <a href="/2018/02/Headline-Generation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/Headline-Generation/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -363,7 +359,7 @@
 
           
           
-             <span id="/PaperNotes/2017/Reading-Wikipedia-to-Answer-Open-Domain-Question/" class="leancloud_visitors" data-flag-title="Reading Wikipedia to Answer Open-Domain Question">
+             <span id="/2018/02/Headline-Generation/" class="leancloud_visitors" data-flag-title="Headline Generation Using Recurrent Neural Networks">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,209 +390,131 @@
       
 
       
-        <p><a href="https://github.com/facebookresearch/DrQA#machine-reading-at-scale" target="_blank" rel="noopener">Paper Link</a></p>
+        <p><a href="https://github.com/hengluchang/deep-news-summarization/blob/master/headline-generation-recurrent.pdf" target="_blank" rel="noopener">Paper Link</a></p>
 <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
-<li>只使用 Wiki 當作資源找出趣聞問題的解答</li>
-<li>Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決</li>
-<li>System: Search Component + RNN<ul>
-<li>Bigram hashing</li>
-<li>TF-IDF matching</li>
-<li>Multi-layer RNN</li>
-</ul>
-</li>
+<li>使用 encoder-decoder LSTM model with attention mechanism</li>
+<li>用 AWS, TensorFlow, English Giga-word 作為工具</li>
 </ul>
 <a id="more"></a>
 <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
-<li>一般 knowledge bases(KBs)：Freebase, DBPedia</li>
-<li>使用 Wiki 作文本導致 QA任務 需要結合 large-scale open-domain QA 和 machine comprehension</li>
-<li><p>Machine Reading at Scale:</p>
-<ul>
-<li>抓出相關文章</li>
-<li>掃描段落找出答案</li>
+<li>summarization 的兩種方法：extractive 和 abstractive<ul>
+<li>extractive: 擷取出 main point</li>
+<li>abstractive: 換句話說</li>
 </ul>
 </li>
-<li><p>只使用內文，不使用 wiki 的 internal graph structure</p>
-<ul>
-<li>可以套用此系統到其他文本</li>
-</ul>
-</li>
-<li><p>Large-scale QA system: IBM’s DeepQA</p>
-<ul>
-<li>依賴很多資源</li>
-<li>information redundancy</li>
-</ul>
-</li>
-<li><p>Machine Comprehension: SQuAD, CNN/Daily Mail</p>
-<ul>
-<li>大多都是以找出一小段相關 text 給 model，但是對 open-domain QA 不切實際</li>
-<li>因此， KBs or Information Retrieval 應該要有 search component</li>
-</ul>
-</li>
-<li><p>使用很多 dataset 來評估 MRS</p>
-</li>
-<li><p>Improve performance by the use of multitask learning and distant supervision</p>
-<blockquote>
-<p>ditant supervision: 使用已從在的資料庫(Freebase or a domain-specific DB)來搜集有關聯的配對，然後再用這些配對產生 training data。例如：Freebase 有 Barack Obama &amp; Michelle Obama 結婚，拿這個事實去標籤同時包含這兩位的句子，如此就能產生大量的資料（也有可能 noisy）。</p>
-</blockquote>
-</li>
+<li>不同於 text summarization 的格式，一般新聞標題通常較令人吃驚，但是 Gigaword 比較偏向新聞內容的摘要</li>
 </ul>
 <h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3><ul>
-<li>Motivation:<ul>
-<li>KBs 限制: 不完整、固定的資料格式</li>
-<li>近期 deep learning 發展，attention-based, memory-augmented neural networks</li>
+<li>這篇為上篇<a href="https://hackmd.io/s/HydCMGj2b" target="_blank" rel="noopener">Generating Headlines</a>的實作及改良</li>
+<li>用attention=based, encoder, latent soft 產生 abstractive summaries 的 data-driven 方法</li>
+<li>instrinsic: 直接找使用者判斷</li>
+<li>extrinsic: 注重效能大於分析，task-based</li>
+</ul>
+<h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul>
+<li>English Gigaword 2nd edition</li>
+<li>同個標題有很多不同的文章</li>
+<li>重複很多相同的新聞篇幅</li>
+<li>因為以上問題，這篇論文使用 1994-2004 APW 的新聞</li>
+<li>資料以 Standard Generalized Markup Language 格式儲存</li>
+<li>每筆資料包含 meta-data(獨立ID和文件類型)、標題、文章</li>
+</ul>
+<h3 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h3><ul>
+<li>使用 python BeautifulSoup4 進行解析</li>
+<li>取出標題及第一段段落</li>
+<li>以下資料刪除以提升正確率、運算效率及節省記憶體空間：<ul>
+<li>標題不符合文法或包含非英文字元</li>
+<li>標題含有’-‘或者第一段少於三個字</li>
+<li>標題有不完整的括號</li>
+<li>含有不完整的 SGML-tagged 或遺失重要 tag</li>
 </ul>
 </li>
-<li>提及其他使用 wiki 的研究 blablabla…</li>
-<li>只考慮 text comprehension</li>
-<li>為了強調 machine reading at scale 的任務，只使用 wiki 當作唯一資源</li>
 </ul>
-<h3 id="DrQA-for-MRS"><a href="#DrQA-for-MRS" class="headerlink" title="DrQA for MRS"></a>DrQA for MRS</h3><ul>
-<li>Doc Retrieval + Doc Reader</li>
-<li><p>Doc Retrieval</p>
-<ul>
-<li>使用有效率的方式（非機器學習）</li>
-<li>simple inverted index lookup(followed by term vector model scoring???) &gt; built-in ElasticSearch based Wiki Search API</li>
-<li>使用 TF-IDF weighted bag-of-word vectors 比較文章和問題</li>
-<li>透過 local word order with n-gram features 改良系統，best -&gt; bigram counts -&gt; 使用 hashing 保持速度和記憶體使用率 -&gt; map bigrams to $2^{24}$ bins with an unasigned murmur3 hash</li>
-<li><p>回傳五篇最相關的 wiki 文章</p>
+<h3 id="Word-Length-Bins"><a href="#Word-Length-Bins" class="headerlink" title="Word Length Bins"></a>Word Length Bins</h3><ul>
+<li>目標是藉由優化 bin sizes 達到縮小標題和句子間的 padding</li>
+<li>將標題長度以: 10, 12, 15, 18 做級距切割，第一句長度以: 20, 30, 40, 45, 50, 60, 70 做級距切割，觀察不同間距的頻率分佈</li>
+</ul>
+<h3 id="Encoder-decoder-LSTM-Model"><a href="#Encoder-decoder-LSTM-Model" class="headerlink" title="Encoder-decoder LSTM Model"></a>Encoder-decoder LSTM Model</h3><ul>
+<li>使用 encoder-decoer LSTM model (RNN) 和 attention mechanism</li>
+<li>使用兩層（上篇用一層）</li>
+<li>使用五個 buckets 和被優化的 bucketing 長度來減少被用在句子裡的 paddings 數量（上篇只用一個 bucket）</li>
+<li><p>先顛倒文章第一句句子順序後當成 input 放入 encoder，如此 input 的前幾個字能比較靠近 output 的前幾個字，以抓出 short term dependencies</p>
 <blockquote>
-<p>Feature hashing 的目標是把原始的高為特徵向量壓縮成較低為特徵向量，且勁量不損失原始特徵的表達。</p>
+<p><i>…其實如果 encoder 是 RNN 的話，理論上越後輸入的單詞影響越大，並非等權的，估計這也是為何 Google 提出 Sequence to Sequence 模型時，發現把輸入句子逆序輸入做翻譯效果會更好的原因）</i></p>
+</blockquote>
+</li>
+<li><p>使用 greedy decoder 取代 beam search decoder 來產生標題</p>
+</li>
+<li>被產生出來的字會被當成下一個預測字的 input</li>
+<li>attention mechanism 給予 encoder 裡的 ouput hidden states 和 current hidden state 權重，來決定哪個字比較重要</li>
+<li>dropout = 0.2, hidden units = 512, word embeddings = 512 dim</li>
+<li>高頻 80,000 words，其他字用 _UNK 或 OOV(out-of-vocabulary)</li>
+<li>使用五個 buckets ((30, 10), (30, 20), (40, 10), (40, 20), (50, 20)) (sen_len, head_len)，意指有五個不同的 encoder-decoder LSTM models</li>
+<li>使用 _PAD 來填充句子和標題到達 bucket size</li>
+</ul>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><ul>
+<li>70% 訓練集，20% 評估集，10% 測試集</li>
+<li>batched 訓練大小 = 128</li>
+<li>learning rate = 0.5</li>
+<li>gradient descent optimizer<ul>
+<li>decay factor = 0.99</li>
+<li>maximum gradient norm = 5</li>
+</ul>
+</li>
+<li>10 epochs</li>
+<li>能使用沒在句中出現過的字來產生好的標題</li>
+<li>遺漏訊息、產生錯誤訊息、因為 bucketing issue 導致出現 <eos> 前就結束，最後一個問題可被解決，只要eos還沒出現，就不斷轉成更大的 bucket</eos></li>
+</ul>
+<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><ul>
+<li>使用 system-oriented 和 user-oriented 的評估方式來比較結果</li>
+<li>user evaluation<ul>
+<li>one-factor within-subject design evaluation survey</li>
+<li>變因為標題產生方式的不同</li>
+<li>使用 Google 表單進行調查<ul>
+<li>搜集性別、年齡、國籍、母語，以確認國籍和母語不影響受試者對句子的評估</li>
+<li>提供10篇新聞讓使用者閱讀，並提供真實的和預測的兩種標題</li>
+<li>以1-5分各自評分兩者標題</li>
+<li>再以1-5分評分兩者間的相似度</li>
+<li>最後再要求受試者選出有描繪到主題的標題</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>system-oriented automatic evaluation<ul>
+<li>使用 BLEU 評斷兩者間的相似程度</li>
+<li>BLEU 是以判斷 n-grams 重疊程度的 precision-based 衡量方法</li>
+<li>使用 k = 1 (unigram)</li>
+</ul>
+</li>
+<li>為了比較系統評估和人工評估之間的關係，挑 BLUE 分數在 0.1 - 0.8 之間的新聞作為人工評估的資料</li>
+<li>以 paired samples t-test 來比較使用者對於兩者標題總結的優劣</li>
+<li><p>相似度方面，使用 Spearman 相關來衡量兩者評估方式間的關聯</p>
+<blockquote>
+<p>Pearson 相關常用來呈現連續型(continous)變數之間的關聯性，尤其在變數符合常態分配的假設下，最爲精確；而spearman相關則不需符合常態，僅要求變數的資料型態至少爲有序的(ordinal)。</p>
 </blockquote>
 </li>
 </ul>
-</li>
-<li><p>Doc Reader</p>
-<ul>
-<li>Paragraph encoding + Question encoding</li>
-<li>3-layer bidirectional LSTMs with h=128 hidden units for both</li>
-<li>Stanford CoreNLP toolkit for tokenization, lemma, POS, NE tag</li>
-<li>所有訓練資料依照段落長度排序，並分到 mini-batches of 32 examples each.</li>
-<li>用 Adamax 優化</li>
-<li>在 word embeddings 和所有 hidden units of LSTMs 使用 dropout with p=0.3 </li>
-<li><p>Paragraph encoding<br>$$ {p_1,…,p_m}=RNN({\check{p}_1,…\check{p}_m}) $$<br>$p_i$: 為每層的 hidden units 的並列(concatenation)，預期 encode 有用的 token $p_i$ context 資訊<br>$\check{p}_1$: feature vector</p>
-<ol>
-<li><p>Word embeddings: 使用 pre-trained 300d Glove word embeddings，保持大部分但微調前 1000 於問題的常見字，像是 what, how, which，畢竟這對QA系統很重要<br>$$ f_{emb}(p_i)=E(p_i) $$</p>
-</li>
-<li><p>Exact match: 使用3個 simple binary features，表示 $p_i$ 是否可完整配對到問題中的字，完整、小寫、或lemma form。但是3用在哪不解？<br>$$ f_{exact\_match(p_i)}=I(p_i\in q) $$</p>
-</li>
-<li><p>Token features: 再加上 POS, NER, TF(normalized term frequency)<br>$$ f_{token}(p_i)=(POS(p_i),NER(p_i),TF(p_i))$$</p>
-</li>
-<li><p>(複雜)Aligned question embedding: attention score $a_{i,j}$ captures the imilarity between $p_i$ and each question words $q_j$.<br>$$ f_{align}(p_i)=\sum_j a_{i,j}E(q_j) $$<br><img src="https://i.imgur.com/NUXpoqK.png" alt=""></p>
-</li>
-</ol>
-</li>
-<li><p>Question encoding</p>
-<ul>
-<li>套用在 $q_i$ word embedding</li>
-<li>並且結合 hidden units into one vector<br><img src="https://i.imgur.com/jolVu8n.png" alt=""></li>
+<h3 id="Data-Analysis"><a href="#Data-Analysis" class="headerlink" title="Data Analysis"></a>Data Analysis</h3><ul>
+<li>樣本分析<ul>
+<li>71人參加，女性42人(59%)，男性29人(41%)</li>
+<li>平均年齡 28.52歲，標準差 9.020</li>
+<li>國籍：美國 34人(47.8%)，台灣 29人(40.8%)，墨西哥 2人，中國 2人，印度 2人，加拿大 1人，馬來西亞 1人</li>
+<li>母語：英文 35人，中文 33人，印度語 2人，西班牙 1人</li>
 </ul>
 </li>
-<li><p>Prediction</p>
-<ul>
-<li>使用 paragraph vectors 和 question vector 來訓練兩個 classifier</li>
-<li>用來預測答案的開頭字跟結尾字</li>
-<li>使用 bilinear term 計算每個字可能為開頭和結尾的機率<br><img src="https://i.imgur.com/DpA8ZQ2.png" alt=""></li>
-<li>選擇最可能的 span 從 $i$ 到 $i’$，不可超過十五個單字，且 $P_{start}(i)*P_{end}(i’)$ is max</li>
-<li>使用 unnormalized exp 以相容不同段落之間的比較</li>
-<li>argmax 找出最可能的答案</li>
+<li>兩者標題的評估比較<ul>
+<li>使用 independent sample t-test 去分析是否母語會影響兩者標題總結優劣的評估結果，結果呈現無太大影響</li>
+<li>從 paired sample t-test 比較，有 7 則新聞預測的標題比較好</li>
 </ul>
 </li>
+<li>系統和人工的評估比較<ul>
+<li>使用 Spearman’s rank-order correlation</li>
+<li>系統和人工評估之間的關聯呈現微弱且正向，表示兩者並無一致性的結果</li>
 </ul>
 </li>
-</ul>
-<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><ol>
-<li><p>Wiki: 答案來源</p>
-<ul>
-<li>只使用內容純文字，list, figure 等全部刪除</li>
-<li>5,075,182 articles, 9,008,962 unique uncased tokens</li>
+<li>優良標題的選擇<ul>
+<li>結果顯示，10則新聞預測標題和實際標題各佔半</li>
 </ul>
 </li>
-<li><p>SQuAD datset: 主要用來 train Document Reader</p>
-<ul>
-<li>Stanford Question Answering Dataset, for machine comprehension based on Wiki</li>
-<li>87k examples for training; 10k for development, a large hidden test set(private)</li>
-<li>Each example: a paragraph &amp; answer, an associated human-generated question</li>
-<li>訓練過程中，需要預測出正確解答</li>
-<li>使用 exact string match(EM) 和 F1 score 評估，token level</li>
-<li>只使用 development set QA pairs 做評估，但不使用提供的段落，要求系統找出正確解答</li>
-</ul>
-</li>
-<li><p>另外 3 個 QA datasets: test 整個系統，evaluated 使用 multitask learning and distant supervision 學習的 model</p>
-<ul>
-<li>CuratedTREC<ul>
-<li>from TREC QA tasks</li>
-<li>2,180 questions</li>
-</ul>
-</li>
-<li>WebQuestions<ul>
-<li>被用來回答 Freebase KB 的問題</li>
-<li>問題是透過 Google Suggest API 來爬取的</li>
-<li>透過 Amazon Turk 得到解答</li>
-<li>使用 entity names 把答案轉換成 text</li>
-</ul>
-</li>
-<li>WikiMovies<ul>
-<li>96k qa pair in movie</li>
-<li>from OMDb and MovieLens DB</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>Distantly Supervised Data<ul>
-<li>原本資料只有 qa pair，不含相關段落</li>
-<li>利用 Distant supervision for relation extraction(2009) 提出的方法</li>
-</ul>
-<ol>
-<li>用 Doc. Retriever 找出該問題的前五篇</li>
-<li>移除不包含答案、短於25或超過1500 char 的段落</li>
-<li>如果 Q 裡面有 named entity，移除那些不包含 EN 的段落</li>
-<li>score all positions that match an answer using unigram and bigram overlap between the question and a 20 token window利用評分剩下的段落</li>
-<li>留最高分的五個段落(keeping up to the top 5 paragraphs with the highest overlaps)，若都沒有，則移除該例子</li>
-</ol>
-</li>
-</ul>
-<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><ul>
-<li><p>Document Retrieval</p>
-<ul>
-<li>方法為找出的前五篇文章中至少一篇出現答案的比率</li>
-<li>比 wiki 內建的搜尋引擎好</li>
-<li>比 Okapi BM25 或 cosine distance in the word embeddings space 好</li>
-</ul>
-</li>
-<li><p>Document Reader</p>
-<ul>
-<li>用 SQuAD evaluation 評估</li>
-<li>此 model 可以達到 SQuAD 最好的結果</li>
-<li>若拿掉 $f_{aligned}$ and $f_{exact\_match}$，效果大幅降低，推論出這兩個 features 扮演著相似但是互補的角色</li>
-</ul>
-</li>
-<li><p>DrQA</p>
-<ul>
-<li>使用上述四個 dataset</li>
-<li><p>用三個 DrQA 版本來比較餵給 Doc. Reader 的訓練來源上使用 distant supervision 和 multitask learning 的影響</p>
-<ol>
-<li>SQuAD: 單純在 Doc. Reader model 上使用訓練集和評估集</li>
-<li>Fine-tune (DS): Doc. Reader model 已經用 SQuAD 事先訓練好，再使用從每個 dataset 得到的 distant supervision training set 來 fine-tuned</li>
-<li>Multitask (DS): Doc. Reader model 從 SQuAD training set 和所有 DS sources 訓練出來</li>
-</ol>
-</li>
-<li><p>SQuAD 雖然比較差，但沒有落後很多，代表有 task transfer</p>
-</li>
-<li>SQuAD -&gt; Multitask(DS) 最主要的進步原因不是 task transfer，因為 fine-tuning on each dataset alone using DS 也有進步，代表導入同領域的 extra data 提供幫助</li>
-<li>Multitask (DS) system 最好</li>
-<li>比較 YodaQA(來源不只 wiki，redudant resources)，儘管我們的任務困難度上升，但重新確認我們的效能並不是落後太多 on CuratedTREC</li>
-<li>on WebQuestions 落後較多是因為這個資料集是從特定格式的 Freebase 產生的，而 YodaQA 直接使用此資料</li>
-<li>完整的 single SQuDA 系統雖然在 SQuDA 資料上的成績從69.6 -&gt; 27.1，但是因為給予的資料從段落變成所有 wiki，若給正確的該篇文章（非段落）則可達 49.4，表示 false positives 來自 topcial sentences.(?)</li>
-<li>儘管 Doc. Retrieval 效果很好，但是值得注意的是，這個落差可能來自於 SQuAD 的questions，因為這些questions是再給予一段段落後去產生的，並不知道上下文，因此可能和整篇文章的主旨有出入</li>
-</ul>
-</li>
-</ul>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><ul>
-<li>利用 wiki 研究 MRS</li>
-<li>此成果表示 MRS 是很關鍵的任務</li>
-<li>只使用 machine comprehension 並不能解決整體任務，此研究結合 search, distant supervision, and multitask learning</li>
 </ul>
 
       
@@ -624,11 +542,9 @@
           
             <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
           
-            <a href="/tags/Machine-Comprehension/" rel="tag"># Machine Comprehension</a>
+            <a href="/tags/Headline-Generation/" rel="tag"># Headline Generation</a>
           
-            <a href="/tags/Machine-Reading/" rel="tag"># Machine Reading</a>
-          
-            <a href="/tags/Recurrent-Neural-Network/" rel="tag"># Recurrent Neural Network</a>
+            <a href="/tags/LSTM/" rel="tag"># LSTM</a>
           
         </div>
       
@@ -641,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/PaperNotes/2017/Headline-Generation-Using-Recurrent-Neural-Networks/" rel="next" title="Headline Generation Using Recurrent Neural Networks">
-                <i class="fa fa-chevron-left"></i> Headline Generation Using Recurrent Neural Networks
+              <a href="/2018/02/Generate-Headline/" rel="next" title="Generating News Headlines with Recurrent Neural Networks">
+                <i class="fa fa-chevron-left"></i> Generating News Headlines with Recurrent Neural Networks
               </a>
             
           </div>
@@ -651,8 +567,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Miscellany/GEC-log/" rel="prev" title="GEC log">
-                GEC log <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/QA-bot/" rel="prev" title="Reading Wikipedia to Answer Open-Domain Question">
+                Reading Wikipedia to Answer Open-Domain Question <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -832,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Related-Work"><span class="nav-number">3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DrQA-for-MRS"><span class="nav-number">4.</span> <span class="nav-text">DrQA for MRS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data"><span class="nav-number">5.</span> <span class="nav-text">Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">7.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Related-Work"><span class="nav-number">3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dataset"><span class="nav-number">4.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Preprocessing"><span class="nav-number">5.</span> <span class="nav-text">Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Word-Length-Bins"><span class="nav-number">6.</span> <span class="nav-text">Word Length Bins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Encoder-decoder-LSTM-Model"><span class="nav-number">7.</span> <span class="nav-text">Encoder-decoder LSTM Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Result"><span class="nav-number">8.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation"><span class="nav-number">9.</span> <span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Analysis"><span class="nav-number">10.</span> <span class="nav-text">Data Analysis</span></a></li></ol></div>
             
 
           </div>
@@ -1180,29 +1096,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 

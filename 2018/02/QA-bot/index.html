@@ -102,28 +102,32 @@
 
 
   
-  <meta name="keywords" content="Machine Learning,Machine Translation,Natural Language Processing," />
+  <meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Machine Comprehension,Machine Reading,Recurrent Neural Network," />
 
 
-<meta name="description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
-<meta name="keywords" content="Machine Learning,Machine Translation,Natural Language Processing">
+<meta name="description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
+<meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Machine Comprehension,Machine Reading,Recurrent Neural Network">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dual Supervised Learning">
-<meta property="og:url" content="https://hanvincent.github.io/PaperNotes/2017/Dual-Supervised-Learning/index.html">
+<meta property="og:title" content="Reading Wikipedia to Answer Open-Domain Question">
+<meta property="og:url" content="https://hanvincent.github.io/2018/02/QA-bot/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
+<meta property="og:description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-02-22T08:32:09.000Z">
+<meta property="og:image" content="https://i.imgur.com/NUXpoqK.png">
+<meta property="og:image" content="https://i.imgur.com/jolVu8n.png">
+<meta property="og:image" content="https://i.imgur.com/DpA8ZQ2.png">
+<meta property="og:updated_time" content="2018-02-22T08:40:35.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dual Supervised Learning">
-<meta name="twitter:description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
+<meta name="twitter:title" content="Reading Wikipedia to Answer Open-Domain Question">
+<meta name="twitter:description" content="Paper Link Abstract 只使用 Wiki 當作資源找出趣聞問題的解答 Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決 System: Search Component + RNN Bigram hashing TF-IDF matching Mult">
+<meta name="twitter:image" content="https://i.imgur.com/NUXpoqK.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hanvincent.github.io/PaperNotes/2017/Dual-Supervised-Learning/"/>
+  <link rel="canonical" href="https://hanvincent.github.io/2018/02/QA-bot/"/>
 
 
 
@@ -132,7 +136,7 @@
     sidebar: "",
   };
 </script>
-  <title>Dual Supervised Learning | HanVincent</title>
+  <title>Reading Wikipedia to Answer Open-Domain Question | HanVincent</title>
   
 
 
@@ -285,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/PaperNotes/2017/Dual-Supervised-Learning/">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/2018/02/QA-bot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Han">
@@ -302,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Dual Supervised Learning</h1>
+          <h1 class="post-title" itemprop="name headline">Reading Wikipedia to Answer Open-Domain Question</h1>
         
 
         <div class="post-meta">
@@ -314,7 +318,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:38:36+08:00">2018-02-13</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:58:14+08:00">2018-02-13</time>
             
 
             
@@ -350,8 +354,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/PaperNotes/2017/Dual-Supervised-Learning/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/PaperNotes/2017/Dual-Supervised-Learning/" itemprop="commentsCount"></span>
+                <a href="/2018/02/QA-bot/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/QA-bot/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -359,7 +363,7 @@
 
           
           
-             <span id="/PaperNotes/2017/Dual-Supervised-Learning/" class="leancloud_visitors" data-flag-title="Dual Supervised Learning">
+             <span id="/2018/02/QA-bot/" class="leancloud_visitors" data-flag-title="Reading Wikipedia to Answer Open-Domain Question">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,182 +394,209 @@
       
 
       
-        <p><a href="https://arxiv.org/pdf/1707.00415.pdf" target="_blank" rel="noopener">Paper Link</a></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。</p>
+        <p><a href="https://github.com/facebookresearch/DrQA#machine-reading-at-scale" target="_blank" rel="noopener">Paper Link</a></p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li>只使用 Wiki 當作資源找出趣聞問題的解答</li>
+<li>Machine Reading at Scale (MRS)，有 document retrieval + machine comprehension of text 的問題要解決</li>
+<li>System: Search Component + RNN<ul>
+<li>Bigram hashing</li>
+<li>TF-IDF matching</li>
+<li>Multi-layer RNN</li>
+</ul>
+</li>
+</ul>
 <a id="more"></a>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+<li>一般 knowledge bases(KBs)：Freebase, DBPedia</li>
+<li>使用 Wiki 作文本導致 QA任務 需要結合 large-scale open-domain QA 和 machine comprehension</li>
+<li><p>Machine Reading at Scale:</p>
 <ul>
-<li>Supervised learning tasks in dual forms<ul>
-<li>translation (Fr -&gt; En / En -&gt; Fr)</li>
-<li>speech recognition / text to speech</li>
-<li>image classification / image generation</li>
+<li>抓出相關文章</li>
+<li>掃描段落找出答案</li>
 </ul>
 </li>
+<li><p>只使用內文，不使用 wiki 的 internal graph structure</p>
+<ul>
+<li>可以套用此系統到其他文本</li>
 </ul>
-<h3 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h3><h4 id="目的：同時訓練-dual-models"><a href="#目的：同時訓練-dual-models" class="headerlink" title="目的：同時訓練 dual models"></a>目的：同時訓練 dual models</h4><h4 id="舉例證明效果更好："><a href="#舉例證明效果更好：" class="headerlink" title="舉例證明效果更好："></a>舉例證明效果更好：</h4><ol>
-<li>Neural Machine Translation</li>
-<li>Image Processing on CIFAR-10</li>
-<li>Sentiment Analysis on IMDB dataset</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Def</th>
-<th style="text-align:left">Illustration</th>
-<th style="text-align:left">Probability</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>primal task:</strong></td>
-<td style="text-align:left"><em>x $\rightarrow$ y</em></td>
-<td style="text-align:left">P(y\</td>
-<td>x; $\theta$~xy~)</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>dual task:</strong></td>
-<td style="text-align:left"><em>y $\rightarrow$ x</em></td>
-<td style="text-align:left">P(x\</td>
-<td>y; $\theta$~yx~)</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Probabilistic-Duality"><a href="#Probabilistic-Duality" class="headerlink" title="Probabilistic Duality:"></a>Probabilistic Duality:</h4><p>$$P(x, y) = P(x)P(y|x; \theta_{xy}) = P(y)P(x|y; \theta_{yx}) \<br>\theta: model$$</p>
-<p>困難：如果個別計算 cost function ，則上方公式難保成立。</p>
-<p>object 1: $min_{\theta_{xy}}(1/n)\sum^n_{i=1}\ell_1(f(x_i;\theta_{xy}), y_i),$<br>object 2: $min_{\theta_{yx}}(1/n)\sum^n_{i=1}\ell_2(g(y_i;\theta_{yx}), x_i),$<br>s.t. $P(x)P(y|x;\theta_{xy}), \forall x,y,$</p>
-<p>解決：將上述公式轉為 penalty term ( 使用 Lagrange Multipliers) ，可將penalty term 視為 data-dependent regularization term.</p>
-<p>然而，因為$P(x), P(y)$ (marginal distributions) 並不好取得，用$\hat{P}(x), \hat{P}(y)$ (empirical marginal distributions) 取代。</p>
-<p>利用 Lagrange multipliers 和 equality constraint of probabilistic duality(以下稱雙向機率對等條件) 代入上方 objective functions.</p>
+</li>
+<li><p>Large-scale QA system: IBM’s DeepQA</p>
+<ul>
+<li>依賴很多資源</li>
+<li>information redundancy</li>
+</ul>
+</li>
+<li><p>Machine Comprehension: SQuAD, CNN/Daily Mail</p>
+<ul>
+<li>大多都是以找出一小段相關 text 給 model，但是對 open-domain QA 不切實際</li>
+<li>因此， KBs or Information Retrieval 應該要有 search component</li>
+</ul>
+</li>
+<li><p>使用很多 dataset 來評估 MRS</p>
+</li>
+<li><p>Improve performance by the use of multitask learning and distant supervision</p>
+<blockquote>
+<p>ditant supervision: 使用已從在的資料庫(Freebase or a domain-specific DB)來搜集有關聯的配對，然後再用這些配對產生 training data。例如：Freebase 有 Barack Obama &amp; Michelle Obama 結婚，拿這個事實去標籤同時包含這兩位的句子，如此就能產生大量的資料（也有可能 noisy）。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3><ul>
+<li>Motivation:<ul>
+<li>KBs 限制: 不完整、固定的資料格式</li>
+<li>近期 deep learning 發展，attention-based, memory-augmented neural networks</li>
+</ul>
+</li>
+<li>提及其他使用 wiki 的研究 blablabla…</li>
+<li>只考慮 text comprehension</li>
+<li>為了強調 machine reading at scale 的任務，只使用 wiki 當作唯一資源</li>
+</ul>
+<h3 id="DrQA-for-MRS"><a href="#DrQA-for-MRS" class="headerlink" title="DrQA for MRS"></a>DrQA for MRS</h3><ul>
+<li>Doc Retrieval + Doc Reader</li>
+<li><p>Doc Retrieval</p>
+<ul>
+<li>使用有效率的方式（非機器學習）</li>
+<li>simple inverted index lookup(followed by term vector model scoring???) &gt; built-in ElasticSearch based Wiki Search API</li>
+<li>使用 TF-IDF weighted bag-of-word vectors 比較文章和問題</li>
+<li>透過 local word order with n-gram features 改良系統，best -&gt; bigram counts -&gt; 使用 hashing 保持速度和記憶體使用率 -&gt; map bigrams to $2^{24}$ bins with an unasigned murmur3 hash</li>
+<li><p>回傳五篇最相關的 wiki 文章</p>
+<blockquote>
+<p>Feature hashing 的目標是把原始的高為特徵向量壓縮成較低為特徵向量，且勁量不損失原始特徵的表達。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>Doc Reader</p>
+<ul>
+<li>Paragraph encoding + Question encoding</li>
+<li>3-layer bidirectional LSTMs with h=128 hidden units for both</li>
+<li>Stanford CoreNLP toolkit for tokenization, lemma, POS, NE tag</li>
+<li>所有訓練資料依照段落長度排序，並分到 mini-batches of 32 examples each.</li>
+<li>用 Adamax 優化</li>
+<li>在 word embeddings 和所有 hidden units of LSTMs 使用 dropout with p=0.3 </li>
+<li><p>Paragraph encoding<br>$$ {p_1,…,p_m}=RNN({\check{p}_1,…\check{p}_m}) $$<br>$p_i$: 為每層的 hidden units 的並列(concatenation)，預期 encode 有用的 token $p_i$ context 資訊<br>$\check{p}_1$: feature vector</p>
 <ol>
-<li>將雙向機率對等條件 regularize<br>$$\ell_{duality}=(log\hat{P}(x)+logP(y|x;\theta_{xy})-log\hat{P}(y)-logP(x|y;\theta_{yx}))^2$$</li>
-<li>Minimize the weighted combination and the above regularization term，針對 objective 1. &amp; 2. 加上 $\lambda\ell_{duality}$，可用SGD, Adam, Adadelta。</li>
+<li><p>Word embeddings: 使用 pre-trained 300d Glove word embeddings，保持大部分但微調前 1000 於問題的常見字，像是 what, how, which，畢竟這對QA系統很重要<br>$$ f_{emb}(p_i)=E(p_i) $$</p>
+</li>
+<li><p>Exact match: 使用3個 simple binary features，表示 $p_i$ 是否可完整配對到問題中的字，完整、小寫、或lemma form。但是3用在哪不解？<br>$$ f_{exact\_match(p_i)}=I(p_i\in q) $$</p>
+</li>
+<li><p>Token features: 再加上 POS, NER, TF(normalized term frequency)<br>$$ f_{token}(p_i)=(POS(p_i),NER(p_i),TF(p_i))$$</p>
+</li>
+<li><p>(複雜)Aligned question embedding: attention score $a_{i,j}$ captures the imilarity between $p_i$ and each question words $q_j$.<br>$$ f_{align}(p_i)=\sum_j a_{i,j}E(q_j) $$<br><img src="https://i.imgur.com/NUXpoqK.png" alt=""></p>
+</li>
 </ol>
-<p><small>備註：提供 theoretical analysis 確保DSL的 generalization bound；提供演算法。</small></p>
-<h3 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h3><p>此方法也對 unsupervised learning 帶來好處，以翻譯為例，$x \rightarrow y’$，再由$y’ \rightarrow x’$，透過減少$x$和$x’$的差異，雙向models都會被優化。</p>
-<p>$\ell_{duality}$ (regularization term) 是 data dependent，意指每個樣本影響 regularization term，每個 model 影響其他 model 的 regularization；然而，Lasso, SVM 是 data independent。</p>
-<p>DSL 之必要條件：</p>
+</li>
+<li><p>Question encoding</p>
+<ul>
+<li>套用在 $q_i$ word embedding</li>
+<li>並且結合 hidden units into one vector<br><img src="https://i.imgur.com/jolVu8n.png" alt=""></li>
+</ul>
+</li>
+<li><p>Prediction</p>
+<ul>
+<li>使用 paragraph vectors 和 question vector 來訓練兩個 classifier</li>
+<li>用來預測答案的開頭字跟結尾字</li>
+<li>使用 bilinear term 計算每個字可能為開頭和結尾的機率<br><img src="https://i.imgur.com/DpA8ZQ2.png" alt=""></li>
+<li>選擇最可能的 span 從 $i$ 到 $i’$，不可超過十五個單字，且 $P_{start}(i)*P_{end}(i’)$ is max</li>
+<li>使用 unnormalized exp 以相容不同段落之間的比較</li>
+<li>argmax 找出最可能的答案</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><ol>
+<li><p>Wiki: 答案來源</p>
+<ul>
+<li>只使用內容純文字，list, figure 等全部刪除</li>
+<li>5,075,182 articles, 9,008,962 unique uncased tokens</li>
+</ul>
+</li>
+<li><p>SQuAD datset: 主要用來 train Document Reader</p>
+<ul>
+<li>Stanford Question Answering Dataset, for machine comprehension based on Wiki</li>
+<li>87k examples for training; 10k for development, a large hidden test set(private)</li>
+<li>Each example: a paragraph &amp; answer, an associated human-generated question</li>
+<li>訓練過程中，需要預測出正確解答</li>
+<li>使用 exact string match(EM) 和 F1 score 評估，token level</li>
+<li>只使用 development set QA pairs 做評估，但不使用提供的段落，要求系統找出正確解答</li>
+</ul>
+</li>
+<li><p>另外 3 個 QA datasets: test 整個系統，evaluated 使用 multitask learning and distant supervision 學習的 model</p>
+<ul>
+<li>CuratedTREC<ul>
+<li>from TREC QA tasks</li>
+<li>2,180 questions</li>
+</ul>
+</li>
+<li>WebQuestions<ul>
+<li>被用來回答 Freebase KB 的問題</li>
+<li>問題是透過 Google Suggest API 來爬取的</li>
+<li>透過 Amazon Turk 得到解答</li>
+<li>使用 entity names 把答案轉換成 text</li>
+</ul>
+</li>
+<li>WikiMovies<ul>
+<li>96k qa pair in movie</li>
+<li>from OMDb and MovieLens DB</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Distantly Supervised Data<ul>
+<li>原本資料只有 qa pair，不含相關段落</li>
+<li>利用 Distant supervision for relation extraction(2009) 提出的方法</li>
+</ul>
 <ol>
-<li>Duality 必須存在(for the two tasks)</li>
-<li>Primal 和 Dual models 必須可訓練(trainable)</li>
-<li>$\hat{P}(X)$ and $\hat{P}(Y)$ 必須可取得</li>
-</ol>
-<h3 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h3><h4 id="機器翻譯"><a href="#機器翻譯" class="headerlink" title="機器翻譯"></a>機器翻譯</h4><ul>
-<li>參考 Bahdanau et al., 2015; Jean et al., 2015</li>
-<li>Tasks<ol>
-<li>En $\leftrightarrow$ Fr<ul>
-<li>Dataset from previous papers</li>
-</ul>
-</li>
-<li>En $\leftrightarrow$ De(Germany)<ul>
-<li>Dataset from newstest 2012, 2013, 2014</li>
-</ul>
-</li>
-<li>En $\leftrightarrow$ Zh(Chinese)<ul>
-<li>Dataset from NIST2006, 2008, 2012</li>
-</ul>
-</li>
+<li>用 Doc. Retriever 找出該問題的前五篇</li>
+<li>移除不包含答案、短於25或超過1500 char 的段落</li>
+<li>如果 Q 裡面有 named entity，移除那些不包含 EN 的段落</li>
+<li>score all positions that match an answer using unigram and bigram overlap between the question and a 20 token window利用評分剩下的段落</li>
+<li>留最高分的五個段落(keeping up to the top 5 paragraphs with the highest overlaps)，若都沒有，則移除該例子</li>
 </ol>
 </li>
-<li>Model<ul>
-<li>使用 GRU as the recurrent module (上述 paper) 實踐 seq2seq model</li>
-<li>Word embedding 維度為620</li>
-<li>Hidden node 為 1000</li>
-<li>單字數量分別為 30k, 50k, 30k</li>
-<li>Baseline: RNNSearch</li>
+</ul>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><ul>
+<li><p>Document Retrieval</p>
+<ul>
+<li>方法為找出的前五篇文章中至少一篇出現答案的比率</li>
+<li>比 wiki 內建的搜尋引擎好</li>
+<li>比 Okapi BM25 或 cosine distance in the word embeddings space 好</li>
 </ul>
 </li>
-<li>Evaluation Metrics<ul>
-<li>Tokenized case-sensitive BLEU</li>
-<li>分數越大品質越好</li>
-<li>case-insensitive BLEU for Zh $\rightarrow$ En</li>
+<li><p>Document Reader</p>
+<ul>
+<li>用 SQuAD evaluation 評估</li>
+<li>此 model 可以達到 SQuAD 最好的結果</li>
+<li>若拿掉 $f_{aligned}$ and $f_{exact\_match}$，效果大幅降低，推論出這兩個 features 扮演著相似但是互補的角色</li>
 </ul>
 </li>
-<li>Training Procedure<ol>
-<li>Initialize two models by two warm-start models（上述 paper），從後段得知為 RNNSearch 訓練出來的 models 作為 initial</li>
-<li>Use SGD with minibatch size of 80 to optimize</li>
-<li>Initialize learning rate = 0.2, 持續減半直到 BLEU score on the validation set 無法明顯成長</li>
-<li>The gradient clip is set as 1.0, 5.0 and 1.0 individually</li>
-<li>根據經驗，$\lambda_{xy}$ and $\lambda_{yx}$ are set as 0.01</li>
+<li><p>DrQA</p>
+<ul>
+<li>使用上述四個 dataset</li>
+<li><p>用三個 DrQA 版本來比較餵給 Doc. Reader 的訓練來源上使用 distant supervision 和 multitask learning 的影響</p>
+<ol>
+<li>SQuAD: 單純在 Doc. Reader model 上使用訓練集和評估集</li>
+<li>Fine-tune (DS): Doc. Reader model 已經用 SQuAD 事先訓練好，再使用從每個 dataset 得到的 distant supervision training set 來 fine-tuned</li>
+<li>Multitask (DS): Doc. Reader model 從 SQuAD training set 和所有 DS sources 訓練出來</li>
 </ol>
 </li>
-<li>Result<ul>
-<li>可以同時改良兩個models</li>
-<li>En $\rightarrow$ Fr 進步最多</li>
-<li>Regularize probabilistic duality constraint 會降低 $\ell_{duality}$，RNNSearch $\rightarrow$ DSL</li>
-</ul>
+<li><p>SQuAD 雖然比較差，但沒有落後很多，代表有 task transfer</p>
 </li>
-<li>Improvement<ul>
-<li>Replace “UNK”(unknown word) with corresponding word-level translations</li>
-<li>使用更好的 models 作為 initials ，取代原本從 RNNSearch 得到的 warm-start models</li>
-</ul>
-</li>
-<li>Advantages<ul>
-<li>Improve by leveraging the stuctural duality of sentences</li>
-<li>consider more contextual information</li>
-<li>handle the plural form</li>
+<li>SQuAD -&gt; Multitask(DS) 最主要的進步原因不是 task transfer，因為 fine-tuning on each dataset alone using DS 也有進步，代表導入同領域的 extra data 提供幫助</li>
+<li>Multitask (DS) system 最好</li>
+<li>比較 YodaQA(來源不只 wiki，redudant resources)，儘管我們的任務困難度上升，但重新確認我們的效能並不是落後太多 on CuratedTREC</li>
+<li>on WebQuestions 落後較多是因為這個資料集是從特定格式的 Freebase 產生的，而 YodaQA 直接使用此資料</li>
+<li>完整的 single SQuDA 系統雖然在 SQuDA 資料上的成績從69.6 -&gt; 27.1，但是因為給予的資料從段落變成所有 wiki，若給正確的該篇文章（非段落）則可達 49.4，表示 false positives 來自 topcial sentences.(?)</li>
+<li>儘管 Doc. Retrieval 效果很好，但是值得注意的是，這個落差可能來自於 SQuAD 的questions，因為這些questions是再給予一段段落後去產生的，並不知道上下文，因此可能和整篇文章的主旨有出入</li>
 </ul>
 </li>
 </ul>
-<h4 id="圖像處理"><a href="#圖像處理" class="headerlink" title="圖像處理"></a>圖像處理</h4><ul>
-<li>Dataset: CIFAR-10 with 10 classes of images</li>
-<li>ResNet for image classifiaciont; PixelCNN++ for image generation</li>
-<li>$\chi$ for image space; $y$ for category space related to CIFAR-10</li>
-<li>Marginal Distributions use uniform distribution</li>
-<li>Models<ul>
-<li>Baseline for image classification: ResNet-32, ResNet-110; for image generation, PixelCNN++</li>
-</ul>
-</li>
-<li>Evaluation Metrics<ul>
-<li>classification error rates for image classfication.</li>
-<li>bits per dimension(bpd) (Salimans et al., 2016) for image generation. for an image x with label y, the bpd is<br>$$ -(\sum^{N_x}_{i=1}logP(x_i|x_{x&lt;i}, y)) / (N_xlog(2)) $$</li>
-</ul>
-</li>
-<li>Training Procedure<ul>
-<li>Initialize both the primal and dual models with ResNet model and PixelCNN++ model pre-trained independently and separately.</li>
-<li>Initialize learning rate of image classification model as 0.1 and that of image generation model as 0.0005</li>
-<li>將近兩週才收斂</li>
-</ul>
-</li>
-<li>Result<ul>
-<li>Image classification 有進步好棒棒</li>
-<li>Image generation 比較困難，採用 ResNet-110 則 bpd 減少0.01，0.01不大卻是進步許多</li>
-</ul>
-</li>
-</ul>
-<h4 id="情感分析"><a href="#情感分析" class="headerlink" title="情感分析"></a>情感分析</h4><ul>
-<li>$\chi$ 代表句子，$y$代表情緒</li>
-<li>Dataset IMDB movie review </li>
-<li>Marginal Distributions use uniform distribution, positive(0.5) or negative(0.5)</li>
-<li>Model<ul>
-<li>LSTM for sentiment classification model</li>
-<li>embedding dimension = 500</li>
-<li>hidden layer size = 1024</li>
-<li>LSTM for sentence generation, input:<br>$$W^e_wE_wx_{t-1} + W^e_sE_sy$$<br>$x_{t-1}$ t-1’th word<br>$E_w$ and $E_s$ embedding matrices and sentiment label<br>$W’s$ represent the connections between embedding matrix and LSTM cells</li>
-<li>一個字一個字產生成句子，該字被產生的機率和下述公式成正比，contextual language model(CLM) $$exp(W^d_wE_wx_{t-1}+W^d_sE_sy+W_hh_{t-1})$$</li>
-</ul>
-</li>
-<li>Evaluation Metrics<ul>
-<li>Use error rate</li>
-</ul>
-</li>
-<li>Training Procedure<ol>
-<li>Baseline models: use Adadelta as the optimization method to train model</li>
-<li>Initialize the two models for DSL</li>
-<li>Use plain SGD </li>
-<li>Initialize learning rate of 0.2</li>
-<li>Decrease it to 0.02 當 validation set 沒明顯進步時</li>
-<li>$\lambda_{xy}=(5/l_x)^2$ and $\lambda_{yx}=(0.5/l_x)^2$，$l_x$ 為x的長度</li>
-</ol>
-</li>
-<li>Result<ul>
-<li>成功減少分類錯誤</li>
-<li>稍微改進 perplexity for sentence generation，原因可能為 label 僅能提供 1 bit 資訊 </li>
-<li>Baseline model 通常抓 training data 的高頻字</li>
-<li>CLM in DSL 可以抓到更準確或強烈的字</li>
-</ul>
-</li>
-</ul>
-<h3 id="探討"><a href="#探討" class="headerlink" title="探討"></a>探討</h3><ul>
-<li>根據三項測驗，發現不需要做 warm-start models 也可以達到比 baseline 好的效果，差別只在速度</li>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><ul>
+<li>利用 wiki 研究 MRS</li>
+<li>此成果表示 MRS 是很關鍵的任務</li>
+<li>只使用 machine comprehension 並不能解決整體任務，此研究結合 search, distant supervision, and multitask learning</li>
 </ul>
 
       
@@ -587,11 +618,17 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Machine-Translation/" rel="tag"># Machine Translation</a>
-          
             <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
+          
+            <a href="/tags/Machine-Comprehension/" rel="tag"># Machine Comprehension</a>
+          
+            <a href="/tags/Machine-Reading/" rel="tag"># Machine Reading</a>
+          
+            <a href="/tags/Recurrent-Neural-Network/" rel="tag"># Recurrent Neural Network</a>
           
         </div>
       
@@ -604,8 +641,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/" rel="next" title="Glove - Global Vector for Word Representation">
-                <i class="fa fa-chevron-left"></i> Glove - Global Vector for Word Representation
+              <a href="/2018/02/Headline-Generation/" rel="next" title="Headline Generation Using Recurrent Neural Networks">
+                <i class="fa fa-chevron-left"></i> Headline Generation Using Recurrent Neural Networks
               </a>
             
           </div>
@@ -614,8 +651,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/PaperNotes/2017/Generating-News-Headlines-with-Recurrent-Neural-Networks/" rel="prev" title="Generating News Headlines with Recurrent Neural Networks">
-                Generating News Headlines with Recurrent Neural Networks <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/GEC-log/" rel="prev" title="GEC log">
+                GEC log <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -795,7 +832,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#內容"><span class="nav-number">2.</span> <span class="nav-text">內容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目的：同時訓練-dual-models"><span class="nav-number">2.1.</span> <span class="nav-text">目的：同時訓練 dual models</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#舉例證明效果更好："><span class="nav-number">2.2.</span> <span class="nav-text">舉例證明效果更好：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probabilistic-Duality"><span class="nav-number">2.3.</span> <span class="nav-text">Probabilistic Duality:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#討論"><span class="nav-number">3.</span> <span class="nav-text">討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#應用"><span class="nav-number">4.</span> <span class="nav-text">應用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#機器翻譯"><span class="nav-number">4.1.</span> <span class="nav-text">機器翻譯</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#圖像處理"><span class="nav-number">4.2.</span> <span class="nav-text">圖像處理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情感分析"><span class="nav-number">4.3.</span> <span class="nav-text">情感分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#探討"><span class="nav-number">5.</span> <span class="nav-text">探討</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Related-Work"><span class="nav-number">3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DrQA-for-MRS"><span class="nav-number">4.</span> <span class="nav-text">DrQA for MRS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data"><span class="nav-number">5.</span> <span class="nav-text">Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">7.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
             
 
           </div>

@@ -102,27 +102,28 @@
 
 
   
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Headline Generation,LSTM," />
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="description" content="Paper Link Abstract an encoder-decoder recurrent neural network with LSTM units and attention effective at paraphrasing pay attention to specific input words   simplified attention mechanism performs">
+<meta name="keywords" content="Deep Learning,Machine Learning,Natural Language Processing,Headline Generation,LSTM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://hanvincent.github.io/hello-world/index.html">
+<meta property="og:title" content="Generating News Headlines with Recurrent Neural Networks">
+<meta property="og:url" content="https://hanvincent.github.io/2018/02/Generate-Headline/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="Paper Link Abstract an encoder-decoder recurrent neural network with LSTM units and attention effective at paraphrasing pay attention to specific input words   simplified attention mechanism performs">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-02-22T08:31:16.233Z">
+<meta property="og:updated_time" content="2018-02-22T08:40:47.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="Generating News Headlines with Recurrent Neural Networks">
+<meta name="twitter:description" content="Paper Link Abstract an encoder-decoder recurrent neural network with LSTM units and attention effective at paraphrasing pay attention to specific input words   simplified attention mechanism performs">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hanvincent.github.io/hello-world/"/>
+  <link rel="canonical" href="https://hanvincent.github.io/2018/02/Generate-Headline/"/>
 
 
 
@@ -131,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>Hello World | HanVincent</title>
+  <title>Generating News Headlines with Recurrent Neural Networks | HanVincent</title>
   
 
 
@@ -284,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/2018/02/Generate-Headline/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Han">
@@ -301,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Generating News Headlines with Recurrent Neural Networks</h1>
         
 
         <div class="post-meta">
@@ -313,7 +314,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-11T15:24:38+08:00">2018-02-11</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:53:32+08:00">2018-02-13</time>
             
 
             
@@ -323,6 +324,24 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Notes/" itemprop="url" rel="index"><span itemprop="name">Paper Notes</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -331,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2018/02/Generate-Headline/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/Generate-Headline/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -340,7 +359,7 @@
 
           
           
-             <span id="/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2018/02/Generate-Headline/" class="leancloud_visitors" data-flag-title="Generating News Headlines with Recurrent Neural Networks">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -371,15 +390,157 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p><a href="https://nlp.stanford.edu/courses/cs224n/2015/reports/1.pdf" target="_blank" rel="noopener">Paper Link</a></p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li>an encoder-decoder recurrent neural network with LSTM units and attention<ul>
+<li>effective at paraphrasing</li>
+<li>pay attention to specific input words</li>
+</ul>
+</li>
+<li>simplified attention mechanism performs better than complex attention mechanism</li>
+</ul>
+<a id="more"></a>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><ul>
+<li>Recurrent NN 常被使用在機器翻譯、語音識別、閱讀理解</li>
+<li>參考的論文是以 simpler attention-based model 完成產生新聞標題（而非 RNN）</li>
+</ul>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><ul>
+<li>使用 encoder-decoder architecture, both encoder &amp; decoder are recurrent NN</li>
+<li>Encoder<ul>
+<li>每一次 input 只輸入一個字</li>
+</ul>
+<ol>
+<li>每個input word 先經過 embedding layer 轉乘 distributed representation</li>
+<li>再丟到利用前一個字生成的 hidden layer，此層為 multi-layer neural network.<br><small><em>(That distributed representation is then combined using a multi-layer neural network with the hidden layers generated after feeding in the previous word, or all 0’s for the first word in the text.)</em></small></li>
+</ol>
+</li>
+<li><p>Decoder</p>
+<ul>
+<li>用最後一個 input word 產生的 hidden layer 當作 decoder input<br><small><em>(The decoder take as input the hidden layers generated after feeding in the last word of the input text)</em></small></li>
+</ul>
+<ol>
+<li>最後一個 input 為 <eos> ，餵入後轉成 distributed representation</eos></li>
+<li>藉由 softmax layer 和 attention 機制一個字接著一個字的產生新聞標題，同樣地每個 output word 都會被當成產生下一個字的 input，新聞標題同樣以 <eos> 做結尾</eos></li>
+</ol>
+</li>
+<li><p>整理理解後：</p>
+<ul>
+<li>encoder 過程不會有 ouput，只有每次訓練出來的 state 給下個神經使用（應該為 memory 的概念）</li>
+<li>encoder 和 decoder 中間是以 <eos> 當作 input 作為連接</eos></li>
+<li>decoder 過程皆以預測的 output 作為預測下一個字的 input</li>
+</ul>
+</li>
+<li><p>Loss function<br>$$-log\ p(y_1,…,y_{T^{‘}}|x_1,…x_T)<br>=-\sum^T_{t=1}log\ p(y_t|y_1,…,y_{t-1},x_1,…x_T)$$</p>
+</li>
+<li><p>training 過程中使用 <strong>teacher forcing</strong></p>
+<ul>
+<li>在 decoder 時原該將上個預測字作為 input，卻使用真正標題對應該位置的字作為 input</li>
+<li>但在 testing 中，input 完全為實際預測的上個字，導致 training 和 testing 沒有關連ㄎdㄎ</li>
+<li>為了克服這項問題，training 過程，改成10%機率餵入 generated word 而非 expected word</li>
+<li>testing 過程，使用 beam-search decoder 一次產生一個字，於每次 extending the $B$ highest probability sequences</li>
+</ul>
+</li>
+<li><p>4層 LSTM units 的隱藏層，每層 600 個 hidden units</p>
+</li>
+<li>dropout 但效果不彰，不使用</li>
+<li>使用均勻分布 [-0.1; 0.1] 初始化大部分參數</li>
+<li>使用訓練文本中出現字頻的 log-probability 初始化 softmax layer 中每個字的 biases</li>
+<li><p>Learning 過程</p>
+<ul>
+<li>Learning rate = 0.01</li>
+<li>RMSProp adative gradient method, decay = 0.9, momentum = 0.9</li>
+<li>訓練 9 epochs, 5th epoch後，每 epoch 減半 learning rate</li>
+<li>batch size = 384 examples，但 batching 卻複雜化 model，因為每句長度不一</li>
+<li>固定 input 和 output 最大長度，並且使用特別的邏輯去確保正確的隱藏層 states 被餵入一開始的decoder ，以及預測到最後不會有損失發生</li>
+</ul>
+<h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h3><ul>
+<li>幫助神經網路記住輸入的特定面向，包含數字和名稱</li>
+<li>使用於預測每個字時，根據所有 input 字計算該字的重要性，並利用此去計算該 output 的 weight。<br> <small><em>(For each output word the attention mechanism computes a weight over each of the input words that determines how much attention should be paid to that input word.)</em></small></li>
+<li>weights 總和為1，並在處理完該句最後字時拿來計算最後一層隱藏層的 weighted average，weighted average, referred to as the context, is then input into the softmax layer along with the last hidden layer from the current step of the decoding.</li>
+</ul>
+</li>
+<li><p>complex attention</p>
+<ul>
+<li>= dot mechanism</li>
+<li>input word 在位置 t 時的 attention weight 是<br>$a_{y_{t^{‘}}}(t)=exp(h^T_{x_t}h_{y_{t^{‘}}}) / \sum^T_texp(h^T_{x_t}h_{y_{t^{‘}}}) \<br>h_{x_t} 代表處理完第 t 個 input word後的最後一層隱藏層 \<br>h_{y_{t^{‘}}}代表 last\ hidden\ layer\ from\ the\ current\ step\ of\ decoding$</li>
+<li>同樣的 hidden units(600) 同時被用來計算 attention weight 和 context</li>
+</ul>
+</li>
+<li><p>simple attention</p>
+<ul>
+<li>處理完每個 input word 產生的最後一層的 hidden units 被切成 50, 550 兩部分</li>
+<li>50 units 被拿來計算 attention weight</li>
+<li>550 units 被拿來計算 context</li>
+<li>current step of decoding 的最後一層隱藏單位一樣也被切成50, 550</li>
+<li>50 拿來計算 attention weight</li>
+<li>550 給 softmax layer</li>
+</ul>
+</li>
+</ul>
+<h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul>
+<li>English Gigaword dataset from the Stanford Linguistics department</li>
+<li>前處理後，有5.5M篇文章，236M單字</li>
+<li>Preprocessing<ul>
+<li>lowercased and tokenized, 移除標點符號</li>
+<li>僅保留第一段</li>
+<li>加入 <eos> 於標題和內文結尾</eos></li>
+<li>無標題、無內文、標題長度超過25字、內文長度超過50字等資料皆移除</li>
+<li>使用前40,000高頻字，其餘以 <unk> 取代</unk></li>
+<li>data 切割成 training set 和 holdout set，holdout set 僅包含上個月的資料，為防止重複資料，完全不採用上上個月的資料</li>
+<li>隨機洗亂 training data</li>
+</ul>
+</li>
+<li>Dataset Issues<ul>
+<li>還是會有些雜音存在於資料，像是連字號形式，但是好的 model 應能處理這些雜音，因此不過濾</li>
+</ul>
+</li>
+</ul>
+<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><ul>
+<li>看 training 和 holdout 的 loss</li>
+<li>BLEU evaluation metric<ul>
+<li>用於 holdout set(為了效率，只用 384 examples)</li>
+<li>looks at what fraction of n-grams of different lengths from the expected headlines are actually output by the model.</li>
+<li>並考慮產生的標題相較於真實標題的字數</li>
+<li>metric 同時直接應用於 384 heldout example，而非一個個 example 計算</li>
+</ul>
+</li>
+</ul>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><ul>
+<li>training loss 通常比 holdout loss 高，因為計算 holdout loss 過程並沒餵入 10% 的預測字</li>
+<li>訓練和測試資料來自同份報社則效果不錯，並懂得換句話說</li>
+<li>預測 Huffington Post 和 Forbes 時效果較差，可能和文章寫法有關</li>
+</ul>
+<h3 id="Detail"><a href="#Detail" class="headerlink" title="Detail"></a>Detail</h3><ul>
+<li><p>存在最後一層的資料</p>
+<ul>
+<li>$o_{y_{t^{‘}}}=W_{co}c_{y_{t^{‘}}}+W_{ho}h_{y_t^{‘}}+b_o$ 計算 input to the softmax function<br>$y_{t^{‘}}$ for the current step of decoding<br>$c_{y_{t^{‘}}}$ context computed for $y_{t^{‘}}$<br>$h_{y_{t^{‘}}}$ last hidden layser for $y_{t^{‘}}$<br>$W_{co}, W_{ho}, b_o$ 是 model parameters</li>
+<li>利用最高分的 ouput 字透過 $W_{ho}h_{y_{t^{‘}}}+b_o$ 去觀察 hidden layer 對 output 產生什麼影響；也透過 $W_{co}h_{y_{t}}+b_o$ 觀察 attention context</li>
+<li>鑑於 context 只是 a weighted sum over the hidden layers of the decoder，我們可以計算 $W_{co}h_{x_{t}}+b_o$ for each of the input positions，並且在神經網路關注每個 input 位置的條件下，了解哪個字應該被記憶(recalled)</li>
+<li>透過舉例，了解 network 有時採取很多步驟才 encode 特定字</li>
+<li>而在 decoding 階段，關聯字則比較有關</li>
+</ul>
+</li>
+<li><p>attention weight vector 如何被計算</p>
+<ul>
+<li>已有初步的計算 attention weight vector 理論</li>
+<li>假設 nework大略記得哪個字應該被產生，dot product $h^T_{x_t}h_{y_t^{‘}}$ 會計算被記住字和實際字之間的相似度</li>
+<li>e.g. 如果 network 記得下個字跟數字有關，且能夠產生和數字很關的字，attention mechanism 將會允許他得到該數字</li>
+<li>因為 decoder 最後一層隱藏層的每個單位和 encoder 最後一層隱藏層的每個單位都會在同樣空間，因此計算 $W_{co}h_{y_{t^{‘}}}+b_o$ 並選擇最高分數的字是具有意義的</li>
+<li>simple attention mechanism 不僅幫助分析哪些 units 影響 attention，且也減少了同時計算 attention weight vector 和 context的噪音</li>
+<li>過程中每一個神經元都會有各自功能，像是抓出人名國名等</li>
+<li>在 encoding 的神經元和 decoding 的神經元會互相影響</li>
+<li>在 decoding 的神經元會視情況、時間不同而有不同的現象</li>
+</ul>
+</li>
+</ul>
+<h3 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h3><ul>
+<li>當 decoding beams 的數量很小時，decoding 較早結束，進而寫出不正確的細節</li>
+<li>當 beams 的數量較大時，容易產生較無關聯且較常出現於 input 的標題，因為增加了「產生機率數值最大的句子」的機率</li>
+<li>因為很難拿捏 beams 的數量，這裡只用 2 decoding beams 給BLEU evaluation，若能解決第二個問題，則可以用較大的 beams 來產生更好的結果</li>
+</ul>
+<h3 id="備註"><a href="#備註" class="headerlink" title="備註"></a>備註</h3><ul>
+<li>這篇參考許多論文</li>
+</ul>
 
       
     </div>
@@ -398,6 +559,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
+          
+            <a href="/tags/Headline-Generation/" rel="tag"># Headline Generation</a>
+          
+            <a href="/tags/LSTM/" rel="tag"># LSTM</a>
+          
+        </div>
+      
 
       
       
@@ -407,14 +582,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/02/Dual-SL/" rel="next" title="Dual Supervised Learning">
+                <i class="fa fa-chevron-left"></i> Dual Supervised Learning
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/PaperNotes/2017/Glove-Global-Vector-for-Word-Representation/" rel="prev" title="Glove - Global Vector for Word Representation">
-                Glove - Global Vector for Word Representation <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/Headline-Generation/" rel="prev" title="Headline Generation Using Recurrent Neural Networks">
+                Headline Generation Using Recurrent Neural Networks <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -594,7 +773,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Background"><span class="nav-number">2.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">3.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention"><span class="nav-number">4.</span> <span class="nav-text">Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dataset"><span class="nav-number">5.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation"><span class="nav-number">6.</span> <span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis"><span class="nav-number">7.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detail"><span class="nav-number">8.</span> <span class="nav-text">Detail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Error"><span class="nav-number">9.</span> <span class="nav-text">Error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#備註"><span class="nav-number">10.</span> <span class="nav-text">備註</span></a></li></ol></div>
             
 
           </div>
@@ -942,6 +1121,29 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

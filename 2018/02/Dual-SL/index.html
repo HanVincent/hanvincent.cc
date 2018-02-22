@@ -102,30 +102,28 @@
 
 
   
-  <meta name="keywords" content="Deep Learning,Coursera," />
+  <meta name="keywords" content="Machine Learning,Machine Translation,Natural Language Processing," />
 
 
-<meta name="description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
-<meta name="keywords" content="Deep Learning,Coursera">
+<meta name="description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
+<meta name="keywords" content="Machine Learning,Machine Translation,Natural Language Processing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Deep Learning on Coursera">
-<meta property="og:url" content="https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/index.html">
+<meta property="og:title" content="Dual Supervised Learning">
+<meta property="og:url" content="https://hanvincent.github.io/2018/02/Dual-SL/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
+<meta property="og:description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/negative_sampling.jpeg">
-<meta property="og:updated_time" content="2018-02-22T08:33:58.633Z">
+<meta property="og:updated_time" content="2018-02-22T08:41:10.568Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Deep Learning on Coursera">
-<meta name="twitter:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
-<meta name="twitter:image" content="https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/negative_sampling.jpeg">
+<meta name="twitter:title" content="Dual Supervised Learning">
+<meta name="twitter:description" content="Paper Link 前言很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/"/>
+  <link rel="canonical" href="https://hanvincent.github.io/2018/02/Dual-SL/"/>
 
 
 
@@ -134,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>Deep Learning on Coursera | HanVincent</title>
+  <title>Dual Supervised Learning | HanVincent</title>
   
 
 
@@ -287,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/2018/02/Dual-SL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Han">
@@ -304,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Deep Learning on Coursera</h1>
+          <h1 class="post-title" itemprop="name headline">Dual Supervised Learning</h1>
         
 
         <div class="post-meta">
@@ -316,7 +314,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T12:06:08+08:00">2018-02-13</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:38:36+08:00">2018-02-13</time>
             
 
             
@@ -337,7 +335,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Study-Notes/" itemprop="url" rel="index"><span itemprop="name">Study Notes</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Notes/" itemprop="url" rel="index"><span itemprop="name">Paper Notes</span></a></span>
 
                 
                 
@@ -352,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/StudyNotes/Deep-Learning-on-Coursera/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/StudyNotes/Deep-Learning-on-Coursera/" itemprop="commentsCount"></span>
+                <a href="/2018/02/Dual-SL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/Dual-SL/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -361,7 +359,7 @@
 
           
           
-             <span id="/StudyNotes/Deep-Learning-on-Coursera/" class="leancloud_visitors" data-flag-title="Deep Learning on Coursera">
+             <span id="/2018/02/Dual-SL/" class="leancloud_visitors" data-flag-title="Dual Supervised Learning">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -392,55 +390,182 @@
       
 
       
-        <h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><p>Learn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.</p>
+        <p><a href="https://arxiv.org/pdf/1707.00415.pdf" target="_blank" rel="noopener">Paper Link</a></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很多時候，某個任務的input/output是另一個任務的output/input，像是下面的dual form tasks，儘管這些任務是雙向對稱的，但大多各自訓練model，而這篇研究目標是利用此雙向特性達到更好的效果。</p>
 <a id="more"></a>
 <ul>
-<li><p>Loss function: the error for a single training example</p>
-</li>
-<li><p>Cost function: the average of the loss functions of the entire training set.</p>
-</li>
-<li><p>derivative just means slope of the line</p>
-</li>
-<li><p>vector/matrix multiplication is faster than for-loop</p>
-</li>
-<li><p>High bias: too many wrong prediction; High variance: too overfitting training data</p>
-</li>
-</ul>
-<h3 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h3><h3 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h3><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><ul>
-<li>Speech recognition</li>
-<li>Music generation</li>
-<li>Sentiment classification</li>
-<li>DNA sequence anlaysis</li>
-<li>Machine translation</li>
-<li>Video activity recognition</li>
-<li>Name entity recognition</li>
-</ul>
-<h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><ul>
-<li>Basic representation: one-hot encoding</li>
-<li><p>If word not in dictionary?</p>
-</li>
-<li><p>Why not a standard network?</p>
-<ul>
-<li>Inputs, outputs can be different length</li>
-<li>Doesn’t share features learned across different position of text</li>
+<li>Supervised learning tasks in dual forms<ul>
+<li>translation (Fr -&gt; En / En -&gt; Fr)</li>
+<li>speech recognition / text to speech</li>
+<li>image classification / image generation</li>
 </ul>
 </li>
-<li><p>Recurrent Neural Network</p>
-<ul>
-<li>Usually starts with zero vector</li>
-<li>Forward propagation activation function: hidden - ReLU, tanh, output - sigmoid</li>
-<li>One-to-many, many-to-many, one-to-one, many-to-one</li>
-<li>Language Model: calculate the probability of sentence</li>
-<li>character-level language model: no worry about <unk> but cost computationally expensive and can not learn words relationship</unk></li>
-<li>Vanishing gradient: weakness of basic NN, so use LSTM, GRU</li>
+</ul>
+<h3 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h3><h4 id="目的：同時訓練-dual-models"><a href="#目的：同時訓練-dual-models" class="headerlink" title="目的：同時訓練 dual models"></a>目的：同時訓練 dual models</h4><h4 id="舉例證明效果更好："><a href="#舉例證明效果更好：" class="headerlink" title="舉例證明效果更好："></a>舉例證明效果更好：</h4><ol>
+<li>Neural Machine Translation</li>
+<li>Image Processing on CIFAR-10</li>
+<li>Sentiment Analysis on IMDB dataset</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Def</th>
+<th style="text-align:left">Illustration</th>
+<th style="text-align:left">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>primal task:</strong></td>
+<td style="text-align:left"><em>x $\rightarrow$ y</em></td>
+<td style="text-align:left">P(y\</td>
+<td>x; $\theta$~xy~)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>dual task:</strong></td>
+<td style="text-align:left"><em>y $\rightarrow$ x</em></td>
+<td style="text-align:left">P(x\</td>
+<td>y; $\theta$~yx~)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Probabilistic-Duality"><a href="#Probabilistic-Duality" class="headerlink" title="Probabilistic Duality:"></a>Probabilistic Duality:</h4><p>$$P(x, y) = P(x)P(y|x; \theta_{xy}) = P(y)P(x|y; \theta_{yx}) \<br>\theta: model$$</p>
+<p>困難：如果個別計算 cost function ，則上方公式難保成立。</p>
+<p>object 1: $min_{\theta_{xy}}(1/n)\sum^n_{i=1}\ell_1(f(x_i;\theta_{xy}), y_i),$<br>object 2: $min_{\theta_{yx}}(1/n)\sum^n_{i=1}\ell_2(g(y_i;\theta_{yx}), x_i),$<br>s.t. $P(x)P(y|x;\theta_{xy}), \forall x,y,$</p>
+<p>解決：將上述公式轉為 penalty term ( 使用 Lagrange Multipliers) ，可將penalty term 視為 data-dependent regularization term.</p>
+<p>然而，因為$P(x), P(y)$ (marginal distributions) 並不好取得，用$\hat{P}(x), \hat{P}(y)$ (empirical marginal distributions) 取代。</p>
+<p>利用 Lagrange multipliers 和 equality constraint of probabilistic duality(以下稱雙向機率對等條件) 代入上方 objective functions.</p>
+<ol>
+<li>將雙向機率對等條件 regularize<br>$$\ell_{duality}=(log\hat{P}(x)+logP(y|x;\theta_{xy})-log\hat{P}(y)-logP(x|y;\theta_{yx}))^2$$</li>
+<li>Minimize the weighted combination and the above regularization term，針對 objective 1. &amp; 2. 加上 $\lambda\ell_{duality}$，可用SGD, Adam, Adadelta。</li>
+</ol>
+<p><small>備註：提供 theoretical analysis 確保DSL的 generalization bound；提供演算法。</small></p>
+<h3 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h3><p>此方法也對 unsupervised learning 帶來好處，以翻譯為例，$x \rightarrow y’$，再由$y’ \rightarrow x’$，透過減少$x$和$x’$的差異，雙向models都會被優化。</p>
+<p>$\ell_{duality}$ (regularization term) 是 data dependent，意指每個樣本影響 regularization term，每個 model 影響其他 model 的 regularization；然而，Lasso, SVM 是 data independent。</p>
+<p>DSL 之必要條件：</p>
+<ol>
+<li>Duality 必須存在(for the two tasks)</li>
+<li>Primal 和 Dual models 必須可訓練(trainable)</li>
+<li>$\hat{P}(X)$ and $\hat{P}(Y)$ 必須可取得</li>
+</ol>
+<h3 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h3><h4 id="機器翻譯"><a href="#機器翻譯" class="headerlink" title="機器翻譯"></a>機器翻譯</h4><ul>
+<li>參考 Bahdanau et al., 2015; Jean et al., 2015</li>
+<li>Tasks<ol>
+<li>En $\leftrightarrow$ Fr<ul>
+<li>Dataset from previous papers</li>
 </ul>
 </li>
-<li><p>Word2Vec</p>
-<ul>
-<li>Skip-gram, CBOW: need to sum up all candidate vectors, which is expensive cost</li>
-<li>Negative Sampling: more efficiently to compute, only choose some negative samples to train<img src="/StudyNotes/Deep-Learning-on-Coursera/negative_sampling.jpeg" title="[Negative Sampling Formula]"></li>
+<li>En $\leftrightarrow$ De(Germany)<ul>
+<li>Dataset from newstest 2012, 2013, 2014</li>
 </ul>
 </li>
+<li>En $\leftrightarrow$ Zh(Chinese)<ul>
+<li>Dataset from NIST2006, 2008, 2012</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Model<ul>
+<li>使用 GRU as the recurrent module (上述 paper) 實踐 seq2seq model</li>
+<li>Word embedding 維度為620</li>
+<li>Hidden node 為 1000</li>
+<li>單字數量分別為 30k, 50k, 30k</li>
+<li>Baseline: RNNSearch</li>
+</ul>
+</li>
+<li>Evaluation Metrics<ul>
+<li>Tokenized case-sensitive BLEU</li>
+<li>分數越大品質越好</li>
+<li>case-insensitive BLEU for Zh $\rightarrow$ En</li>
+</ul>
+</li>
+<li>Training Procedure<ol>
+<li>Initialize two models by two warm-start models（上述 paper），從後段得知為 RNNSearch 訓練出來的 models 作為 initial</li>
+<li>Use SGD with minibatch size of 80 to optimize</li>
+<li>Initialize learning rate = 0.2, 持續減半直到 BLEU score on the validation set 無法明顯成長</li>
+<li>The gradient clip is set as 1.0, 5.0 and 1.0 individually</li>
+<li>根據經驗，$\lambda_{xy}$ and $\lambda_{yx}$ are set as 0.01</li>
+</ol>
+</li>
+<li>Result<ul>
+<li>可以同時改良兩個models</li>
+<li>En $\rightarrow$ Fr 進步最多</li>
+<li>Regularize probabilistic duality constraint 會降低 $\ell_{duality}$，RNNSearch $\rightarrow$ DSL</li>
+</ul>
+</li>
+<li>Improvement<ul>
+<li>Replace “UNK”(unknown word) with corresponding word-level translations</li>
+<li>使用更好的 models 作為 initials ，取代原本從 RNNSearch 得到的 warm-start models</li>
+</ul>
+</li>
+<li>Advantages<ul>
+<li>Improve by leveraging the stuctural duality of sentences</li>
+<li>consider more contextual information</li>
+<li>handle the plural form</li>
+</ul>
+</li>
+</ul>
+<h4 id="圖像處理"><a href="#圖像處理" class="headerlink" title="圖像處理"></a>圖像處理</h4><ul>
+<li>Dataset: CIFAR-10 with 10 classes of images</li>
+<li>ResNet for image classifiaciont; PixelCNN++ for image generation</li>
+<li>$\chi$ for image space; $y$ for category space related to CIFAR-10</li>
+<li>Marginal Distributions use uniform distribution</li>
+<li>Models<ul>
+<li>Baseline for image classification: ResNet-32, ResNet-110; for image generation, PixelCNN++</li>
+</ul>
+</li>
+<li>Evaluation Metrics<ul>
+<li>classification error rates for image classfication.</li>
+<li>bits per dimension(bpd) (Salimans et al., 2016) for image generation. for an image x with label y, the bpd is<br>$$ -(\sum^{N_x}_{i=1}logP(x_i|x_{x&lt;i}, y)) / (N_xlog(2)) $$</li>
+</ul>
+</li>
+<li>Training Procedure<ul>
+<li>Initialize both the primal and dual models with ResNet model and PixelCNN++ model pre-trained independently and separately.</li>
+<li>Initialize learning rate of image classification model as 0.1 and that of image generation model as 0.0005</li>
+<li>將近兩週才收斂</li>
+</ul>
+</li>
+<li>Result<ul>
+<li>Image classification 有進步好棒棒</li>
+<li>Image generation 比較困難，採用 ResNet-110 則 bpd 減少0.01，0.01不大卻是進步許多</li>
+</ul>
+</li>
+</ul>
+<h4 id="情感分析"><a href="#情感分析" class="headerlink" title="情感分析"></a>情感分析</h4><ul>
+<li>$\chi$ 代表句子，$y$代表情緒</li>
+<li>Dataset IMDB movie review </li>
+<li>Marginal Distributions use uniform distribution, positive(0.5) or negative(0.5)</li>
+<li>Model<ul>
+<li>LSTM for sentiment classification model</li>
+<li>embedding dimension = 500</li>
+<li>hidden layer size = 1024</li>
+<li>LSTM for sentence generation, input:<br>$$W^e_wE_wx_{t-1} + W^e_sE_sy$$<br>$x_{t-1}$ t-1’th word<br>$E_w$ and $E_s$ embedding matrices and sentiment label<br>$W’s$ represent the connections between embedding matrix and LSTM cells</li>
+<li>一個字一個字產生成句子，該字被產生的機率和下述公式成正比，contextual language model(CLM) $$exp(W^d_wE_wx_{t-1}+W^d_sE_sy+W_hh_{t-1})$$</li>
+</ul>
+</li>
+<li>Evaluation Metrics<ul>
+<li>Use error rate</li>
+</ul>
+</li>
+<li>Training Procedure<ol>
+<li>Baseline models: use Adadelta as the optimization method to train model</li>
+<li>Initialize the two models for DSL</li>
+<li>Use plain SGD </li>
+<li>Initialize learning rate of 0.2</li>
+<li>Decrease it to 0.02 當 validation set 沒明顯進步時</li>
+<li>$\lambda_{xy}=(5/l_x)^2$ and $\lambda_{yx}=(0.5/l_x)^2$，$l_x$ 為x的長度</li>
+</ol>
+</li>
+<li>Result<ul>
+<li>成功減少分類錯誤</li>
+<li>稍微改進 perplexity for sentence generation，原因可能為 label 僅能提供 1 bit 資訊 </li>
+<li>Baseline model 通常抓 training data 的高頻字</li>
+<li>CLM in DSL 可以抓到更準確或強烈的字</li>
+</ul>
+</li>
+</ul>
+<h3 id="探討"><a href="#探討" class="headerlink" title="探討"></a>探討</h3><ul>
+<li>根據三項測驗，發現不需要做 warm-start models 也可以達到比 baseline 好的效果，差別只在速度</li>
 </ul>
 
       
@@ -462,9 +587,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Coursera/" rel="tag"># Coursera</a>
+            <a href="/tags/Machine-Translation/" rel="tag"># Machine Translation</a>
+          
+            <a href="/tags/Natural-Language-Processing/" rel="tag"># Natural Language Processing</a>
           
         </div>
       
@@ -477,8 +604,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Miscellany/GEC-log/" rel="next" title="GEC log">
-                <i class="fa fa-chevron-left"></i> GEC log
+              <a href="/2018/02/Glove/" rel="next" title="Glove - Global Vector for Word Representation">
+                <i class="fa fa-chevron-left"></i> Glove - Global Vector for Word Representation
               </a>
             
           </div>
@@ -486,6 +613,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/Generate-Headline/" rel="prev" title="Generating News Headlines with Recurrent Neural Networks">
+                Generating News Headlines with Recurrent Neural Networks <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -664,7 +795,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutional-Neural-Networks"><span class="nav-number">2.</span> <span class="nav-text">Convolutional Neural Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-Models"><span class="nav-number">3.</span> <span class="nav-text">Sequence Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">3.1.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-number">3.2.</span> <span class="nav-text">Notes</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#內容"><span class="nav-number">2.</span> <span class="nav-text">內容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目的：同時訓練-dual-models"><span class="nav-number">2.1.</span> <span class="nav-text">目的：同時訓練 dual models</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#舉例證明效果更好："><span class="nav-number">2.2.</span> <span class="nav-text">舉例證明效果更好：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probabilistic-Duality"><span class="nav-number">2.3.</span> <span class="nav-text">Probabilistic Duality:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#討論"><span class="nav-number">3.</span> <span class="nav-text">討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#應用"><span class="nav-number">4.</span> <span class="nav-text">應用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#機器翻譯"><span class="nav-number">4.1.</span> <span class="nav-text">機器翻譯</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#圖像處理"><span class="nav-number">4.2.</span> <span class="nav-text">圖像處理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情感分析"><span class="nav-number">4.3.</span> <span class="nav-text">情感分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#探討"><span class="nav-number">5.</span> <span class="nav-text">探討</span></a></li></ol></div>
             
 
           </div>
@@ -1012,6 +1143,29 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
