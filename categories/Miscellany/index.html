@@ -340,8 +340,9 @@
        function showGitment() {
          $("#gitment_title").attr("style", "display:none");
          $("#container").attr("style", "").addClass("gitment_container");
+         var fileName = window.location.pathname.split('/').pop();
          var gitment = new Gitment({
-           id: window.location.pathname,
+           id: fileName,
            theme: myTheme,
            owner: '',
            repo: '',
