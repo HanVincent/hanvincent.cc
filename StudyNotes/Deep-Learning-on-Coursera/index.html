@@ -105,18 +105,20 @@
   <meta name="keywords" content="Deep Learning,Coursera," />
 
 
-<meta name="description" content="TargetSome notes for Deep Learning to review.">
+<meta name="description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
 <meta name="keywords" content="Deep Learning,Coursera">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep Learning on Coursera">
 <meta property="og:url" content="https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="TargetSome notes for Deep Learning to review.">
+<meta property="og:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-02-14T04:17:47.794Z">
+<meta property="og:image" content="https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/negative_sampling.jpeg">
+<meta property="og:updated_time" content="2018-02-22T07:15:28.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Learning on Coursera">
-<meta name="twitter:description" content="TargetSome notes for Deep Learning to review.">
+<meta name="twitter:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
+<meta name="twitter:image" content="https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/negative_sampling.jpeg">
 
 
 
@@ -351,8 +353,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/StudyNotes/Deep-Learning-on-Coursera/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="StudyNotes/Deep-Learning-on-Coursera/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/StudyNotes/Deep-Learning-on-Coursera/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -391,7 +392,7 @@
       
 
       
-        <h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><p>Some notes for Deep Learning to review.</p>
+        <h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><p>Learn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.</p>
 <a id="more"></a>
 <ul>
 <li><p>Loss function: the error for a single training example</p>
@@ -403,6 +404,42 @@
 <li><p>vector/matrix multiplication is faster than for-loop</p>
 </li>
 <li><p>High bias: too many wrong prediction; High variance: too overfitting training data</p>
+</li>
+</ul>
+<h3 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h3><h3 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h3><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><ul>
+<li>Speech recognition</li>
+<li>Music generation</li>
+<li>Sentiment classification</li>
+<li>DNA sequence anlaysis</li>
+<li>Machine translation</li>
+<li>Video activity recognition</li>
+<li>Name entity recognition</li>
+</ul>
+<h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><ul>
+<li>Basic representation: one-hot encoding</li>
+<li><p>If word not in dictionary?</p>
+</li>
+<li><p>Why not a standard network?</p>
+<ul>
+<li>Inputs, outputs can be different length</li>
+<li>Doesn’t share features learned across different position of text</li>
+</ul>
+</li>
+<li><p>Recurrent Neural Network</p>
+<ul>
+<li>Usually starts with zero vector</li>
+<li>Forward propagation activation function: hidden - ReLU, tanh, output - sigmoid</li>
+<li>One-to-many, many-to-many, one-to-one, many-to-one</li>
+<li>Language Model: calculate the probability of sentence</li>
+<li>character-level language model: no worry about <unk> but cost computationally expensive and can not learn words relationship</unk></li>
+<li>Vanishing gradient: weakness of basic NN, so use LSTM, GRU</li>
+</ul>
+</li>
+<li><p>Word2Vec</p>
+<ul>
+<li>Skip-gram, CBOW: need to sum up all candidate vectors, which is expensive cost</li>
+<li>Negative Sampling: more efficiently to compute, only choose some negative samples to train<img src="/StudyNotes/Deep-Learning-on-Coursera/negative_sampling.jpeg" title="[Negative Sampling Formula]"></li>
+</ul>
 </li>
 </ul>
 
@@ -476,17 +513,14 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
 
-
+  
 
         </div>
         
@@ -630,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.</span> <span class="nav-text">Target</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutional-Neural-Networks"><span class="nav-number">2.</span> <span class="nav-text">Convolutional Neural Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-Models"><span class="nav-number">3.</span> <span class="nav-text">Sequence Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">3.1.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-number">3.2.</span> <span class="nav-text">Notes</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -791,45 +825,6 @@
 
   
 
-  
-    <script id="dsq-count-scr" src="https://HanVincent.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://hanvincent.github.io/StudyNotes/Deep-Learning-on-Coursera/';
-        this.page.identifier = 'StudyNotes/Deep-Learning-on-Coursera/';
-        this.page.title = 'Deep Learning on Coursera';
-      };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://HanVincent.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
-  
-
-
-
 
 
 	
@@ -844,7 +839,48 @@
 
 
 
+  
 
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'HanVincent',
+            repo: 'HanVincent.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'c6876d6027132b8ca3158283d57b378c993e65dc',
+            
+                client_id: '10f8b61f4dfab9a871b4'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
