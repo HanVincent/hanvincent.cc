@@ -114,7 +114,7 @@
 <meta property="og:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="https://hanvincent.github.io/2018/02/DL-notes/negative_sampling.jpeg">
-<meta property="og:updated_time" content="2018-02-22T08:43:44.129Z">
+<meta property="og:updated_time" content="2018-03-04T10:54:37.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Learning on Coursera">
 <meta name="twitter:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
@@ -394,18 +394,33 @@
       
         <h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><p>Learn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.</p>
 <a id="more"></a>
-<ul>
-<li><p>Loss function: the error for a single training example</p>
+<h3 id="李宏毅’s-course"><a href="#李宏毅’s-course" class="headerlink" title="李宏毅’s course"></a>李宏毅’s course</h3><ul>
+<li><p>Machine Learning step:</p>
+<ol>
+<li>Define a set of function</li>
+<li>Goodness of function</li>
+<li>Pick the best function</li>
+</ol>
 </li>
-<li><p>Cost function: the average of the loss functions of the entire training set.</p>
+<li><p>Regression: output is “scalar” 數值</p>
 </li>
-<li><p>derivative just means slope of the line</p>
-</li>
-<li><p>vector/matrix multiplication is faster than for-loop</p>
-</li>
-<li><p>High bias: too many wrong prediction; High variance: too overfitting training data</p>
-</li>
+<li>Classification: Binary Classification (Yes/No), Multi-class classification (選擇題)</li>
+<li>Gradient Descent: step 取決於微分後的 f 及 learning rate。</li>
 </ul>
+<h3 id="林軒田’s-course-機器學習基石（上）"><a href="#林軒田’s-course-機器學習基石（上）" class="headerlink" title="林軒田’s course - 機器學習基石（上）"></a>林軒田’s course - 機器學習基石（上）</h3><ul>
+<li>從 hypotheses (H) 中推論出一個函式 g，近似理想的 f(x)</li>
+<li>Perceptrons &lt;=&gt; linear (binary) classifiers</li>
+<li>Hoeffding’s inequality: in big sample (N large), v is probably close to u (within $\epsilon$) $$P[|v-u| &gt; \epsilon] &lt;= 2 exp(-2\epsilon^2 N)$$<br>the statement “v = u” is probably approximately correct (PAC)</li>
+<li>Shattered: 擊倒，代表可以找出 2^n 個可能性，沒有 break point</li>
+</ul>
+<h3 id="未整理"><a href="#未整理" class="headerlink" title="未整理"></a>未整理</h3><ul>
+<li>Loss function: the error for a single training example</li>
+<li>Cost function: the average of the loss functions of the entire training set.</li>
+<li>derivative just means slope of the line</li>
+<li>vector/matrix multiplication is faster than for-loop</li>
+<li>High bias: too many wrong prediction; High variance: too overfitting training data</li>
+</ul>
+<p>// 還有四個主題未加入</p>
 <h3 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h3><h3 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h3><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><ul>
 <li>Speech recognition</li>
 <li>Music generation</li>
@@ -486,6 +501,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/AtoS IT Challenge 2018/" rel="prev" title="AtoS IT Challenge 2018">
+                AtoS IT Challenge 2018 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -570,7 +589,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -589,7 +608,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -628,7 +649,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -664,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutional-Neural-Networks"><span class="nav-number">2.</span> <span class="nav-text">Convolutional Neural Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-Models"><span class="nav-number">3.</span> <span class="nav-text">Sequence Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">3.1.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-number">3.2.</span> <span class="nav-text">Notes</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#李宏毅’s-course"><span class="nav-number">2.</span> <span class="nav-text">李宏毅’s course</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#林軒田’s-course-機器學習基石（上）"><span class="nav-number">3.</span> <span class="nav-text">林軒田’s course - 機器學習基石（上）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未整理"><span class="nav-number">4.</span> <span class="nav-text">未整理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutional-Neural-Networks"><span class="nav-number">5.</span> <span class="nav-text">Convolutional Neural Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-Models"><span class="nav-number">6.</span> <span class="nav-text">Sequence Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">6.1.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-number">6.2.</span> <span class="nav-text">Notes</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1012,6 +1037,29 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
