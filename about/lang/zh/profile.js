@@ -1,7 +1,7 @@
-const eng_profile = {
+const chi_profile = {
     about: {
-        firstName: "Vincent",
-        lastName: "Han",
+        firstName: "文彬",
+        lastName: "韓",
         state: "National Tsing Hua University · Hsinchu , Taiwan",
         phone: "(886) 987-999-556",
         email: "vincent.han.tw@gmail",

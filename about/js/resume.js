@@ -1,49 +1,48 @@
 (function ($) {
-  "use strict";
+    "use strict";
 
-  function render(section, name, content) {
-    $('#' + section).html(`
-    <div class="my-auto">
-        <h2 class="mb-5"> ${name} </h2> ${content} 
-    </div>`);
-  }
+    function append(section, name, content) {
+        $('#' + section).html(`
+            <div class="my-auto">
+                <h2 class="mb-5"> ${name} </h2> ${content} 
+            </div>`);
+    }
 
-  (() => {
-    const section = "about"
-    const { firstName, lastName, state, phone, email, bio, media } = profile[section];
-    const mlis = media.reduce((concat, curr) => concat + `
-        <li class="list-inline-item">
-            <a href="${curr.link}">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa ${curr.icon} fa-stack-1x fa-inverse"></i>
+    const getAbout = () => {
+        const section = "about"
+        const { firstName, lastName, state, phone, email, bio, media } = profile[section];
+        const name = isZH ? `<span class="text-primary">${lastName}</span>${firstName}` : `${firstName}<span class="text-primary">${lastName}</span>`
+        const mlis = media.reduce((concat, curr) => concat + `
+            <li class="list-inline-item">
+                <a href="${curr.link}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa ${curr.icon} fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>`, '');
+        const content = `
+            <div class="my-auto">
+                <span class="text-center d-block d-lg-none">
+                <img class="img-fluid img-profile rounded-circle w-50 mx-auto mb-3" src="img/profile.jpg" alt="HanVincent picture">
                 </span>
-            </a>
-        </li>`, '');
-    const content = `
-        <div class="my-auto">
-            <span class="text-center d-block d-lg-none">
-              <img class="img-fluid img-profile rounded-circle w-50 mx-auto mb-3" src="img/profile.jpg" alt="HanVincent picture">
-            </span>
-            <h1 class="mb-0">${firstName}
-                <span class="text-primary">${lastName}</span>
-            </h1>
-            <div class="subheading mb-5">
-                ${state} · ${phone} · 
-                <a href="mailto:${email}">${email}</a>
-            </div>
-            <p class="mb-5">${bio}</p>
-            <ul class="list-inline list-social-icons mb-0">${mlis}</ul>
-        </div>`
-    $("#" + section).html(content);
-  })();
+                <h1 class="mb-0">${name}</h1>
+                <div class="subheading mb-5">
+                    ${state} · ${phone} · 
+                    <a href="mailto:${email}">${email}</a>
+                </div>
+                <p class="mb-5">${bio}</p>
+                <ul class="list-inline list-social-icons mb-0">${mlis}</ul>
+            </div>`
+        $("#" + section).html(content);
+    }
 
-  (() => {
-    const section = "experience";
-    const { name, items } = profile[section];
-    const content = items.reduce((concat, item) => {
-      const lis = item.description.reduce((lis, curr) => lis + `<li>${curr}</li>`, '');
-      return concat + `
+    const getExperience = () => {
+        const section = "experience";
+        const { name, items } = profile[section];
+        const content = items.reduce((concat, item) => {
+            const lis = item.description.reduce((lis, curr) => lis + `<li>${curr}</li>`, '');
+            return concat + `
             <div class="resume-item d-flex flex-column flex-md-row mb-5">
                 <div class="resume-content mr-auto">
                     <h3 class="mb-0">${item.name}</h3>
@@ -55,15 +54,15 @@
                     <span class="text-primary">${item.time}</span>
                 </div>
             </div>`}, '')
-    render(section, name, content);
-  })();
+        append(section, name, content);
+    }
 
-  (() => {
-    const section = "education";
-    const { name, items } = profile[section];
-    const content = items.reduce((concat, item) => {
-      const lis = item.description.reduce((lis, curr) => lis + `<li>${curr}</li>`, '');
-      return concat + `
+    const getEducation = () => {
+        const section = "education";
+        const { name, items } = profile[section];
+        const content = items.reduce((concat, item) => {
+            const lis = item.description.reduce((lis, curr) => lis + `<li>${curr}</li>`, '');
+            return concat + `
             <div class="resume-item d-flex flex-column flex-md-row mb-5">
                 <div class="resume-content mr-auto">
                     <h3 class="mb-0">${item.name}</h3>
@@ -75,15 +74,15 @@
                     <span class="text-primary">${item.time}</span>
                 </div>
             </div>`}, '')
-    render(section, name, content);
-  })();
+        append(section, name, content);
+    }
 
-  (() => {
-    const section = "projects";
-    const { name, items } = profile[section];
-    const content = items.reduce((concat, item) => {
-      const lis = item.description.reduce((lis, curr) => lis + `<li>${curr}</li>`, '')
-      return concat + `
+    const getProjects = () => {
+        const section = "projects";
+        const { name, items } = profile[section];
+        const content = items.reduce((concat, item) => {
+            const lis = item.description.reduce((lis, curr) => lis + `<li>${curr}</li>`, '')
+            return concat + `
             <div class="resume-item d-flex flex-column flex-md-row mb-5">
                 <div class="resume-content mr-auto">
                     <h3 class="mb-0">${item.title}
@@ -97,54 +96,54 @@
                     <span class="text-primary">${item.time}</span>
                 </div>
             </div>`}, '');
-    render(section, name, content);
-  })();
+        append(section, name, content);
+    }
 
-  (() => {
-    const section = "skills";
-    const { name, programming, language } = profile[section];
-    const plis = programming.items.reduce((lis, item) => lis +
-      `<li class="list-inline-item">
-            <i class="devicon-${item}-plain"></i>
-        </li>`, '');
-    const llis = language.items.reduce((lis, item) => lis +
-      `<li>
-            <i class="fa-li fa ${language.icon}"></i>${item}
-        </li>`, '');
-    const content = `
-        <div class="subheading mb-3">${programming.name}</div>
-        <ul class="list-inline list-icons">${plis}</ul>
-        <div class="subheading mb-3">${language.name}</div>
-        <ul class="fa-ul mb-0">${llis}</ul>`
+    const getSkills = () => {
+        const section = "skills";
+        const { name, programming, language } = profile[section];
+        const plis = programming.items.reduce((lis, item) => lis +
+            `<li class="list-inline-item">
+                <i class="devicon-${item}-plain"></i>
+            </li>`, '');
+        const llis = language.items.reduce((lis, item) => lis +
+            `<li>
+                <i class="fa-li fa ${language.icon}"></i>${item}
+            </li>`, '');
+        const content = `
+            <div class="subheading mb-3">${programming.name}</div>
+            <ul class="list-inline list-icons">${plis}</ul>
+            <div class="subheading mb-3">${language.name}</div>
+            <ul class="fa-ul mb-0">${llis}</ul>`
 
-    render(section, name, content);
-  })();
+        append(section, name, content);
+    }
 
-  (() => {
-    const section = "interests";
-    const { name, paragraphs } = profile[section];
-    const content = paragraphs;
-    render(section, name, content);
-  })();
+    const getInterests = () => {
+        const section = "interests";
+        const { name, paragraphs } = profile[section];
+        const content = paragraphs;
+        append(section, name, content);
+    }
 
-  (() => {
-    const section = "awards";
-    const { name, icon, items } = profile[section];
-    const lis = items.reduce((concat, item) => concat + `
+    const getAwards = () => {
+        const section = "awards";
+        const { name, icon, items } = profile[section];
+        const lis = items.reduce((concat, item) => concat + `
         <li>
             <i class="fa-li fa ${icon} text-warning"></i>
             ${item.time} - ${item.award} - ${item.host}
         </li>`, '')
-    const content = `<ul class="fa-ul mb-0">${lis}</ul>`;
-    render(section, name, content);
-  })();
+        const content = `<ul class="fa-ul mb-0">${lis}</ul>`;
+        append(section, name, content);
+    }
 
-  (() => {
-    const section = "extracurricular";
-    const { name, items } = profile[section];
-    const content = items.reduce((concat, item) => {
-      const lis = item.description.reduce((lis, curr) => lis + `<li>${curr}</li>`, '');
-      return concat + `
+    const getExtracurricular = () => {
+        const section = "extracurricular";
+        const { name, items } = profile[section];
+        const content = items.reduce((concat, item) => {
+            const lis = item.description.reduce((lis, curr) => lis + `<li>${curr}</li>`, '');
+            return concat + `
             <div class="resume-item d-flex flex-column flex-md-row mb-5">
                 <div class="resume-content mr-auto">
                     <h3 class="mb-0">${item.position}</h3>
@@ -156,12 +155,34 @@
                     <span class="text-primary">${item.time}</span>
                 </div>
             </div>`}, '');
-    render(section, name, content);
-  })();
+        append(section, name, content);
+    }
 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function () {
-    $('.navbar-collapse').collapse('hide');
-  });
+    function render() {
+        getAbout();
+        getExperience();
+        getEducation();
+        getProjects();
+        getSkills();
+        getInterests();
+        getAwards();
+        getExtracurricular();
+    }
+
+    const version = [eng_profile, chi_profile];
+    let isZH = ((navigator.language || navigator.userLanguage) === 'zh-TW') ? 1 : 0; // 0 for English, 1 for Chinese
+    let profile = version[isZH];
+    render();
+
+    $('.lang-btn').click(() => {
+        isZH = 1 - isZH;
+        profile = version[isZH];
+        render();
+    });
+
+    // Closes responsive menu when a scroll trigger link is clicked
+    $('.js-scroll-trigger').click(() => {
+        $('.navbar-collapse').collapse('hide');
+    });
 
 })(jQuery); 

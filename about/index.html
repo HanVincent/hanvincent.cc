@@ -29,6 +29,9 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#">
       <span class="d-block d-lg-none">HanVincent</span>
+      <a class="lang-btn text-light btn btn-link d-block d-lg-none">
+        <i class="fa fa-language"></i>
+      </a>
       <span class="d-none d-lg-block">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="HanVincent picture">
       </span>
@@ -73,12 +76,14 @@
         </li>
       </ul>
     </div>
-    <a href="#"><small class="text-light">To English</small></a>
+    <a class="lang-btn text-light btn btn-link d-none d-lg-block">
+        <i class="fa fa-language"></i>
+    </a>
   </nav>
 
   <div class="tab-content container-fluid p-0" id="nav-tabContent">
     <section class="tab-pane fade show active resume-section p-3 p-lg-5 d-column" role="tabpanel" id="about" aria-labelledby="about-tab"></section>
-    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" id="experience" role="tabpanel" aria-labelledby="experience-tab"></section>
+    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="experience" aria-labelledby="experience-tab"></section>
     <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="education" aria-labelledby="education-tab"></section>
     <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="projects" aria-labelledby="projects-tab"></section>
     <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="skills" aria-labelledby="skills-tab"></section>
@@ -93,6 +98,7 @@
 
   <!-- Language setting -->
   <script src="lang/en/profile.js"></script>
+  <script src="lang/zh/profile.js"></script>
 
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
