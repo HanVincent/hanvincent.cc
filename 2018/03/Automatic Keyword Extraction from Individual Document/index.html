@@ -105,18 +105,18 @@
   <meta name="keywords" content="Keyword Recognition,Keyword Extraction," />
 
 
-<meta name="description" content="Abstract">
+<meta name="description" content="Abstract 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
 <meta name="keywords" content="Keyword Recognition,Keyword Extraction">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Automatic Keyword Extraction from Individual Document">
 <meta property="og:url" content="https://hanvincent.github.io/2018/03/Automatic Keyword Extraction from Individual Document/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="Abstract">
+<meta property="og:description" content="Abstract 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-03-08T10:00:13.153Z">
+<meta property="og:updated_time" content="2018-03-08T18:07:50.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Automatic Keyword Extraction from Individual Document">
-<meta name="twitter:description" content="Abstract">
+<meta name="twitter:description" content="Abstract 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
 
 
 
@@ -378,8 +378,41 @@
       
 
       
-        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><a id="more"></a>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3>
+        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li>關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words</li>
+</ul>
+<a id="more"></a>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+<li>Corpus-oriented methods <ul>
+<li>通常都是針對單個字，但是單個字在不同情境下有不同意思</li>
+</ul>
+</li>
+<li>Document-oriented methods <ul>
+<li>會擷取出相同的 keywords regardless of the current state of a corpus</li>
+<li>方法可以套用到任何大小的 documents 上</li>
+<li>先前的做法是結合 NLP 來偵測 POS tags / Noun Chunk / n-grams 等，並使用 supervised learning, machine-learning algorithm, or statistical methods</li>
+</ul>
+</li>
+<li>Graph-based ranking algorithm<ul>
+<li>TextRank is based on words’ associations in the graph</li>
+<li>前幾名則被選為 keywords，並將相連的 keywords 視為同組 (multi-word keywords)</li>
+</ul>
+</li>
+<li>Chi-squaare measrue<ul>
+<li>Determine the bias of word co-occurrences used to rank words and phrases as keywords</li>
+<li>Degree of biases is not reliable when term frequency is small</li>
+</ul>
+</li>
+<li>Rapid Automatic Keyword Extraaction (RAKE) // this paper<ul>
+<li>unsupervised, domain-independent, and language-independent method</li>
+<li>如果要達到更高準確率，則會比 TextRank 需要更多計算成本</li>
+</ul>
+</li>
+</ul>
+<h3 id="RAKE"><a href="#RAKE" class="headerlink" title="RAKE"></a>RAKE</h3><ul>
+<li>keywords 通常是複合字且很少包含標點符號或 stopwords</li>
+</ul>
+
       
     </div>
 
@@ -636,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RAKE"><span class="nav-number">3.</span> <span class="nav-text">RAKE</span></a></li></ol></div>
             
 
           </div>
