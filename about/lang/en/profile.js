@@ -17,6 +17,10 @@ const profile = {
             icon: "fa-github",
             link: "https://github.com/HanVincent"
         }, {
+            name: "Blog",
+            icon: "fa-book",
+            link: "https://HanVincent.github.io"
+        }, {
             name: "CV",
             icon: "fa-download",
             link: "assets/w.b.han.cv.pdf"
