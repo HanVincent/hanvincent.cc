@@ -6,8 +6,8 @@ const eng_profile = {
         phone: "(886) 987-999-556",
         email: "vincent.han.tw@gmail",
         bio: `<i>Be a professional programmer with fashion sense and excellent social skills.</i><br>
-        I am a graduate student experienced in Natural Language Processing and Frontend with a keen interest on Machine Learning and Backend.<br>
-        Besides, Joining conferences aand hackathons is my interest.`,
+            I am a graduate student experienced in Natural Language Processing and Frontend with a keen interest on Machine Learning and Backend.<br>
+            Besides, Joining conferences aand hackathons is my interest.`,
         media: [{
             name: "LinkedIn",
             icon: "fa-linkedin",
@@ -23,8 +23,14 @@ const eng_profile = {
         }, {
             name: "CV",
             icon: "fa-download",
-            link: "assets/w.b.han.cv.pdf"
-        }]
+            link: "assets/w.b.han.pdf"
+        }],
+        programming: ["python", "html5", "javascript", "jquery", "vuejs", "css3", "bootstrap", "nodejs",
+            "java", "git", "webpack"],
+        language: [
+            "TOEIC: 895",
+            "Proficient in reading and writing English",
+        ]
     },
 
     experience: {
@@ -35,9 +41,10 @@ const eng_profile = {
             location: "Taipei, Taiwan",
             time: "May 2017 - Sept. 2017",
             description: [
-                "Coordinated with two colleagues as a self-taught and self-discipline first employee in a startup pace",
-                "Refactored redundant code with Vue.js and developed SPA web to separate server and client for better maintenance",
+                "Reduced at least 20% redundant code by Vue.js and developed SPA web for better maintenance",
+                "Corrected colleague's JavaScript concept and algorithm",
                 "Incorporated UI design and enhanced the ability of problem solving on my own",
+                "Coordinated with two colleagues as a self-taught and self-discipline first employee in a startup pace",
             ]
         }, {
             name: "The Republic of China Army",
@@ -53,9 +60,19 @@ const eng_profile = {
             location: "Taipei, Taiwan",
             time: "Sept. 2016 - Jan. 2017",
             description: [
-                "Solved issues and maintained application with Agile, and shortened the gap between academia and industry",
+                "Solved Web UI issues, separated components and applied Redux",
+                "Found critical system security bug over-allowing administrative privileges",
                 "Reported progress of tasks in daily scrum and learned to detect problems rapidly",
-                "Strengthened skills of JavaScript, AngularJS, and CSS from front-end mentors"
+                "Learned Agile and Scrum, JavaScript, AngularJS, and CSS from front-end mentors"
+            ]
+        }, {
+            name: "Full Stack Engineer, Intern",
+            company: "NCU IISR Lab",
+            location: "Taoyuan, Taiwan",
+            time: "July 2015 - Aug. 2015",
+            description: [
+                "Built a web-based location annotation system",
+                "HTML, JavaScript, PHP, and MySQL"
             ]
         }]
     },
@@ -77,7 +94,7 @@ const eng_profile = {
             location: "Taoyuan, Taiwan",
             time: "Sept. 2013 - Jan. 2017",
             description: [
-                "Overall GPA 4.06/4.3, Major GPA: 4.09/4.3, Credits: 143 with creativity program",
+                "Overall GPA 4.06/4.3, Major GPA: 4.09/4.3, with creativity program",
                 "Graduated ahead of schedule with top 6\% rank and received once Academic Excellence Award",
                 "Published 'NCU IISR System for NTCIR-12 MobileClick' on NTCIR-12, 2016"
             ]
@@ -93,10 +110,10 @@ const eng_profile = {
             host: "AtoS IT Challenge 2018",
             time: "Nov. 2017 - Present",
             description: [
-                "Entered development phase (top 20 of 205 teams) in international competition on chatbot by AtoS",
-                "Headed 4-member team to establish a chatbot from crawling data to modeling",
-                "Built model by SVM or CNN/RNN and analyzed distinction between both ways",
-                "Python, TF-IDF, SVM, CNN/RNN"
+                "Top-20 (of 205 teams) in international AI Chatbot competition and entered development phase",
+                "Team leader in 4-member team to establish a chatbot from crawling data to modeling",
+                "Built models and analyzed distinction them",
+                "Python, TF-IDF, SVM, CNN, RNN(future)"
             ]
         }, {
             title: "What Does The Box Say",
@@ -105,9 +122,10 @@ const eng_profile = {
             host: "Software Engineering Course",
             time: "Sept. 2016 - Jan. 2017",
             description: [
-                "What Does The Box Say is a piece of coursework of 'Software Engineering' written in Java",
                 "Completed a multi-player and large-scale map online game from scratch to implementation",
-                "Accomplished UDP broadcast and examined the core logic in server"
+                "Instructed and supervised teammate to finish game core logic",
+                "Accomplished UDP broadcast via Java packages",
+                "Taught teammate using git"
             ]
         }, {
             title: "Sentimental Analysis on Movie Comments",
@@ -116,8 +134,8 @@ const eng_profile = {
             host: "Prof. Julian McAuley",
             time: "July 2016 - Aug. 2016",
             description: [
-                "Analyzed sentiment on movie comments by Linear Regression, contest about Natural Language Process on Kaggle",
-                "Predicted with accuracy of 60\% in using stemming and unigram vocabulary",
+                "Achieved accuracy of 60% in NLP contest on Kaggle",
+                "Used Linear Regression with stemming and unigram",
                 "Conducted research in English environment and cultivated my independence and toughness",
                 "Python, NLP, Linear Regression"
             ]
@@ -135,13 +153,12 @@ const eng_profile = {
         }, {
             title: "NCU IISR System for NTCIR-12 MobileClick",
             link: "https://github.com/HanVincent/NTCIR_MobileClick2_Contest",
-            subtitle: "Query Searching for Mobile",
+            subtitle: "Ranking Information for Mobile",
             host: "National Institute of Informatics, Japan",
             time: "Sept. 2015 - Jan. 2016",
             description: [
-                "Ranked information using word embeddings, TFIDF and Machine Learning in point-wise and pair-wise methods",
-                "Achieved nDCG@3 accuracy of 75\% by pair-wise features with LIBLINEAR SVM",
-                "C\#, TFIDF, LIBLINEAR SVM, Word2Vec"
+                "Achieved nDCG@3 accuracy of 75\% by pair-wise features",
+                "TFIDF, SVM, Word Embedding, NLP methods"
             ]
         }, {
             title: "Air Hockey",
@@ -151,27 +168,9 @@ const eng_profile = {
             time: "Sept. 2015 - Jan. 2016",
             description: [
                 "Built web app on Firefox OS based on HTML, JavaScript, and CSS",
-                "Implemented one player with computer or two players modes and adjustable game settings"
+                "Implemented 1 or 2 players modes and adjustable game settings"
             ]
         }]
-    },
-
-    skills: {
-        name: "Skills",
-        programming: {
-            name: "Programming Languages &amp; Tools",
-            items: ["python", "html5", "javascript", "jquery", "vuejs", "css3", "bootstrap", "nodejs",
-                "java", "git", "webpack"],
-
-        },
-        language: {
-            name: "English",
-            icon: "fa-check",
-            items: [
-                "TOEIC: 895 (R: 485, L: 410), TOEFL iBT: 84",
-                "Proficient in reading and writing English",
-            ]
-        }
     },
 
     interests: {
@@ -186,6 +185,11 @@ const eng_profile = {
         name: "Awards",
         icon: "fa-trophy",
         items: [{
+            // 金色證書
+            time: 2017,
+            award: "Gold Certificate: 895",
+            host: "TOEIC"
+        }, {
             // 中央資工系大學部專題成果展佳作
             time: 2016,
             award: "Excellence Award for Lab Study Project",
@@ -208,7 +212,7 @@ const eng_profile = {
         }, {
             // 2015 中央資工系「計算機網路」課程創意競賽第三名
             time: 2015,
-            award: "3<sup>nd</sup> Creativity Competition on Computer Network course",
+            award: "3<sup>rd</sup> Creativity Competition on Computer Network course",
             host: "National Central University, Taiwan"
         }, {
             // 1022 書卷獎
@@ -258,9 +262,9 @@ const eng_profile = {
             description: [
                 "2016/07 - 2016/08 - International Summer Research Programm in University of California, San Diego",
                 "2014/09 - 2015/06 Waiter in Noodle Shop",
-                "2014/08 - 2014/09 Member of the Acavity Group, NCU-CSIE orientaaon camp 中央資工迎新宿營 活動組組員",
-                "2014/07/20 - 07/28 China Jinan University Leaders Camp 廣州暨南大學學生領袖研習營 ",
-                "2014/07/08 - 07/15 China Chongqing University Cultural Communication Camp 重慶大學三峽文化交流營",
+                "2014/08 - 2014/09 Member of the Acavity Group, NCU-CSIE orientation camp",
+                "2014/07/20 - 07/28 China Jinan University Leaders Camp",
+                "2014/07/08 - 07/15 China Chongqing University Cultural Communication Camp ",
                 "2013/12 - 2014/07 Member of Teaching Group, NCU-CSIE Summer Camp",
                 "2013/10 - 2013/12 Member of the Arts Group, NCU-CSIE Return of Service",
                 "2013/09 - 2015/01 Part-time Worker in TLDC of NCU"

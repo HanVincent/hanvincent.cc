@@ -10,7 +10,7 @@
 
     const getAbout = () => {
         const section = "about"
-        const { firstName, lastName, state, phone, email, bio, media } = profile[section];
+        const { firstName, lastName, state, phone, email, bio, media, programming, language } = profile[section];
         const name = isZH ? `<span class="text-primary">${lastName}</span>${firstName}` : `${firstName}<span class="text-primary">${lastName}</span>`
         const mlis = media.reduce((concat, curr) => concat + `
             <li class="list-inline-item">
@@ -21,18 +21,31 @@
                     </span>
                 </a>
             </li>`, '');
+        const plis = programming.reduce((lis, item) => lis +
+            `<li class="list-inline-item">
+                <i class="devicon-${item}-plain"></i>
+            </li>`, '');
+        const llis = language.reduce((lis, item) => lis +
+            `<li>
+                <i class="fa-li fa fa-check"></i>${item}
+            </li>`, '');
         const content = `
             <div class="my-auto">
                 <span class="text-center d-block d-lg-none">
                 <img class="img-fluid img-profile rounded-circle w-50 mx-auto mb-3" src="img/profile.jpg" alt="HanVincent picture">
                 </span>
-                <h1 class="mb-0">${name}</h1>
-                <div class="subheading mb-5">
-                    ${state} · ${phone} · 
-                    <a href="mailto:${email}">${email}</a>
+                <h1 class="mb-5">${name}</h1>
+                <div class="subheading mb-3">
+                    <ul class="fa-ul">
+                        <li><i class="fa-li fa fa-user"></i>${state}</li>
+                        <li><i class="fa-li fa fa-phone"></i>${phone}</li>
+                        <li><i class="fa-li fa fa-envelope"></i><a href="mailto:${email}">${email}</a></li>
+                    </ul>
                 </div>
+                <ul class="list-inline list-social-icons mb-5">${mlis}</ul>
                 <p class="mb-5">${bio}</p>
-                <ul class="list-inline list-social-icons mb-0">${mlis}</ul>
+                <ul class="fa-ul mb-3">${llis}</ul>
+                <ul class="list-inline list-icons">${plis}</ul>
             </div>`
         $("#" + section).html(content);
     }
@@ -99,26 +112,6 @@
         append(section, name, content);
     }
 
-    const getSkills = () => {
-        const section = "skills";
-        const { name, programming, language } = profile[section];
-        const plis = programming.items.reduce((lis, item) => lis +
-            `<li class="list-inline-item">
-                <i class="devicon-${item}-plain"></i>
-            </li>`, '');
-        const llis = language.items.reduce((lis, item) => lis +
-            `<li>
-                <i class="fa-li fa ${language.icon}"></i>${item}
-            </li>`, '');
-        const content = `
-            <div class="subheading mb-3">${programming.name}</div>
-            <ul class="list-inline list-icons">${plis}</ul>
-            <div class="subheading mb-3">${language.name}</div>
-            <ul class="fa-ul mb-0">${llis}</ul>`
-
-        append(section, name, content);
-    }
-
     const getInterests = () => {
         const section = "interests";
         const { name, paragraphs } = profile[section];
@@ -163,13 +156,12 @@
         getExperience();
         getEducation();
         getProjects();
-        getSkills();
         getInterests();
         getAwards();
         getExtracurricular();
     }
 
-    const version = [eng_profile, chi_profile];
+    const version = [eng_profile, cht_profile];
     let isZH = ((navigator.language || navigator.userLanguage) === 'zh-TW') ? 1 : 0; // 0 for English, 1 for Chinese
     let profile = version[isZH];
     render();
