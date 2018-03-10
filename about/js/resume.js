@@ -14,7 +14,7 @@
         const name = isZH ? `<span class="text-primary">${lastName}</span>${firstName}` : `${firstName}<span class="text-primary">${lastName}</span>`
         const mlis = media.reduce((concat, curr) => concat + `
             <li class="list-inline-item">
-                <a href="${curr.link}">
+                <a target="_blank" href="${curr.link}">
                     <span class="fa-stack fa-lg">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa ${curr.icon} fa-stack-1x fa-inverse"></i>
