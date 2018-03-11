@@ -7,7 +7,7 @@ const eng_profile = {
         email: "vincent.han.tw@gmail",
         bio: `<i>Be a professional programmer with fashion sense and excellent social skills.</i><br>
             I am a graduate student experienced in Natural Language Processing and Frontend with a keen interest on Machine Learning and Backend.<br>
-            Besides, Joining conferences and hackathons is my interest.`,
+            I would like to develop innovative program in my free time. Besides, Joining conferences and hackathons is my interest.`,
         media: [{
             name: "LinkedIn",
             icon: "fa-linkedin",
