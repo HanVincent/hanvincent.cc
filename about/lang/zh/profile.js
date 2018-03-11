@@ -25,7 +25,7 @@ const cht_profile = {
             icon: "fa-download",
             link: "assets/w.b.han.pdf"
         }],
-        programming: ["python", "html5", "javascript", "jquery", "vuejs", "css3", "bootstrap", "nodejs",
+        programming: ["python", "html5", "css3", "bootstrap", "javascript", "jquery", "vuejs", "nodejs",
             "java", "git", "webpack"],
         language: [
             "TOEIC: 895，專精英文的閱讀及寫作",
