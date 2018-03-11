@@ -26,7 +26,7 @@ const eng_profile = {
             link: "assets/w.b.han.pdf"
         }],
         programming: ["python", "html5", "css3", "bootstrap", "javascript", "jquery", "vuejs", "nodejs",
-            "java", "git", "webpack"],
+            "java", "git", "babel", "webpack"],
         language: [
             "TOEIC: 895",
             "Proficient in reading and writing English",
