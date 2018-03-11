@@ -7,7 +7,7 @@ const eng_profile = {
         email: "vincent.han.tw@gmail",
         bio: `<i>Be a professional programmer with fashion sense and excellent social skills.</i><br>
             I am a graduate student experienced in Natural Language Processing and Frontend with a keen interest on Machine Learning and Backend.<br>
-            Besides, Joining conferences aand hackathons is my interest.`,
+            Besides, Joining conferences and hackathons is my interest.`,
         media: [{
             name: "LinkedIn",
             icon: "fa-linkedin",
@@ -25,7 +25,7 @@ const eng_profile = {
             icon: "fa-download",
             link: "assets/w.b.han.pdf"
         }],
-        programming: ["python", "html5", "javascript", "jquery", "vuejs", "css3", "bootstrap", "nodejs",
+        programming: ["python", "html5", "css3", "bootstrap", "javascript", "jquery", "vuejs", "nodejs",
             "java", "git", "webpack"],
         language: [
             "TOEIC: 895",
