@@ -190,6 +190,16 @@ const eng_profile = {
             award: "Gold Certificate: 895",
             host: "TOEIC"
         }, {
+            // 1051 書卷獎
+            time: 2017,
+            award: "Academic Excellence Award",
+            host: "National Central University, Taiwan"
+        }, {
+            // 中央大學郭秉文校長紀念獎學金
+            time: 2016,
+            award: "Mr. Ping-Wen Kuo Memorial Award Scholarship",
+            host: "National Central University, Taiwan"
+        }, {
             // 中央資工系大學部專題成果展佳作
             time: 2016,
             award: "Excellence Award for Lab Study Project",
@@ -197,12 +207,22 @@ const eng_profile = {
         }, {
             // 殷省三先生紀念獎助學金
             time: 2016,
-            award: "Mr. Yin-Sheng San Memorial Award Scholarship",
+            award: "104-2 Mr. Yin-Sheng San Memorial Award Scholarship",
             host: "National Central University, Taiwan"
         }, {
             // 2016 中央資工系 Web App 成果展人氣獎
             time: 2016,
             award: "Best Popularity Aaward for Web App",
+            host: "National Central University, Taiwan"
+        }, {
+            // 殷省三先生紀念獎助學金
+            time: 2015,
+            award: "104-1 Mr. Yin-Sheng San Memorial Award Scholarship",
+            host: "National Central University, Taiwan"
+        }, {
+            // 殷省三先生紀念獎助學金
+            time: 2016,
+            award: "103-2 Mr. Yin-Sheng San Memorial Award Scholarship",
             host: "National Central University, Taiwan"
         }, {
             // 2015 中央大學通識中心創意成果展競賽第二名
