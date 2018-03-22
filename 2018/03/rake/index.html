@@ -105,25 +105,25 @@
   <meta name="keywords" content="Keyword Recognition,Keyword Extraction," />
 
 
-<meta name="description" content="Abstract 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
+<meta name="description" content="Abstract RAKE algorithm 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
 <meta name="keywords" content="Keyword Recognition,Keyword Extraction">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Automatic Keyword Extraction from Individual Document">
-<meta property="og:url" content="https://hanvincent.github.io/2018/03/auto keyword extraction/index.html">
+<meta property="og:url" content="https://hanvincent.github.io/2018/03/rake/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="Abstract 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
+<meta property="og:description" content="Abstract RAKE algorithm 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
 <meta property="og:locale" content="en-US">
-<meta property="og:updated_time" content="2018-03-22T00:46:46.924Z">
+<meta property="og:updated_time" content="2018-03-22T03:47:08.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Automatic Keyword Extraction from Individual Document">
-<meta name="twitter:description" content="Abstract 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
+<meta name="twitter:description" content="Abstract RAKE algorithm 關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hanvincent.github.io/2018/03/auto keyword extraction/"/>
+  <link rel="canonical" href="https://hanvincent.github.io/2018/03/rake/"/>
 
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/2018/03/auto keyword extraction/">
+    <link itemprop="mainEntityOfPage" href="https://hanvincent.github.io/2018/03/rake/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Han">
@@ -359,8 +359,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/auto keyword extraction/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/auto keyword extraction/" itemprop="commentsCount"></span>
+                <a href="/2018/03/rake/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/rake/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -368,7 +368,7 @@
 
           
           
-             <span id="/2018/03/auto keyword extraction/" class="leancloud_visitors" data-flag-title="Automatic Keyword Extraction from Individual Document">
+             <span id="/2018/03/rake/" class="leancloud_visitors" data-flag-title="Automatic Keyword Extraction from Individual Document">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,6 +400,7 @@
 
       
         <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li>RAKE algorithm</li>
 <li>關鍵字通常代表了這篇的重要資訊，因此這篇介紹如何從 documents 中找到可能的關鍵字，並且是 sequence words</li>
 </ul>
 <a id="more"></a>
@@ -431,7 +432,36 @@
 </li>
 </ul>
 <h3 id="RAKE"><a href="#RAKE" class="headerlink" title="RAKE"></a>RAKE</h3><ul>
-<li>keywords 通常是複合字且很少包含標點符號或 stopwords</li>
+<li>keywords 通常是多字組合且很少包含標點符號或 stopwords</li>
+<li>Step<ol>
+<li>使用 stopwords 和 phrase delimiters 切割成候選字，而這些候選字中有些搭配詞是很有意義的<blockquote>
+<p>Eg: Compatibility of systems of linear constraints over the set of natural numbers<br>Compatibility – systems – linear constraints – set – natural numbers</p>
+</blockquote>
+</li>
+<li>利用 degree 和 頻率做成圖表計算候選字的分數<ul>
+<li>word frequency (freq(w)) - 該字出現次數</li>
+<li>word degree (deg(w)) - 該字單獨出現或和其他搭配詞出現的次數</li>
+<li>ratio of degree to frequency (deg(w)/freq(w)) 數字越大代表和其他詞一起出現的數量越高</li>
+</ul>
+</li>
+<li>多字候選字利用分數相加代表該候選字分數</li>
+</ol>
+</li>
+<li>因為 RAKE 會根據 stopwords 進行切割，但是有些 stopwords 是屬於關鍵字的字，eg: axis of evil，因此 RAKE 希望能夠處理這項特徵</li>
+<li>找出那些 keyword pair 在同樣文本以同樣順序出現兩次的，新關鍵字將會是兩個關鍵字分數總和</li>
+<li>最後得到的關鍵字群，取 top T 個當作關鍵字，T 為所以抓取出來的關鍵字的 1/3 數量</li>
+</ul>
+<h3 id="Stopword-list"><a href="#Stopword-list" class="headerlink" title="Stopword list"></a>Stopword list</h3><ul>
+<li>從 training data 中拿 term frequency 前五十名的字，並觀察這些字的 term freq, document freq, Adjacency freq, keyword freq.</li>
+<li>觀察後發現，若只靠 TF，容易將 system, control, 和 method 這些特定領域中常被當成關鍵字的字列入到 stopwords</li>
+<li>出現在關鍵字中的字的次數 &gt; 出現相鄰關鍵字的字的次數時，從 stoplist 移除</li>
+<li>實驗發現，上述規則加入後（也就是自己產生的 stopword list）效果較好</li>
+<li>Stopword list 只需要根據特定 domain 產生一次就可以使用</li>
+</ul>
+<h3 id="Measure"><a href="#Measure" class="headerlink" title="Measure"></a>Measure</h3><ul>
+<li>使用 statistical measures precision, recall 和 F-measure 評估</li>
+<li>同樣五百個摘要，RAKE 花 160 ms，TextRank 花 1002 ms，六倍的時間</li>
+<li>隨著內文的數量變多，RAKE 和 TextRank 的差距只會越來越大，因為 RAKE 抓取關鍵字是 single pass，但是 TextRank 需要重複 iterate 直到文字排行收斂</li>
 </ul>
 
       
@@ -673,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RAKE"><span class="nav-number">3.</span> <span class="nav-text">RAKE</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RAKE"><span class="nav-number">3.</span> <span class="nav-text">RAKE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stopword-list"><span class="nav-number">4.</span> <span class="nav-text">Stopword list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Measure"><span class="nav-number">5.</span> <span class="nav-text">Measure</span></a></li></ol></div>
             
 
           </div>
