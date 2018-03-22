@@ -105,19 +105,19 @@
   <meta name="keywords" content="Deep Learning,Coursera," />
 
 
-<meta name="description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
+<meta name="description" content="TargetLearn Deep Learning online so here are some notes for me to remind.">
 <meta name="keywords" content="Deep Learning,Coursera">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Deep Learning on Coursera">
+<meta property="og:title" content="Deep Learning Notes">
 <meta property="og:url" content="https://hanvincent.github.io/2018/02/DL-notes/index.html">
 <meta property="og:site_name" content="HanVincent">
-<meta property="og:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
+<meta property="og:description" content="TargetLearn Deep Learning online so here are some notes for me to remind.">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="https://hanvincent.github.io/2018/02/DL-notes/negative_sampling.jpeg">
-<meta property="og:updated_time" content="2018-03-04T10:54:37.858Z">
+<meta property="og:updated_time" content="2018-03-22T00:39:57.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Deep Learning on Coursera">
-<meta name="twitter:description" content="TargetLearn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.">
+<meta name="twitter:title" content="Deep Learning Notes">
+<meta name="twitter:description" content="TargetLearn Deep Learning online so here are some notes for me to remind.">
 <meta name="twitter:image" content="https://hanvincent.github.io/2018/02/DL-notes/negative_sampling.jpeg">
 
 
@@ -134,7 +134,7 @@
     sidebar: "",
   };
 </script>
-  <title>Deep Learning on Coursera | HanVincent</title>
+  <title>Deep Learning Notes | HanVincent</title>
   
 
 
@@ -313,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Deep Learning on Coursera</h1>
+          <h1 class="post-title" itemprop="name headline">Deep Learning Notes</h1>
         
 
         <div class="post-meta">
@@ -370,7 +370,7 @@
 
           
           
-             <span id="/2018/02/DL-notes/" class="leancloud_visitors" data-flag-title="Deep Learning on Coursera">
+             <span id="/2018/02/DL-notes/" class="leancloud_visitors" data-flag-title="Deep Learning Notes">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -401,7 +401,7 @@
       
 
       
-        <h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><p>Learn Deep Learning provided by Andrew Ng on Coursera so here is some notes for me to remind.</p>
+        <h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><p>Learn Deep Learning online so here are some notes for me to remind.</p>
 <a id="more"></a>
 <h3 id="李宏毅’s-course"><a href="#李宏毅’s-course" class="headerlink" title="李宏毅’s course"></a>李宏毅’s course</h3><ul>
 <li><p>Machine Learning step:</p>
@@ -415,22 +415,32 @@
 </li>
 <li>Classification: Binary Classification (Yes/No), Multi-class classification (選擇題)</li>
 <li>Gradient Descent: step 取決於微分後的 f 及 learning rate。</li>
+<li>Error 來自 Bias &amp; Variance<ul>
+<li>Low Bias: 所有點的平均位置很近靶心，但是所有點較不集中</li>
+<li>Low Variance: 所有點比較集中，但是離靶心有點距離</li>
+</ul>
+</li>
 </ul>
 <h3 id="林軒田’s-course-機器學習基石（上）"><a href="#林軒田’s-course-機器學習基石（上）" class="headerlink" title="林軒田’s course - 機器學習基石（上）"></a>林軒田’s course - 機器學習基石（上）</h3><ul>
 <li>從 hypotheses (H) 中推論出一個函式 g，近似理想的 f(x)</li>
 <li>Perceptrons &lt;=&gt; linear (binary) classifiers</li>
 <li>Hoeffding’s inequality: in big sample (N large), v is probably close to u (within $\epsilon$) $$P[|v-u| &gt; \epsilon] &lt;= 2 exp(-2\epsilon^2 N)$$<br>the statement “v = u” is probably approximately correct (PAC)</li>
 <li>Shattered: 擊倒，代表可以找出 2^n 個可能性，沒有 break point</li>
+<li>Linear Model for Classification<ul>
+<li>Binary classification via (logistic) regression</li>
+<li>Multiclass via OVA/OVO decomposition</li>
 </ul>
-<h3 id="未整理"><a href="#未整理" class="headerlink" title="未整理"></a>未整理</h3><ul>
+</li>
+<li>Non-linear Transformation</li>
+</ul>
+<h3 id="Andrew-Ng’s-course-Coursera"><a href="#Andrew-Ng’s-course-Coursera" class="headerlink" title="Andrew Ng’s course - Coursera"></a>Andrew Ng’s course - Coursera</h3><h4 id="Neural-Networks-and-Deep-Learning"><a href="#Neural-Networks-and-Deep-Learning" class="headerlink" title="Neural Networks and Deep Learning"></a>Neural Networks and Deep Learning</h4><ul>
 <li>Loss function: the error for a single training example</li>
 <li>Cost function: the average of the loss functions of the entire training set.</li>
 <li>derivative just means slope of the line</li>
 <li>vector/matrix multiplication is faster than for-loop</li>
 <li>High bias: too many wrong prediction; High variance: too overfitting training data</li>
 </ul>
-<p>// 還有四個主題未加入</p>
-<h3 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h3><h3 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h3><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><ul>
+<h4 id="Improving-Deep-Neural-Networks"><a href="#Improving-Deep-Neural-Networks" class="headerlink" title="Improving Deep Neural Networks"></a>Improving Deep Neural Networks</h4><h4 id="Structuring-Machine-Learning-Projects"><a href="#Structuring-Machine-Learning-Projects" class="headerlink" title="Structuring Machine Learning Projects"></a>Structuring Machine Learning Projects</h4><h4 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h4><h4 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h4><h5 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h5><ul>
 <li>Speech recognition</li>
 <li>Music generation</li>
 <li>Sentiment classification</li>
@@ -439,7 +449,7 @@
 <li>Video activity recognition</li>
 <li>Name entity recognition</li>
 </ul>
-<h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><ul>
+<h5 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h5><ul>
 <li>Basic representation: one-hot encoding</li>
 <li><p>If word not in dictionary?</p>
 </li>
@@ -702,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#李宏毅’s-course"><span class="nav-number">2.</span> <span class="nav-text">李宏毅’s course</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#林軒田’s-course-機器學習基石（上）"><span class="nav-number">3.</span> <span class="nav-text">林軒田’s course - 機器學習基石（上）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未整理"><span class="nav-number">4.</span> <span class="nav-text">未整理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutional-Neural-Networks"><span class="nav-number">5.</span> <span class="nav-text">Convolutional Neural Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-Models"><span class="nav-number">6.</span> <span class="nav-text">Sequence Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">6.1.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-number">6.2.</span> <span class="nav-text">Notes</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#李宏毅’s-course"><span class="nav-number">2.</span> <span class="nav-text">李宏毅’s course</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#林軒田’s-course-機器學習基石（上）"><span class="nav-number">3.</span> <span class="nav-text">林軒田’s course - 機器學習基石（上）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Andrew-Ng’s-course-Coursera"><span class="nav-number">4.</span> <span class="nav-text">Andrew Ng’s course - Coursera</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Neural-Networks-and-Deep-Learning"><span class="nav-number">4.1.</span> <span class="nav-text">Neural Networks and Deep Learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Improving-Deep-Neural-Networks"><span class="nav-number">4.2.</span> <span class="nav-text">Improving Deep Neural Networks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Structuring-Machine-Learning-Projects"><span class="nav-number">4.3.</span> <span class="nav-text">Structuring Machine Learning Projects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Convolutional-Neural-Networks"><span class="nav-number">4.4.</span> <span class="nav-text">Convolutional Neural Networks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sequence-Models"><span class="nav-number">4.5.</span> <span class="nav-text">Sequence Models</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Examples"><span class="nav-number">4.5.1.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Notes"><span class="nav-number">4.5.2.</span> <span class="nav-text">Notes</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
