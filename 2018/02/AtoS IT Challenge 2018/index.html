@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="HanVincent">
 <meta property="og:description" content="!!! Work in Progress !!! 前言Well，好像在臉書上無意間看到這項比賽的推廣，剛好今年主題是 Chatbot，和實驗室研究領域有關，因此就拉了實驗室同學一起組成四人隊伍 - TensorFun 參賽。 提案過程抓資料、formula、model傳統統計法傳統tfidfsvmsvm+各種feature 不能弄到 label 結果">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-03-06T02:55:49.308Z">
+<meta property="og:updated_time" content="2018-03-22T00:43:26.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AtoS IT Challenge 2018">
 <meta name="twitter:description" content="!!! Work in Progress !!! 前言Well，好像在臉書上無意間看到這項比賽的推廣，剛好今年主題是 Chatbot，和實驗室研究領域有關，因此就拉了實驗室同學一起組成四人隊伍 - TensorFun 參賽。 提案過程抓資料、formula、model傳統統計法傳統tfidfsvmsvm+各種feature 不能弄到 label 結果">
@@ -353,6 +353,18 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/AtoS IT Challenge 2018/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/AtoS IT Challenge 2018/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
           
           
@@ -462,42 +474,17 @@
 
           </div>
           
-       <div onclick="showGitment()" id="gitment_title" class="gitment_title">Show Gitment</div>
-       <div id="container" style="display:none"></div>
-       <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-       <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-       <script>
-       const myTheme = {
-         render(state, instance) {
-           const container = document.createElement('div');
-           container.lang = "en-US";
-           container.className = 'gitment-container gitment-root-container';
-           container.appendChild(instance.renderHeader(state, instance));
-           container.appendChild(instance.renderEditor(state, instance));
-           container.appendChild(instance.renderComments(state, instance));
-           container.appendChild(instance.renderFooter(state, instance));
-           return container;
-         }
-       }
-       function showGitment() {
-         $("#gitment_title").attr("style", "display:none");
-         $("#container").attr("style", "").addClass("gitment_container");
-         var gitment = new Gitment({
-           id: window.location.pathname,
-           theme: myTheme,
-           owner: '',
-           repo: '',
-           oauth: {
-             client_id: '10f8b61f4dfab9a871b4',
-             client_secret: 'c6876d6027132b8ca3158283d57b378c993e65dc'
-           }
-         });
-         gitment.render('container');
-       }
-       </script>
 
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
+  
 
+  
 
         </div>
         
@@ -843,6 +830,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'HanVincent',
+            repo: 'HanVincent.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'c6876d6027132b8ca3158283d57b378c993e65dc',
+            
+                client_id: '10f8b61f4dfab9a871b4'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
