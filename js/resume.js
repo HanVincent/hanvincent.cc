@@ -120,13 +120,14 @@
         $.getJSON("lang/hackmd.json", function (items) {
             const { name } = profile[section];
             const content = items.reduce((concat, item) => {
+                const tags = item.tags.reduce((prev, curr) => prev + `<span class="badge badge-secondary m-1">${curr}</span>`, '');
                 return concat + `
-                <div class="resume-item d-flex flex-column flex-md-row mb-1">
+                <div class="resume-item d-flex flex-column flex-md-row mb-3">
                     <div class="resume-content mr-auto">
                         <p class="subheading mb-0">
                             <a href="https://hackmd.io/${item.id}">${item.text}</a>
                         </p>
-                        <div class="mb-3">${item.tags.join(', ')}</div>
+                        ${tags}
                     </div>
                 </div>`}, '');
             append(section, name, content);
