@@ -19,7 +19,7 @@ const eng_profile = {
         }, {
             name: "CV",
             icon: "fa-download",
-            link: "assets/w.b.han.pdf"
+            link: "assets/w.b.han.en.pdf"
         }],
         programming: ["python", "html5", "css3", "bootstrap", "javascript", "jquery", "vuejs", "nodejs",
             "java", "git", "babel", "webpack"],
