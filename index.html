@@ -11,6 +11,16 @@
 
   <title>HanVincent</title>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115782642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115782642-1');
+  </script>
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -60,8 +70,7 @@
             aria-selected="false">Projects | 專案</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#notes" id="notes-tab" data-toggle="tab" role="tab" aria-controls="notes"
-            aria-selected="false">Notes | 筆記</a>
+          <a class="nav-link js-scroll-trigger" href="#notes" id="notes-tab" data-toggle="tab" role="tab" aria-controls="notes" aria-selected="false">Notes | 筆記</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#interests" id="interests-tab" data-toggle="tab" role="tab" aria-controls="interests"
@@ -78,7 +87,7 @@
       </ul>
     </div>
     <a class="lang-btn text-light btn btn-link d-none d-lg-block">
-        <i class="fa fa-language"></i>
+      <i class="fa fa-language"></i>
     </a>
   </nav>
 
