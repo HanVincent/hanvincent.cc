@@ -3,8 +3,7 @@ const eng_profile = {
         firstName: "Vincent",
         lastName: "Han",
         state: "National Tsing Hua University · Hsinchu , Taiwan",
-        phone: "(886) 987-999-556",
-        email: "vincent.han.tw@gmail",
+        email: "vincent.han.tw@gmail.com",
         bio: `<i>Be a professional programmer with fashion sense and excellent social skills.</i><br>
             I am a graduate student experienced in Natural Language Processing and Frontend with a keen interest on Machine Learning and Backend.<br>
             I would like to develop innovative program in my free time. Besides, Joining conferences and hackathons is my interest.`,
@@ -18,7 +17,7 @@ const eng_profile = {
             link: "https://github.com/HanVincent"
         }, {
             name: "CV",
-            icon: "fa-download",
+            icon: "fa-file-pdf-o",
             link: "assets/w.b.han.en.pdf"
         }],
         programming: ["python", "html5", "css3", "bootstrap", "javascript", "jquery", "vuejs", "nodejs",

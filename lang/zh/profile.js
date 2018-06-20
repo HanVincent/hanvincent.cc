@@ -3,8 +3,7 @@ const cht_profile = {
         firstName: "文彬",
         lastName: "韓",
         state: "國立清華大學",
-        phone: "(886) 987-999-556",
-        email: "vincent.han.tw@gmail",
+        email: "vincent.han.tw@gmail.com",
         bio: `<i>想成為一位時尚的專業工程師</i><br>
             目前是一位研究自然語言處理及機器學習的研究生，同時也有前端開發經驗，也正在學習使用 Node.js 後端，期待能將機器學習的成果用前端顯示出來。<br>
             除此之外，我也喜歡參加 Conferences 和黑客松。`,
@@ -18,7 +17,7 @@ const cht_profile = {
             link: "https://github.com/HanVincent"
         }, {
             name: "CV",
-            icon: "fa-download",
+            icon: "fa-file-pdf-o",
             link: "assets/w.b.han.zh.pdf"
         }],
         programming: ["python", "html5", "css3", "bootstrap", "javascript", "jquery", "vuejs", "nodejs",

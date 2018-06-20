@@ -10,7 +10,7 @@
 
     const getAbout = () => {
         const section = "about"
-        const { firstName, lastName, state, phone, email, bio, media, programming, language } = profile[section];
+        const { firstName, lastName, state, email, bio, media, programming, language } = profile[section];
         const name = isZH ? `<span class="text-primary">${lastName}</span>${firstName}` : `${firstName}<span class="text-primary">${lastName}</span>`
         const mlis = media.reduce((concat, curr) => concat + `
             <li class="list-inline-item">
@@ -38,7 +38,6 @@
                 <div class="subheading mb-3">
                     <ul class="fa-ul">
                         <li><i class="fa-li fa fa-user"></i>${state}</li>
-                        <li><i class="fa-li fa fa-phone"></i>${phone}</li>
                         <li><i class="fa-li fa fa-envelope"></i><a href="mailto:${email}">${email}</a></li>
                     </ul>
                 </div>
