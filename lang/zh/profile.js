@@ -161,6 +161,7 @@ const cht_profile = {
             host: "Web App Course by Mozilla",
             time: "2015/09 - 2016/01",
             description: [
+                "使用原生 API requestAnimationFrame 優化效能",
                 "原設計於 Firefox OS 的單機遊戲，且成功上架於 Market，而後改於網頁遊戲",
                 "可以調整遊戲設定，並且可和電腦對抗或兩人對戰",
                 "HTML, JavaScript, jQuery"
