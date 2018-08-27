@@ -163,6 +163,7 @@ const eng_profile = {
             host: "Web App Course by Mozilla",
             time: "Sept. 2015 - Jan. 2016",
             description: [
+                "Optimize by using requestAnimationFrame",
                 "Web Game based on HTML, JavaScript, and CSS",
                 "Implemented 1 or 2 players modes and adjustable game settings"
             ]
