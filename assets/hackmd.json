@@ -1,1 +1,244 @@
-[{"id":"XTqqbBPTSVOkjLvBxckp4Q","text":"Dual Supervised Learning","time":1531315004400,"tags":["Paper Notes","Machine Learning","Machine Translation","Natural Language Processing"]},{"id":"MtlQqV3qQryZbf4Hvo-u-g","text":"Generating News Headlines with Recurrent Neural Networks","time":1531315037869,"tags":["Paper Notes","Natural Language Processing","Headline Generation","Machine Learning","Deep Learning","LSTM"]},{"id":"eCvw0Kz8TM2UV-ZMnGZZlg","text":"Glove - Global Vector for Word Representation","time":1542871449609,"tags":["Paper Notes","Natural Language Processing","word2vec"]},{"id":"T0TiSk_mSnu0jucehKwUqg","text":"Headline Generation Using Recurrent Neural Networks","time":1537973438013,"tags":["Paper Notes","Natural Language Processing","Deep Learning","Headline Generation","LSTM"]},{"id":"6UYbvBfMQJ-hh97lC3ueKg","text":"Reading Wikipedia to Answer Open-Domain Question","time":1538448618238,"tags":["Paper Notes","Machine Comprehension","Machine Reading","Natural Language Processing","Machine Learning","Deep Learning","Recurrent Neural Network"]},{"id":"hSR-VSStTs2S0-vooBuEbg","text":"Automatic Keyword Extraction from Individual Document","time":1531314939444,"tags":["Paper Notes","Keyword Recognition","Keyword Extraction"]},{"id":"1u__dMtnQSeRvnUkpa9x0g","text":"Learned in Translation: Contextualized Word Vectors","time":1542895911442,"tags":["Paper Notes","word2vec","seq2seq"]},{"id":"x-eyebJoSwy68NS_qXmm1g","text":"Learning Synchronous Grammar Patterns for Assisted Writing for Second Language Learners","time":1531314953279,"tags":["Paper Notes","GEC"]},{"id":"PWO4VQ7UQCqcECQCvxoZ8g","text":"Replace or Retrieve Keywords in Documents at Scale","time":1531314960388,"tags":["Paper Notes","Keyword Extraction"]},{"id":"768DBktdR1mTa-JzTb7XBQ","text":"WriteAhead: Mining Grammar Patterns in Corpora for Assisted Writing","time":1531314966562,"tags":["Paper Notes","GEC"]},{"id":"d0252SzLR-ywQSE97brzPg","text":"Deep Learning Notes","time":1545712995194,"tags":["Study Notes","Deep Learning","Coursera"]},{"id":"XGSQghpcQdqy96pSQyPTjQ","text":"English Course for Speaking","time":1531314978580,"tags":["Study Notes","English","English Speaking"]},{"id":"NXHRyU9OSrWzjAWstqA3Pw","text":"趨勢科技機器學習組暑期實習面試","time":1531314991131,"tags":["Diary","Interview","Internship"]},{"id":"MDtB8_2JQHOvY_V5KGX3XA","text":"TSMC Machine Learning 組暑期實習面試","time":1531315023050,"tags":["Diary","Interview","Internship"]},{"id":"Y93skgWOSoiCEZBH3LCpGA","text":"Oath/Yahoo Search Engineering 暑期實習面試","time":1545626389746,"tags":["Diary","Interview","Internship"]},{"id":"oQ0aePfzQpOjPO2LPaTshw","text":"GrandChallenge","time":1532520972578,"tags":[],"pinned":true},{"id":"jYmh9WhxRH2S4yR1P0iqqw","text":"GDEX: Automatically Finding Good Dictionary Examples in a Corpus","time":1538230715537,"tags":["Paper Notes","Natural Language Processing"]},{"id":"CsMs1oYCSguQ7ioIPRZMIQ","text":"That's Not My Question: Learning to Weight Unmatched Terms in CQA Vertical Search","time":1538230730038,"tags":["Paper Notes","Document Ranking","Community-based Question Answering"]},{"id":"_HufRg10QxSACzSsN01sZw","text":"MPQA 3.0: An Entity/Event-Level Sentiment Corpus","time":1545626032841,"tags":["Paper Notes","Opinion Mining","Dataset"]},{"id":"lQmKbG2lR9-vEZfAEa-KxA","text":"Opinion Mining with Deep Recurrent Neural Networks","time":1540566175890,"tags":["Paper Notes","Opinion Mining","Recurrent Neural Network","Deep RNN"]},{"id":"MgUDEKBQQ4yJCdPpMyLQSQ","text":"Investigating LSTMs for Joint Extraction of Opinion Entities and Relations","time":1540349079403,"tags":["Paper Notes","Opinion Mining","Recurrent Neural Network","LSTM"]},{"id":"oyHQ-XB_RRKjADa0qf6icA","text":"End-to-End Relation Extraction using LSTMs on Sequences and Tree Structures","time":1542873060995,"tags":["Paper Notes","Opinion Mining","Recurrent Neural Network","LSTM","Deep RNN"]},{"id":"VszUD-5xTRWXEfTtE0HFPw","text":"Going out on a limb: Joint Extraction of Entity Mentions and Relations without Dependency Trees","time":1545626272083,"tags":["Paper Notes","Opinion Mining","Recurrent Neural Network","LSTM","Deep RNN"]},{"id":"O8WPsS6DTiuPHvds0oS4qA","text":"What were the most significant machine learning/AI advances in 2018?","time":1545719298456,"tags":["Study Notes","Deep Learning","Machine Learning"]}]
+[
+    {
+        "id": "XTqqbBPTSVOkjLvBxckp4Q",
+        "text": "Dual Supervised Learning",
+        "time": 1531315004400,
+        "tags": [
+            "Paper Notes",
+            "Machine Learning",
+            "Machine Translation",
+            "Natural Language Processing"
+        ]
+    },
+    {
+        "id": "MtlQqV3qQryZbf4Hvo-u-g",
+        "text": "Generating News Headlines with Recurrent Neural Networks",
+        "time": 1531315037869,
+        "tags": [
+            "Paper Notes",
+            "Natural Language Processing",
+            "Headline Generation",
+            "Machine Learning",
+            "Deep Learning",
+            "LSTM"
+        ]
+    },
+    {
+        "id": "eCvw0Kz8TM2UV-ZMnGZZlg",
+        "text": "Glove - Global Vector for Word Representation",
+        "time": 1542871449609,
+        "tags": [
+            "Paper Notes",
+            "Natural Language Processing",
+            "word2vec"
+        ]
+    },
+    {
+        "id": "T0TiSk_mSnu0jucehKwUqg",
+        "text": "Headline Generation Using Recurrent Neural Networks",
+        "time": 1537973438013,
+        "tags": [
+            "Paper Notes",
+            "Natural Language Processing",
+            "Deep Learning",
+            "Headline Generation",
+            "LSTM"
+        ]
+    },
+    {
+        "id": "6UYbvBfMQJ-hh97lC3ueKg",
+        "text": "Reading Wikipedia to Answer Open-Domain Question",
+        "time": 1538448618238,
+        "tags": [
+            "Paper Notes",
+            "Machine Comprehension",
+            "Machine Reading",
+            "Natural Language Processing",
+            "Machine Learning",
+            "Deep Learning",
+            "Recurrent Neural Network"
+        ]
+    },
+    {
+        "id": "hSR-VSStTs2S0-vooBuEbg",
+        "text": "Automatic Keyword Extraction from Individual Document",
+        "time": 1531314939444,
+        "tags": [
+            "Paper Notes",
+            "Keyword Recognition",
+            "Keyword Extraction"
+        ]
+    },
+    {
+        "id": "1u__dMtnQSeRvnUkpa9x0g",
+        "text": "Learned in Translation: Contextualized Word Vectors",
+        "time": 1542895911442,
+        "tags": [
+            "Paper Notes",
+            "word2vec",
+            "seq2seq"
+        ]
+    },
+    {
+        "id": "x-eyebJoSwy68NS_qXmm1g",
+        "text": "Learning Synchronous Grammar Patterns for Assisted Writing for Second Language Learners",
+        "time": 1531314953279,
+        "tags": [
+            "Paper Notes",
+            "GEC"
+        ]
+    },
+    {
+        "id": "PWO4VQ7UQCqcECQCvxoZ8g",
+        "text": "Replace or Retrieve Keywords in Documents at Scale",
+        "time": 1531314960388,
+        "tags": [
+            "Paper Notes",
+            "Keyword Extraction"
+        ]
+    },
+    {
+        "id": "768DBktdR1mTa-JzTb7XBQ",
+        "text": "WriteAhead: Mining Grammar Patterns in Corpora for Assisted Writing",
+        "time": 1531314966562,
+        "tags": [
+            "Paper Notes",
+            "GEC"
+        ]
+    },
+    {
+        "id": "d0252SzLR-ywQSE97brzPg",
+        "text": "Deep Learning Notes",
+        "time": 1545712995194,
+        "tags": [
+            "Study Notes",
+            "Deep Learning",
+            "Coursera"
+        ]
+    },
+    {
+        "id": "XGSQghpcQdqy96pSQyPTjQ",
+        "text": "English Course for Speaking",
+        "time": 1531314978580,
+        "tags": [
+            "Study Notes",
+            "English",
+            "English Speaking"
+        ]
+    },
+    {
+        "id": "NXHRyU9OSrWzjAWstqA3Pw",
+        "text": "趨勢科技機器學習組暑期實習面試",
+        "time": 1531314991131,
+        "tags": [
+            "Diary",
+            "Interview",
+            "Internship"
+        ]
+    },
+    {
+        "id": "MDtB8_2JQHOvY_V5KGX3XA",
+        "text": "TSMC Machine Learning 組暑期實習面試",
+        "time": 1531315023050,
+        "tags": [
+            "Diary",
+            "Interview",
+            "Internship"
+        ]
+    },
+    {
+        "id": "Y93skgWOSoiCEZBH3LCpGA",
+        "text": "Oath/Yahoo Search Engineering 暑期實習面試",
+        "time": 1545626389746,
+        "tags": [
+            "Diary",
+            "Interview",
+            "Internship"
+        ]
+    },
+    {
+        "id": "jYmh9WhxRH2S4yR1P0iqqw",
+        "text": "GDEX: Automatically Finding Good Dictionary Examples in a Corpus",
+        "time": 1538230715537,
+        "tags": [
+            "Paper Notes",
+            "Natural Language Processing"
+        ]
+    },
+    {
+        "id": "CsMs1oYCSguQ7ioIPRZMIQ",
+        "text": "That's Not My Question: Learning to Weight Unmatched Terms in CQA Vertical Search",
+        "time": 1538230730038,
+        "tags": [
+            "Paper Notes",
+            "Document Ranking",
+            "Community-based Question Answering"
+        ]
+    },
+    {
+        "id": "_HufRg10QxSACzSsN01sZw",
+        "text": "MPQA 3.0: An Entity/Event-Level Sentiment Corpus",
+        "time": 1545626032841,
+        "tags": [
+            "Paper Notes",
+            "Opinion Mining",
+            "Dataset"
+        ]
+    },
+    {
+        "id": "lQmKbG2lR9-vEZfAEa-KxA",
+        "text": "Opinion Mining with Deep Recurrent Neural Networks",
+        "time": 1540566175890,
+        "tags": [
+            "Paper Notes",
+            "Opinion Mining",
+            "Recurrent Neural Network",
+            "Deep RNN"
+        ]
+    },
+    {
+        "id": "MgUDEKBQQ4yJCdPpMyLQSQ",
+        "text": "Investigating LSTMs for Joint Extraction of Opinion Entities and Relations",
+        "time": 1540349079403,
+        "tags": [
+            "Paper Notes",
+            "Opinion Mining",
+            "Recurrent Neural Network",
+            "LSTM"
+        ]
+    },
+    {
+        "id": "oyHQ-XB_RRKjADa0qf6icA",
+        "text": "End-to-End Relation Extraction using LSTMs on Sequences and Tree Structures",
+        "time": 1542873060995,
+        "tags": [
+            "Paper Notes",
+            "Opinion Mining",
+            "Recurrent Neural Network",
+            "LSTM",
+            "Deep RNN"
+        ]
+    },
+    {
+        "id": "VszUD-5xTRWXEfTtE0HFPw",
+        "text": "Going out on a limb: Joint Extraction of Entity Mentions and Relations without Dependency Trees",
+        "time": 1545626272083,
+        "tags": [
+            "Paper Notes",
+            "Opinion Mining",
+            "Recurrent Neural Network",
+            "LSTM",
+            "Deep RNN"
+        ]
+    },
+    {
+        "id": "O8WPsS6DTiuPHvds0oS4qA",
+        "text": "What were the most significant machine learning/AI advances in 2018?",
+        "time": 1545719298456,
+        "tags": [
+            "Study Notes",
+            "Deep Learning",
+            "Machine Learning"
+        ]
+    }
+]

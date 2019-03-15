@@ -7,7 +7,7 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 body {
-  font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
   padding-top: 54px;
   color: #868e96;
 }
@@ -25,10 +25,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Saira Extra Condensed', 'Roboto', 'Noto Sans TC', sans-serif;
+  font-family:'Noto Sans TC', sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
+  
   color: #343a40;
+}
+
+h1, h2{
+  text-transform: uppercase;
+  font-family: 'Saira Extra Condensed', 'Noto Sans TC', sans-serif;
 }
 
 h1 {
@@ -42,7 +47,7 @@ h2 {
 
 .subheading {
   font-weight: 500;
-  font-family: 'Saira Extra Condensed', 'Roboto', 'Noto Sans TC', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 1.35rem;
 }
 
@@ -69,6 +74,7 @@ h2 {
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
   text-transform: uppercase;
+  font-size: larger;
 }
 
 @media (min-width: 992px) {
