@@ -21,97 +21,673 @@
     gtag('config', 'UA-115782642-1');
   </script>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Noto+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Noto+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css"
+    integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css"
+    integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css"
+    integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
+  <link href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+    rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
+  <link href="css/resume.css" rel="stylesheet">
 
 </head>
 
 <body>
 
+  <!-- Navigation Section -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#">
       <span class="d-block d-lg-none">HanVincent</span>
-      <a class="lang-btn text-light btn btn-link d-block d-lg-none">
-        <i class="fa fa-language"></i>
-      </a>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="HanVincent picture">
-      </span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
+    <a class="lang-btn text-light btn btn-link d-block d-lg-none">
+      <i class="fa fa-language"></i>
+    </a>
+    <span class="d-none d-lg-block">
+      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="HanVincent picture">
+    </span>
+
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="nav navbar-nav" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active js-scroll-trigger" href="#about" id="about-tab" data-toggle="tab" role="tab" aria-controls="about"
-            aria-selected="true">About | 關於我</a>
+          <a class="nav-link js-scroll-trigger active show" href="#about" id="about-tab" data-toggle="tab" role="tab"
+            aria-controls="about" aria-selected="true">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience" id="experience-tab" data-toggle="tab" role="tab" aria-controls="experience"
-            aria-selected="false">Experience | 工作經驗</a>
+          <a class="nav-link js-scroll-trigger" href="#experience" id="experience-tab" data-toggle="tab" role="tab"
+            aria-controls="experience" aria-selected="false">Experiences</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education" id="education-tab" data-toggle="tab" role="tab" aria-controls="education"
-            aria-selected="false">Education | 學歷</a>
+          <a class="nav-link js-scroll-trigger" href="#education" id="education-tab" data-toggle="tab" role="tab"
+            aria-controls="education" aria-selected="false">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#projects" id="projects-tab" data-toggle="tab" role="tab" aria-controls="projects"
-            aria-selected="false">Projects | 專案</a>
+          <a class="nav-link js-scroll-trigger" href="#projects" id="projects-tab" data-toggle="tab" role="tab"
+            aria-controls="projects" aria-selected="false">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#notes" id="notes-tab" data-toggle="tab" role="tab" aria-controls="notes" aria-selected="false">Notes | 筆記</a>
+          <a class="nav-link js-scroll-trigger" href="#interests" id="interests-tab" data-toggle="tab" role="tab"
+            aria-controls="interests" aria-selected="false">Interests</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests" id="interests-tab" data-toggle="tab" role="tab" aria-controls="interests"
-            aria-selected="false">Interests | 興趣</a>
+          <a class="nav-link js-scroll-trigger" href="#awards" id="awards-tab" data-toggle="tab" role="tab"
+            aria-controls="awards" aria-selected="false">Awards</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards" id="awards-tab" data-toggle="tab" role="tab" aria-controls="awards"
-            aria-selected="false">Awards | 獎項</a>
+          <a class="nav-link js-scroll-trigger" href="#notes" id="notes-tab" data-toggle="tab" role="tab"
+            aria-controls="notes" aria-selected="false">Notes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#extracurricular" id="extracurricular-tab" data-toggle="tab" role="tab" aria-controls="extracurricular"
-            aria-selected="false">Activity | 課外活動</a>
+          <a class="nav-link js-scroll-trigger" href="#extracurricular" id="extracurricular-tab" data-toggle="tab"
+            role="tab" aria-controls="extracurricular" aria-selected="false">Activity</a>
         </li>
       </ul>
     </div>
-    <a class="lang-btn text-light btn btn-link d-none d-lg-block">
-      <i class="fa fa-language"></i>
-    </a>
   </nav>
+  <!-- END Navigation Section -->
 
   <div class="tab-content container-fluid p-0" id="nav-tabContent">
-    <section class="tab-pane fade show active resume-section p-3 p-lg-5 d-column" role="tabpanel" id="about" aria-labelledby="about-tab"></section>
-    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="experience" aria-labelledby="experience-tab"></section>
-    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="education" aria-labelledby="education-tab"></section>
-    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="projects" aria-labelledby="projects-tab"></section>
-    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="notes" aria-labelledby="notes-tab"></section>
-    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="interests" aria-labelledby="interests-tab"></section>
-    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="awards" aria-labelledby="awards-tab"></section>
-    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="extracurricular" aria-labelledby="extracurricular-tab"></section>
+
+    <!-- About Section -->
+    <section class="tab-pane fade resume-section p-3 p-lg-5 d-column active show" role="tabpanel" id="about"
+      aria-labelledby="about-tab">
+      <div class="my-auto">
+
+        <span class="text-center d-block d-lg-none">
+          <img class="img-fluid img-profile rounded-circle w-50 mx-auto mb-3" src="img/profile.jpg"
+            alt="HanVincent picture">
+        </span>
+
+        <h1 class="mb-5">Vincent<span class="text-primary">Han</span></h1>
+
+        <div class="subheading mb-3">
+          <ul class="fa-ul">
+            <li><i class="fa-li fas fa-user"></i>National Tsing Hua University · Hsinchu , Taiwan</li>
+            <li><i class="fa-li fas fa-envelope"></i><a
+                href="mailto:vincent.han.tw@gmail.com">vincent.han.tw@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <ul class="list-inline list-social-icons mb-5">
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/hanvincent/">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/HanVincent">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="assets/w.b.han.pdf">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-download fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <p class="mb-5">
+          <i>Be a professional programmer with fashion sense and excellent social skills.</i>
+          <br>
+          I am a graduate student experienced in Natural Language Processing and Frontend with a keen interest on
+          Machine Learning and Backend.
+          <br>
+          I would like to develop innovative program in my free time. Besides, Joining conferences and hackathons is my
+          interest.
+        </p>
+
+        <ul class="fa-ul mb-3">
+          <li>
+            <i class="fa-li fas fa-check"></i>TOEIC: 895 (Gold Certificate)
+          </li>
+          <li>
+            <i class="fa-li fas fa-check"></i>Proficient in reading and writing English
+          </li>
+        </ul>
+
+        <ul class="list-inline list-icons">
+          <li class="list-inline-item">
+            <i class="devicon-python-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-html5-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-css3-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-bootstrap-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-javascript-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-jquery-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-vuejs-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-nodejs-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-java-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-git-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-babel-plain"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="devicon-webpack-plain"></i>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+    <!-- END About Section -->
+
+    <!-- Experience -->
+    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="experience"
+      aria-labelledby="experience-tab">
+      <div class="my-auto">
+        <h2 class="mb-5"> Work Experiences </h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Summer Intern</h3>
+            <div class="subheading mb-3">Yahoo! (Oath) Taiwan</div>
+            <ul>
+              <li>Web Search Team, cooperated with 4 engineering interns & 1 design intern</li>
+              <li>Videos content-based searching system to increase the accessibility</li>
+              <li>Implemented face recognition via OpenCV and face_recognition python package</li>
+              <li>Utilized chrome extension to illustrate our idea on Yahoo! Taiwan Sports page
+              </li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Taipei, Taiwan</div>
+            <span class="text-primary">July 2018 - Aug. 2018</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Design Engineer</h3>
+            <div class="subheading mb-3">LayerDirect Co., Ltd.</div>
+            <ul>
+              <li>Reduced at least 20% redundant code by Vue.js and developed SPA web for better maintenance</li>
+              <li>Advisor of JavaScript and algorithm</li>
+              <li>Incorporated UI design and enhanced the ability of problem solving on my own</li>
+              <li>Coordinated with two colleagues as a self-taught and self-discipline first employee in a startup pace
+              </li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Taipei, Taiwan</div>
+            <span class="text-primary">May 2017 - Sept. 2017</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">The Republic of China Army</h3>
+            <div class="subheading mb-3">Mandatory Military Service</div>
+            <ul>
+              <li>Reinforced physical fitness in group life</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Tainan, Taiwan</div>
+            <span class="text-primary">Feb. 2017 - Apr. 2017</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Front-end Engineer, Intern</h3>
+            <div class="subheading mb-3">Positive Grid</div>
+            <ul>
+              <li>Solved Web UI issues, separated components and applied Redux</li>
+              <li>Reported progress of tasks in daily scrum and trained to detect problems rapidly</li>
+              <li>Agile and Scrum, JavaScript, AngularJS, and CSS from skilled front-end mentors</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Taipei, Taiwan</div>
+            <span class="text-primary">Sept. 2016 - Jan. 2017</span>
+          </div>
+        </div>
+    </section>
+    <!-- END Experiences Section -->
+
+    <!-- Education Section -->
+    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="education"
+      aria-labelledby="education-tab">
+      <div class="my-auto">
+        <h2 class="mb-5"> Education </h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">National Tsing Hua University</h3>
+            <div class="subheading mb-3">M.S. in Computer Science · NLP Lab · Prof. Jason S. Chang</div>
+            <ul>
+              <li>GPA 4.3/4.3, TOEIC: 895 (Gold Certificate)</li>
+              <li>Researching Natural Language Processing and Machine Learning</li>
+              <li>Teaching Assistant for NLP course</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Hsinchu, Taiwan</div>
+            <span class="text-primary">Sept. 2017 - Present</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">National Central University</h3>
+            <div class="subheading mb-3">B.S. in Computer Science and Information Engineering · IISR Lab · Prof. Richard
+              T.H. Tsai</div>
+            <ul>
+              <li>Overall GPA 4.06/4.3, Major GPA: 4.09/4.3, top 6% rank with Creativity Program</li>
+              <li>Graduated in 3.5 years with 115% required credits and received twice Academic Excellence Awards</li>
+              <li>Published "NCU IISR System for NTCIR-12 MobileClick2" on NTCIR-12</li>
+              <li>Scholarships: Mr. Yin-Sheng San Memorial Award, Mr. Ping-Wen Kuo Memorial Award</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Taoyuan, Taiwan</div>
+            <span class="text-primary">Sept. 2013 - Jan. 2017</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Education Section -->
+
+    <!-- Projects -->
+    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="projects"
+      aria-labelledby="projects-tab">
+      <div class="my-auto">
+        <h2 class="mb-5"> Projects </h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Opinion Mining with Deep Contextualized Embeddings
+              <!-- <a href="https://github.com/HanVincent/Opinion_Mining">[link]</a> -->
+            </h3>
+            <div class="subheading mb-3">Research Intern · Prof. Noriko Kando</div>
+            <ul>
+              <li>Detected opinionated spans on 3 datasets with Bi-LSTM-CRF architecture</li>
+              <li>Applied different embedders: Word2Vec, GloVe, ELMo, and BERT</li>
+              <li>Improved almost 20% using BERT as embedder</li>
+              <li>Supported Minpaku museum project for frontend UI using Google Maps API</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">NII, Japan</div>
+            <span class="text-primary">Sept. 2018 - Jan. 2019</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">BoxBox
+              <a href="https://boxbox.hanvincent.cc">[link]</a>
+            </h3>
+            <div class="subheading mb-3">Web-based Online Multi-player Game</div>
+            <ul>
+              <li>Utilized Node.js and socket.io to build the server</li>
+              <li>Accelerated to render UI via Pixi.js (GPU)</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class=""></div>
+            <span class="text-primary">Aug. 2018 - Sep. 2018</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Grammar Error Correction
+              <a href="https://gec.hanvincent.cc">[link]</a>
+            </h3>
+            <div class="subheading mb-3">Inter-word Dependency-based Grammar Error Correction System</div>
+            <ul>
+              <li>Detect grammatical error of verbs and suggest possible usage with ngram examples</li>
+              <li>Applied SpaCy parser and rules to generate patterns of verbs</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">NLP Course</div>
+            <span class="text-primary">Apr. 2018 - June 2018</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Steeve
+              <a href="https://github.com/TensorFun">[link]</a>
+            </h3>
+            <div class="subheading mb-3">Chatbot for Job Seeking</div>
+            <ul>
+              <li>Top-20 (of 205 teams) in international AI Chatbot competition</li>
+              <li>Team leader in 4-member team to establish chatbot from crawling data to modeling</li>
+              <li>TF-IDF, SVM, CNN, RNN</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">AtoS IT Challenge 2018</div>
+            <span class="text-primary">Nov. 2017 - Apr. 2018</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Air Hockey
+              <a href="https://airhockey.hanvincent.cc/">[link]</a>
+            </h3>
+            <div class="subheading mb-3">Web Application Game</div>
+            <ul>
+              <li>Optimize rendering by using requestAnimationFrame</li>
+              <li>Adjustable game settings and 1-2 players modes</li>
+              <li>Vanilla JavaScript, jQuery, HTML, CSS</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Web App Course</div>
+            <span class="text-primary">Feb. 2018 - Mar. 2018</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Chatroom
+              <a href="https://chatroom.hanvincent.cc/">[link]</a>
+            </h3>
+            <div class="subheading mb-3">Web Application</div>
+            <ul>
+              <li>First Node.js application instructed by Udemy course</li>
+              <li>Learned Socket.io to connect client and server side</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class=""></div>
+            <span class="text-primary">Jan. 2018 - Feb. 2018</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">What Does The Box Say
+              <a href="https://github.com/ylin0603/What-does-the-box-say">[link]</a>
+            </h3>
+            <div class="subheading mb-3">Online Multi-player and Large-scale Map Game</div>
+            <ul>
+              <li>Instructed and supervised teammate to finish core logic in server</li>
+              <li>Accomplished UDP broadcast via Java packages</li>
+              <li>Taught teammate using git</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Software Engineering Course</div>
+            <span class="text-primary">Sept. 2016 - Jan. 2017</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Sentimental Analysis on Movie CommentsSentimental Analysis on Movie Comments
+              <a href="https://github.com/HanVincent/Sentimental_Analysis_on_Movie_Comments">[link]</a>
+            </h3>
+            <div class="subheading mb-3">International Summer Research Program · Prof. Julian McAuley
+            </div>
+            <ul>
+              <li>Achieved 60% accuracy in NLP contest on Kaggle using Linear Regression, stemming and ngram</li>
+              <li>Conducted research in English environment and cultivated my independence and toughness</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">UC, San Diego</div>
+            <span class="text-primary">July 2016 - Aug. 2016</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Pixel Game
+              <a href="https://github.com/pm847">[link]</a>
+            </h3>
+            <div class="subheading mb-3">Online Multi-player Web Game</div>
+            <ul>
+              <li>Awarded 2016 Taiwan OpenStack Application Hackathon Technical Recognition (top 6 of 38 teams)</li>
+              <li>Cooperated in 6-member impromptu team to prototype an online multi-player game within 48 hours</li>
+              <li>In charge of front-end, designed harmonious-colored web UI and connected server by jQuery AJAX</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">OpenStack Application Hackathon</div>
+            <span class="text-primary">Mar. 2016 - Mar. 2016</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">NCU IISR System for NTCIR-12 MobileClick
+              <a href="https://github.com/HanVincent/NTCIR_MobileClick2_Contest">[link]</a>
+            </h3>
+            <div class="subheading mb-3">Ranking Information for Mobile</div>
+            <ul>
+              <li>MobileClick2: Better information retrieval for mobile user</li>
+              <li>Achieved nDCG@3 accuracy of 75% by pair-wise features</li>
+              <li>TFIDF, SVM, Word Embedding, NLP methods</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">NTCIR, Japan</div>
+            <span class="text-primary">Sept. 2015 - Jan. 2016</span>
+          </div>
+        </div>
+    </section>
+    <!-- END Projects Section -->
+
+    <!-- Notes Section -->
+    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="notes"
+      aria-labelledby="notes-tab">
+      <div class="my-auto">
+        <h2 class="mb-5"> Notes </h2>
+        <div id="notes-content"></div>
+      </div>
+    </section>
+    <!-- END Notes Section -->
+
+    <!-- Interest Section -->
+    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="interests"
+      aria-labelledby="interests-tab">
+      <div class="my-auto">
+        <h2 class="mb-5"> Interests </h2>
+        <p>In my leisure time, I would like to learn new things. For instance, I followed Udemy course and built up a
+          chat app with Node.js last winter vacation. Also, I am working in progress on web-based "What does the fox
+          say" project because it is a funny game! I want to promote it like slither.io.
+          Moreover, to enhance my professional ability, I also watch MOOC courses for Machine Learning.</p>
+        <p>Apart from being a developer, I enjoy watching America series, such as Friends and Prison Break, and YouTube.
+          For example, ChuChuShoe is my favorite YouTuber because I can learn extracurricular knowledge and explore the
+          latest technolgy advancements from him. Besides, I exercise in the gym for healthier body.</p>
+      </div>
+    </section>
+    <!-- END Interest Section -->
+
+    <!-- Awards Section -->
+    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="awards"
+      aria-labelledby="awards-tab">
+      <div class="my-auto">
+        <h2 class="mb-5"> Awards </h2>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2017 - Gold Certificate: 895 - TOEIC
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2017 - Academic Excellence Award - National Central University, Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2016 - Mr. Ping-Wen Kuo Memorial Award Scholarship - National Central University, Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2016 - Excellence Award for Lab Study Project - National Central University, Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2016 - 104-2 Mr. Yin-Sheng San Memorial Award Scholarship - National Central University, Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2016 - Best Popularity Aaward for Web App - National Central University, Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2015 - 104-1 Mr. Yin-Sheng San Memorial Award Scholarship - National Central University, Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2016 - 103-2 Mr. Yin-Sheng San Memorial Award Scholarship - National Central University, Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2015 - 2<sup>nd</sup> Creativity Competition - National Central University, Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2015 - 3<sup>rd</sup> Creativity Competition on Computer Network course - National Central University,
+            Taiwan
+          </li>
+          <li>
+            <i class="fa-li fas fa-trophy text-warning"></i>
+            2014 - Academic Excellence Award - National Central University, Taiwan
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- END Awards Section -->
+
+    <!-- Extracurricular Section -->
+    <section class="tab-pane fade resume-section p-3 p-lg-5 flex-column" role="tabpanel" id="extracurricular"
+      aria-labelledby="extracurricular-tab">
+      <div class="my-auto">
+        <h2 class="mb-5"> Extracurricular Activities </h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">President &amp; Vice President</h3>
+            <div class="subheading mb-3">NCU Tzu Chi Collegiate Association</div>
+            <ul>
+              <li>Managed members in executing club courses and delegated tasks to members based on skills and interests
+              </li>
+              <li>Assisted president to hold the activities and handled formal documents</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Tauyuan, Taiwan</div>
+            <span class="text-primary">Sept. 2014 - June 2015</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Leader of Teaching Group</h3>
+            <div class="subheading mb-3">NCU-CSIE Summer Camp</div>
+            <ul>
+              <li>Led a 6-member team to overcome stage fright and coach students steadily in size-50 class</li>
+              <li>Instructed them to cooperate with other members to motivate students to answer questions</li>
+              <li>Communicated with other team leaders to host the whole activity perfectly</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class="">Tauyuan, Taiwan</div>
+            <span class="text-primary">Dec. 2014 - July 2015</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Hackathons</h3>
+            <div class="subheading mb-3"></div>
+            <ul>
+              <li>2016/11 - Development Bank of Singapore Hackathon in Taiwan</li>
+              <li>2016/10 - 'Evolution!!' Akatsuki Game Hackathon - Akatsuki, Taiwan</li>
+              <li>2016/04 - Big Data x Maker Hackathon - Industriaal Development Bureau, Taiwan</li>
+              <li>2016/03 - OpenStack Application Hackathon - Taiwan OpenStack Application</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class=""></div>
+            <span class="text-primary"></span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Others</h3>
+            <div class="subheading mb-3"></div>
+            <ul>
+              <li>2016/07 - 2016/08 - International Summer Research Programm in University of California, San Diego</li>
+              <li>2014/09 - 2015/06 Waiter in Noodle Shop</li>
+              <li>2014/08 - 2014/09 Member of the Acavity Group, NCU-CSIE orientation camp</li>
+              <li>2014/07/20 - 07/28 China Jinan University Leaders Camp</li>
+              <li>2014/07/08 - 07/15 China Chongqing University Cultural Communication Camp </li>
+              <li>2013/12 - 2014/07 Member of Teaching Group, NCU-CSIE Summer Camp</li>
+              <li>2013/10 - 2013/12 Member of the Arts Group, NCU-CSIE Return of Service</li>
+              <li>2013/09 - 2015/01 Part-time Worker in TLDC of NCU</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <div class=""></div>
+            <span class="text-primary"></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- END Extracurricular Section -->
+
   </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Language setting -->
-  <script src="lang/en/profile.js"></script>
-  <script src="lang/zh/profile.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="js/resume.js"></script>
 
 </body>
 
